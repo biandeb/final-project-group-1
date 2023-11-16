@@ -1,4 +1,25 @@
 {
-    "users":[],
-    "products":[]
+    "users":[
+        {
+            "firstname": "juliana",
+            "lastname": "elias",
+            "userName": "julielias",
+            "password": "Aa=11234",
+            "isAdmin": false,
+            "id": 1
+          }
+    ],
+
+    "products":[
+        {
+            "name": "hamburguesa",
+            "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+            "price": "$400",
+            "description": "descripcion corta 2 renglones",
+            "isAvailable": false,
+            "isOrdered": false,
+            "amount": 0,
+            "id": 1
+        }
+    ]
 }
