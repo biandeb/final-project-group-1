@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "firstname": "juliana",
+            "lastname": "elias",
+            "email": "julielias",
+            "password": "aA1=1111",
+            "isAuthenticated": false,
+            "isAdmin": false,
+            "id": 1
+          }
+    ],
+    "products":[
+        {
+            "name": "juliana",
+            "image": "elias",
+            "price": "julielias",
+            "description": "aA1=1111",
+            "isAvailable": false,
+            "isOrdered": false,
+            "amount": 0,
+            "id": 1
+    }
+    ]
+}
