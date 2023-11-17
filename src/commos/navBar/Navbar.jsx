@@ -1,16 +1,16 @@
 
 import { NavLink } from "react-router-dom";
+
 import "./navbar.css"; 
 
 const Navbar = () => {
   return (
-    <header className="header " id="desktop">
-
-    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
+  <header className="header " id="desktop">
+  <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
   <div className="container">
     <a className="navbar-brand mx-5" href="#">Navbar</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+    <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse container" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-links ">
@@ -79,8 +79,8 @@ const Navbar = () => {
     </div>
   </div>
 </nav>
-                  </header>
+</header>
   )
 }
 
-export default Navbar
+export default Navbar;
