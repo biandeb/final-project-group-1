@@ -12,6 +12,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 //Importaciones de componentes nuestros
 import NavBarMain from "./commos/navBar/navBarMain";
 import ErrorView from "./views/ErrorView";
+import AboutUs from "./views/AboutUs";
 
 
 
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <main>
         <Routes>
         <Route exact path='/error' element={<ErrorView />} />
+        <Route exact path='/about-us' element={<AboutUs />} />
         </Routes>
         </main>
       </BrowserRouter>
