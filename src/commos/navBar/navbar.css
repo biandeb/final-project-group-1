@@ -2,7 +2,7 @@
 
 .header{
     display: flex;
-    height: 85px;
+    /* height: 85px; */
     z-index: 5;
 }
 

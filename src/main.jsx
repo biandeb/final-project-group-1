@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
        <NavBarMain></NavBarMain>
-        <main>
+        <main className="mt-0">
         <Routes>
         <Route exact path='/error' element={<ErrorView />} />
         <Route exact path='/about-us' element={<AboutUs />} />

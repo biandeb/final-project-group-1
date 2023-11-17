@@ -1,17 +1,19 @@
 import grillImage from '../img/grill2.jpg';
 
+import "../styles/aboutUs.css";
+
 const AboutUs = () => {
     return (
-        <section className="container mb-4 text-center">
+        <section className="text-center position-relative m-0">
         <article>
         <img
             src={grillImage}
             alt='Grill meat'
-            className='w-100'
+            className='w-100 '
         />
-        <div className="texts-slogan">
-        <h1 className="text-light mt-5 fw-bold">FLAME GRILLED, JUST TASTES BETTER!</h1>
-        <h2 className="text-light mt-5 fw-bold">WE GRILL • YOU CHILL</h2>
+        <div className="position-absolute top-50 start-50 translate-middle">
+        <h1 className="text-light mt-5">FLAME GRILLED, JUST TASTES BETTER!</h1>
+        <h2 className="text-light mt-5">WE GRILL • YOU CHILL</h2>
         </div>
         </article>
         <hr className="text-light" />
