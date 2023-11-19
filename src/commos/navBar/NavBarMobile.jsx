@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
+
 import "./navbar.css";
+
 const NavBarMobile = () => {
   return (
     <header className="header" id="mobileFirst">
-      <nav className=" navbar bg-body-tertiary fixed-bottom border-top ">
-        <ul className="nav-links mx-auto ">
+      <nav className="navbar bg-body-tertiary fixed-bottom border-top">
+        <ul className="nav-links mx-auto">
           <li>
             <div className="text-center prueba">
               <NavLink>
@@ -51,7 +53,7 @@ const NavBarMobile = () => {
             </div>
           </li>
           <li>
-            <div className="text-center ms-5  ">
+            <div className="text-center ms-5">
               <NavLink>
                 <i
                   className="bi bi-person-circle fs-2 text-secondary"
