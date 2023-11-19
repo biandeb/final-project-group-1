@@ -10,7 +10,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 //Importaciones de componentes nuestros
-import NavBarMain from "./commos/navBar/navBarMain";
+import NavBarMain from "./commos/navBar/NavBarMain";
 import ErrorView from "./views/ErrorView";
 
 
