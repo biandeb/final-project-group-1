@@ -7,12 +7,12 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
         <div className="container">
           <Link to="/">
-          <img
-            src="https://trello.com/1/cards/6553e17ebd7c340d40f7a7a4/attachments/6555759498880ba20d2fcdfe/download/logo_pagina.png"
-            alt="logo"
-            className=" imgLogo mx-5"
+            <img
+              src="https://trello.com/1/cards/6553e17ebd7c340d40f7a7a4/attachments/6555759498880ba20d2fcdfe/download/logo_pagina.png"
+              alt="logo"
+              className=" imgLogo mx-5"
             ></img>
-            </Link>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -102,9 +102,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
               </li>
-            
             </ul>
+            <Link to={"/register"}>
             <button className="ms-5">Ingresar</button>
+            </Link>
           </div>
         </div>
       </nav>
