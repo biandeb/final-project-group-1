@@ -17,6 +17,15 @@
       "isAdmin": false,
       "isAuthenticated": false,
       "id": 2
+    },
+    {
+      "firstName": "daniel",
+      "lastName": "cardozo",
+      "email": "daniel@gmail.com",
+      "password": "123456",
+      "isAdmin": false,
+      "isAuthenticated": false,
+      "id": 3
     }
   ],
   "products": [
