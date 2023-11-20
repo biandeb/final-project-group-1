@@ -17,3 +17,8 @@
     font-size: 1rem;
     font-weight: 800;
 }
+
+.order-btn{
+    border: none;
+    background-color: var(--primary-color);
+}
