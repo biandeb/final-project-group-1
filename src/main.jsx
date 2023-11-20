@@ -17,6 +17,7 @@ import NavBarMain from "./commos/navBar/NavBarMain";
 
 //importaciones de estilos
 import "./index.css";
+import ProductCard from "./components/UserView/ProductCard";
 
 
 
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
        <NavBarMain></NavBarMain>
+       <ProductCard/>
         <main>
         <Routes>
         
