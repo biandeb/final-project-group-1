@@ -1,4 +1,4 @@
-import "../../commos/styles.css";
+import "../../index.css";
 import "./userStyles.css"
 
 const ProductCard = () => {

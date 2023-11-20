@@ -17,13 +17,9 @@ import NavBarMain from "./commos/navBar/NavBarMain";
 
 //importaciones de estilos
 import "./index.css";
-<<<<<<< HEAD
+
 import OrderView from "./views/OrderView";
-=======
 import RegisterViews from "./views/RegisterViews";
->>>>>>> 339d515e3a7775030bb7fa87e656928dad6b8931
-
-
 
 
 
@@ -41,6 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path='/register'
             element={<RegisterViews/>}
           />
+          <Route path="/order" element={<OrderView/>}/>
         </Routes>
         </main>
         

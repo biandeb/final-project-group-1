@@ -1,3 +1,5 @@
+/* PRODUCT CARD */
+
 .product-card{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -18,7 +20,17 @@
     font-weight: 800;
 }
 
-.order-btn{
+.submit-btn{
     border: none;
     background-color: var(--primary-color);
+}
+
+/* TABLE NUMBER */
+.table-number-container {
+    background-color: var(--primary-color);
+}
+
+.table-btn{
+    background-color: var(--secondary-color);
+    color: var(--background);
 }
