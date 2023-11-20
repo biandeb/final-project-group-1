@@ -3,7 +3,7 @@ import ProductCard from './ProductCard'
 
 const ProductsGallery = () => {
   return (
-    <section className='container-fluid m-2 row'>
+    <section className='m-2 row'>
         <ProductCard />
         <ProductCard />
         <ProductCard />

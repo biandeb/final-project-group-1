@@ -17,8 +17,7 @@ import NavBarMain from "./commos/navBar/NavBarMain";
 
 //importaciones de estilos
 import "./index.css";
-import ProductCard from "./components/UserView/ProductCard";
-import ProductsGallery from "./components/UserView/ProductsGallery";
+import OrderView from "./views/OrderView";
 
 
 
@@ -31,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
        <NavBarMain></NavBarMain>
-       <ProductsGallery/>
+       <OrderView/>
         <main>
         <Routes>
         
