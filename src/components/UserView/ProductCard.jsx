@@ -3,7 +3,7 @@ import "./userStyles.css"
 
 const ProductCard = () => {
   return (
-    <article className="p-2 m-3 product-card col-12 col-md-3">
+    <article className="p-2 mb-2 product-card col-12 col-md-3">
         <div className="row">
             <div className="col-7">
                 <h5>Hamburguesa con queso</h5>
