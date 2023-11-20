@@ -1,29 +1,66 @@
+import Swal from "sweetalert2";
+
 import { useForm } from "react-hook-form";
-import Input from "../../components/Input/Input";
-import "./registerStyle.css";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+
+import { postUserFn } from "../../api/users";
+import { useSession } from "../../stores/useSessions";
+
+import Input from "../../components/Input/Input";
+
+import "./registerStyle.css";
 
 const Register = () => {
+  // ZUSTAND --------------------------------------------
+
+  const { login } = useSession();
+  // RRD -----------------------------------------------------
+
+  const navigate = useNavigate();
+
   // RHF -----------------------------------------------------
 
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
-    setValue,
-    reset,
   } = useForm();
+
   // Tquery -----------------------------------------------------
+
   const { mutate: postUser } = useMutation({
-    Mutation: postUserFn,
-    onSuccess: () => {},
+    mutationFn: postUserFn,
+    onSuccess: (data) => {
+      Swal.close();
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Bienvenido",
+      });
+
+      login({ ...data, password: undefined });
+    },
     onError: () => {},
   });
+
   // Handlers -----------------------------------------------------
 
   const handleSubmit = (data) => {
-    postUser({...data,isAdmin:false});
+    Swal.showLoading();
+    postUser({ ...data, isAdmin: false, isAuthenticated: false });
   };
+
   // Render -----------------------------------------------------
 
   return (
