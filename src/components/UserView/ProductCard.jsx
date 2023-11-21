@@ -1,9 +1,22 @@
 import "../../index.css";
 import "./userStyles.css"
 
+import { useOrder } from "../../stores/useOrder.js";
+
 const ProductCard = (props) => {
 
     const {product} = props;
+
+    //ZUSTAND
+
+    const { setProductForOrder } = useOrder();
+
+    //HANDLERS
+
+    const handleOrder = () => {
+        setProductForOrder(product);
+        console.log('add')
+    }
 
   return (
     <article className="p-2 mb-2 product-card col-12 col-md-3">
@@ -27,7 +40,7 @@ const ProductCard = (props) => {
         </div>
 
         <div className="text-end mt-2 me-4">
-            <button className="order-btn">Add</button>
+            <button className="order-btn" onClick={handleOrder}>Add</button>
         </div>
 
     </article>

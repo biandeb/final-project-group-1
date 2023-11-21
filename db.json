@@ -44,7 +44,7 @@
 }
     ],
 
-    "checkout":[
+    "orders":[
         {
             "tablenumber": 9,
             "products": [

@@ -4,7 +4,6 @@ import ProductCard from './ProductCard'
 const ProductsGallery = (props) => {
 
   const {products} = props;
-  console.log(products)
 
   return (
 <div className="container mt-5">
