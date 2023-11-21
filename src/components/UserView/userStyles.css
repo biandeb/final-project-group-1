@@ -34,3 +34,12 @@
     background-color: var(--secondary-color);
     color: var(--background);
 }
+
+/* CHECKOUT */
+.total-container{
+    background-color: var(--primary-color);
+}
+
+.order-btn{
+    background-color: var(--tertiary-color) !important
+}
