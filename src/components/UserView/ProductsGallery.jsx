@@ -1,14 +1,20 @@
 
 import ProductCard from './ProductCard'
 
-const ProductsGallery = () => {
+const ProductsGallery = (props) => {
+
+  const {products} = props;
+  console.log(products)
+
   return (
-    <section className=' mt-4 row'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-    </section>
+<div className="container mt-5">
+<section className="row">
+        {products.length === 0? <p>No products available</p> : null}
+        {products.map((product)=>{
+            return <ProductCard key={product.id} product = {product}/>
+        })}
+</section>
+</div>
   )
 }
 

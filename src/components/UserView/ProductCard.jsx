@@ -1,30 +1,33 @@
 import "../../index.css";
 import "./userStyles.css"
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+
+    const {product} = props;
+
   return (
     <article className="p-2 mb-2 product-card col-12 col-md-3">
         <div className="row">
             <div className="col-7">
-                <h5>Hamburguesa con queso</h5>
-                <p>detalle corto del producto, pocas lineas</p>
+                <h5>{product.name}</h5>
+                <p>{product.description}</p>
             </div>
             <div className="col-4">
-                <img className="card-img" src="https://assets.unileversolutions.com/recipes-v2/235485.jpg" alt="hamburguesa"></img>
+                <img className="card-img" src={product.image} alt={product.name}></img>
             </div>
         </div>
 
         <div className="d-flex justify-content-between">
-            <h5>$5000</h5>
+            <h5>{product.price}</h5>
             <div className="d-flex me-4">
                 <button className="amount-btn">-</button>
-                <h5 className="m-2">0</h5>
+                <h5 className="m-2">{product.amount}</h5>
                 <button className="amount-btn">+</button>
             </div>
         </div>
 
         <div className="text-end mt-2 me-4">
-            <button className="order-btn">Agregar</button>
+            <button className="order-btn">Add</button>
         </div>
 
     </article>
