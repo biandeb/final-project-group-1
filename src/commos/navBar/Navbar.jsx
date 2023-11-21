@@ -1,7 +1,29 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useSession } from "../../stores/useSessions";
 import "./navbar.css";
+import Swal from "sweetalert2";
+import { toast } from "sonner";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { isLoggedIn, logout, user } = useSession();
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Atención",
+      text: "Estás por cerrar tu sesión",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, salir",
+      cancelButtonText: "Cancelar",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        toast.success("Sesión cerrada exitosamente. Hasta luego!");
+        logout();
+        navigate("/login");
+      }
+    });
+  };
+
   return (
     <header className="header " id="desktop">
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
@@ -78,18 +100,21 @@ const Navbar = () => {
                   </NavLink>
                 </div>
               </li>
-              <li>
-                <div className="text-center ms-2 mx-4 ">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Admin
-                  </NavLink>
-                </div>
-              </li>
+              {user?.isAdmin && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/"
+                    >
+                      Admin
+                    </NavLink>
+                  </div>
+                </li>
+              )}
+
               <li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
@@ -103,9 +128,20 @@ const Navbar = () => {
                 </div>
               </li>
             </ul>
-            <Link to={"/register"}>
-            <button className="ms-5">Ingresar</button>
-            </Link>
+            {!isLoggedIn && (
+              <Link to={"/login"}>
+                <button className="ms-5">Ingresar</button>
+              </Link>
+            )}
+            {isLoggedIn && (
+              <button
+                className="btn btn-danger"
+                type="button"
+                onClick={handleLogout}
+              >
+                Salir
+              </button>
+            )}
           </div>
         </div>
       </nav>

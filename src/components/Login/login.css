@@ -8830,6 +8830,7 @@
 
 .button{
     background-color: #ee5e26;
+    color: white;
     border: none;
 }
 .button:hover{
@@ -8837,6 +8838,6 @@
     color: #000;
 }
 .h1Color{
-     color: #f74702;
+     color: #f74702!important;
 }
 

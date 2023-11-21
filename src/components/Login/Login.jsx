@@ -80,7 +80,7 @@ const Login = () => {
                   <div className="col-lg-6">
                     <div className="p-5">
                       <div className="text-center">
-                        <h1 className="h4 text-gray-900 mb-4 fw-bold">Login</h1>
+                        <h1 className=" text-gray-900 mb-4 fw-bold h1Color">Login</h1>
                       </div>
                       <form
                         className="user"
@@ -112,14 +112,14 @@ const Login = () => {
                         ></Input>
                         <button
                           type="submit"
-                          className="btn btn-primary btn-user btn-block"
+                          className="btn button fw-bolder btn-user btn-block"
                         >
                           Login
                         </button>
                       </form>
 
                       <div className="text-center">
-                        <Link className="small" to={"/register"}>
+                        <Link className="small fw-bolder" to={"/register"}>
                           Create an Account!
                         </Link>
                       </div>

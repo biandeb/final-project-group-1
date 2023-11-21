@@ -23,7 +23,7 @@
       "lastName": "cardozo",
       "email": "daniel@gmail.com",
       "password": "123456",
-      "isAdmin": false,
+      "isAdmin": true,
       "isAuthenticated": false,
       "id": 3
     }

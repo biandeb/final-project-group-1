@@ -20,6 +20,7 @@ import LoginViews from "./views/LoginViews";
 
 //importaciones de estilos
 import "./index.css";
+import { Toaster } from "sonner";
 
 
 
@@ -43,6 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={<LoginViews/>}
           />
         </Routes>
+        <Toaster position='top-right' richColors />
         </main>
         
       </BrowserRouter>
