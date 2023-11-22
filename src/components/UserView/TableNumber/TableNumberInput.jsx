@@ -13,7 +13,6 @@ const TableNumberInput = () => {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
-    // reset,
   } = useForm();
 
   //ZUSTAND
@@ -24,17 +23,7 @@ const TableNumberInput = () => {
 
   const handleSubmit = (tablenumber) => {
     setTableNumber(tablenumber);
-    // console.log(tablenumber);
-    // console.log(data);
-
-    // const tableNumber = JSON.stringify(data.tablenumber);
-
-    // sessionStorage.setItem("tableNumber", tableNumber);
-
-    // reset();
   };
-
-  // const tableNumberSS = sessionStorage.getItem("tableNumber");
 
   return (
     <>

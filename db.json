@@ -1,106 +1,217 @@
 {
-    "users": [
-        {
-            "firstname": "juliana",
-            "lastname": "elias",
-            "email": "julielias",
-            "password": "aA1=1111",
-            "isAuthenticated": false,
-            "isAdmin": false,
-            "id": 1
-          }
-    ],
-
-    "products":[
-        {
-            "name": "hamburguesa",
-            "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-            "price": "700",
-            "description": "descripcion breve de maximo 3 lineas",
-            "isAvailable": false,
-            "isOrdered": false,
-            "amount": 0,
-            "id": 1
+  "users": [
+    {
+      "firstname": "juliana",
+      "lastname": "elias",
+      "email": "julielias",
+      "password": "aA1=1111",
+      "isAuthenticated": false,
+      "isAdmin": false,
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "name": "hamburguesa",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 1
     },
     {
-        "name": "pizza",
-        "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-        "price": "700",
-        "description": "descripcion breve de maximo 3 lineas",
-        "isAvailable": false,
-        "isOrdered": false,
-        "amount": 0,
-        "id": 2
-},
-{
-    "name": "empanadas",
-    "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-    "price": "700",
-    "description": "descripcion breve de maximo 3 lineas",
-    "isAvailable": false,
-    "isOrdered": false,
-    "amount": 0,
-    "id": 3
-},
-{
-    "name": "hamburguesa",
-    "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-    "price": "700",
-    "description": "descripcion breve de maximo 3 lineas",
-    "isAvailable": false,
-    "isOrdered": false,
-    "amount": 0,
-    "id": 4
-},
-{
-"name": "pizza",
-"image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-"price": "700",
-"description": "descripcion breve de maximo 3 lineas",
-"isAvailable": false,
-"isOrdered": false,
-"amount": 0,
-"id": 5
-},
-{
-"name": "empanadas",
-"image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-"price": "700",
-"description": "descripcion breve de maximo 3 lineas",
-"isAvailable": false,
-"isOrdered": false,
-"amount": 0,
-"id": 6
-}
-    ],
-
-    "orders":[
+      "name": "pizza",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 2
+    },
+    {
+      "name": "empanadas",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 3
+    },
+    {
+      "name": "hamburguesa",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 4
+    },
+    {
+      "name": "pizza",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 5
+    },
+    {
+      "name": "empanadas",
+      "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+      "price": "700",
+      "description": "descripcion breve de maximo 3 lineas",
+      "isAvailable": false,
+      "isOrdered": false,
+      "amount": 0,
+      "id": 6
+    }
+  ],
+  "orders": [
+    {
+      "productsordered": [
         {
-            "tablenumber": 9,
-            "products": [
-                {
-                    "name": "hamburguesa",
-                    "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-                    "price": "700",
-                    "description": "descripcion breve de maximo 3 lineas",
-                    "isAvailable": false,
-                    "isOrdered": false,
-                    "amount": 0,
-                    "id": 1
-                },
-                {
-                    "name": "empanadas",
-                    "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-                    "price": "700",
-                    "description": "descripcion breve de maximo 3 lineas",
-                    "isAvailable": false,
-                    "isOrdered": false,
-                    "amount": 0,
-                    "id": 3
-                }
-            ],
-            "total": 15000
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 1
+        },
+        {
+          "name": "pizza",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 2
         }
-
-    ]
+      ],
+      "tablenumber": {
+        "tablenumber": "5"
+      },
+      "id": 1
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 1
+        },
+        {
+          "name": "pizza",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 2
+        }
+      ],
+      "tablenumber": {
+        "tablenumber": "5"
+      },
+      "id": 2
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 2,
+          "id": 1
+        }
+      ],
+      "tablenumber": {
+        "tablenumber": "5"
+      },
+      "id": 3
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 2,
+          "id": 1
+        },
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 2,
+          "id": 1
+        },
+        {
+          "name": "pizza",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 2,
+          "id": 2
+        }
+      ],
+      "tablenumber": {
+        "tablenumber": "4"
+      },
+      "id": 4
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 1
+        },
+        {
+          "name": "pizza",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 2
+        }
+      ],
+      "tablenumber": {
+        "tablenumber": "3"
+      },
+      "id": 5
+    }
+  ]
 }

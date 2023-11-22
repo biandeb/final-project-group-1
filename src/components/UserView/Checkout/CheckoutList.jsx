@@ -3,9 +3,7 @@ import CheckoutCard from "./CheckoutCard";
 
 const CheckoutList = () => {
   //ZUSTAND
-
   const { productsOrdered } = useOrder();
-  console.log(productsOrdered);
 
   return (
     <section className="container-fluid m-2">

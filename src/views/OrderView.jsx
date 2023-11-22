@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 
 import ProductsGallery from "../components/UserView/Products/ProductsGallery";
 import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
-import TableNumber from "../components/UserView/TableNumber/TableNumber";
+
+import "../components/UserView/userStyles.css"
 
 const OrderView = () => {
   const {

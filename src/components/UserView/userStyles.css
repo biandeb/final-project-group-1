@@ -10,9 +10,9 @@
   height: auto;
 }
 
-.counter-div{
+.counter-div {
   border-radius: 5px;
-  border: solid  var(black) !important;
+  border: solid var(black) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .amount-btn {
@@ -27,7 +27,6 @@
   border: none;
   background-color: var(--primary-color);
 }
-
 
 /* TABLE NUMBER */
 .table-number-container {
@@ -46,4 +45,8 @@
 
 .order-btn {
   background-color: var(--tertiary-color) !important;
+}
+
+.order-btn:hover{
+  background-color: var(--secondary-color) !important;
 }

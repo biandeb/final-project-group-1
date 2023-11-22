@@ -11,6 +11,6 @@ export const postOrderFn = async (data) =>{
     });
 
     if(!res.ok){
-        throw new Error('Ocurrio un error al agregar un blog')
+        throw new Error('An error occured while posting an order')
     }
 }
