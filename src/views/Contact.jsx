@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import FormContact from "./FormContact.jsx";
+
 import "../styles/contact.css";
 
 
@@ -19,5 +21,6 @@ const Contact = () => {
                     </>
                     );
                 };
+                <FormContact />
 
 export default Contact;
