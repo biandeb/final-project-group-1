@@ -10,12 +10,15 @@
   height: auto;
 }
 
+.counter-div{
+  border-radius: 5px;
+  border: solid  var(black) !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 .amount-btn {
   border: none;
+  background-color: transparent;
   text-align: center;
-  border-radius: 50%;
-  background-color: var(--tertiary-color);
-  color: var(--background);
   font-size: 1rem;
   font-weight: 800;
 }
@@ -24,6 +27,7 @@
   border: none;
   background-color: var(--primary-color);
 }
+
 
 /* TABLE NUMBER */
 .table-number-container {

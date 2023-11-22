@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <NavBarMain></NavBarMain>
+        {/* <NavBarMain></NavBarMain> */}
         <main>
           <Routes>
             <Route path="/register" element={<RegisterViews />} />

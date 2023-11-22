@@ -6,8 +6,8 @@ const ProductsGallery = (props) => {
   const {products} = props;
 
   return (
-<div className="container mt-5">
-<section className="row">
+<div className="container-fluid mt-5 d-flex">
+<section className="row justify-content-center">
         {products.length === 0? <p>No products available</p> : null}
         {products.map((product)=>{
             return <ProductCard key={product.id} product = {product}/>

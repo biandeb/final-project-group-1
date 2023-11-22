@@ -1,6 +1,7 @@
-import { useTable } from "../../stores/useTable.js";
+import { useTable } from "../../../stores/useTable.js";
 
 const TableNumber = () => {
+  //ZUSTAND
   const { tablenumberForOrder } = useTable();
 
   if (tablenumberForOrder) {

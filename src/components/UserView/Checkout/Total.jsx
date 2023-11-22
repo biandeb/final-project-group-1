@@ -6,9 +6,7 @@ const Total = () => {
 
   const { productsOrdered } = useOrder();
   
-  const totalAmount = productsOrdered.reduce((total, product)=> total + parseInt(product.price), 0);
-  console.log(totalAmount)
-
+  const totalAmount = productsOrdered.reduce((total, product)=> total + parseInt(product.price*product.amount), 0);
 
   return (
     <div className="mt-3">

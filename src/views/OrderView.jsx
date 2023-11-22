@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { getProductsFn } from "../api/products";
 import { NavLink } from "react-router-dom";
 
-import ProductsGallery from "../components/UserView/ProductsGallery";
-import TableNumberInput from "../components/UserView/TableNumberInput";
-import TableNumber from "../components/UserView/TableNumber";
+import ProductsGallery from "../components/UserView/Products/ProductsGallery";
+import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
+import TableNumber from "../components/UserView/TableNumber/TableNumber";
 
 const OrderView = () => {
   const {

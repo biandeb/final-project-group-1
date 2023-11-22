@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
-import Input from "../Input/Input";
+import Input from "../../Input/Input";
 
-import "./userStyles.css";
-import "../../index.css";
+import "../userStyles.css";
+import "../../../index.css";
 
 import TableNumber from "./TableNumber";
-import { useTable } from "../../stores/useTable";
+import { useTable } from "../../../stores/useTable";
 
 const TableNumberInput = () => {
   //RHF

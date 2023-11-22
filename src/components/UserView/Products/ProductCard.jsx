@@ -1,11 +1,18 @@
-import "../../index.css";
-import "./userStyles.css"
+import "../../../index.css";
+import "../userStyles.css"
 
-import { useOrder } from "../../stores/useOrder.js";
+import { useOrder } from "../../../stores/useOrder.js";
+import Counter from "./Counter.jsx";
+import { useState } from "react";
 
 const ProductCard = (props) => {
 
     const {product} = props;
+
+    //USE STATE para counter
+    const [count, setCount] = useState(0);
+
+    product.amount = count
 
     //ZUSTAND
 
@@ -15,10 +22,11 @@ const ProductCard = (props) => {
 
     const handleOrder = () => {
         setProductForOrder(product);
+        console.log(product);
     }
 
   return (
-    <article className="p-2 mb-2 product-card col-12 col-md-3">
+    <article className="p-2 mb-2 product-card col-12 col-md-3 me-md-3">
         <div className="row">
             <div className="col-7">
                 <h5>{product.name}</h5>
@@ -30,16 +38,12 @@ const ProductCard = (props) => {
         </div>
 
         <div className="d-flex justify-content-between">
-            <h5>{product.price}</h5>
-            <div className="d-flex me-4">
-                <button className="amount-btn">-</button>
-                <h5 className="m-2">{product.amount}</h5>
-                <button className="amount-btn">+</button>
-            </div>
+            <h5>${product.price}</h5>
+            <Counter count={count} setCount={setCount}/>
         </div>
 
-        <div className="text-end mt-2 me-4">
-            <button className="order-btn" onClick={handleOrder}>Add</button>
+        <div className="text-end mt-2">
+            <button className="order-btn w-100 text-light" onClick={handleOrder}>Add</button>
         </div>
 
     </article>
