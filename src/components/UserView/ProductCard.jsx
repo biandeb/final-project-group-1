@@ -15,7 +15,6 @@ const ProductCard = (props) => {
 
     const handleOrder = () => {
         setProductForOrder(product);
-        console.log('add')
     }
 
   return (

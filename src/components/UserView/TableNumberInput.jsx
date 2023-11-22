@@ -5,6 +5,7 @@ import "./userStyles.css";
 import "../../index.css";
 
 import TableNumber from "./TableNumber";
+import { useTable } from "../../stores/useTable";
 
 const TableNumberInput = () => {
   //RHF
@@ -12,20 +13,28 @@ const TableNumberInput = () => {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
-    reset,
+    // reset,
   } = useForm();
 
-  const handleSubmit = (data) => {
-    console.log(data);
+  //ZUSTAND
 
-    const tableNumber = JSON.stringify(data.tablenumber);
+  const { setTableNumber } = useTable();
 
-    sessionStorage.setItem("tableNumber", tableNumber);
+  //HANDLERS
 
-    reset();
+  const handleSubmit = (tablenumber) => {
+    setTableNumber(tablenumber);
+    // console.log(tablenumber);
+    // console.log(data);
+
+    // const tableNumber = JSON.stringify(data.tablenumber);
+
+    // sessionStorage.setItem("tableNumber", tableNumber);
+
+    // reset();
   };
 
-  const tableNumberSS = sessionStorage.getItem("tableNumber");
+  // const tableNumberSS = sessionStorage.getItem("tableNumber");
 
   return (
     <>
@@ -87,8 +96,7 @@ const TableNumberInput = () => {
           </div>
         </div>
       </div>
-
-      <TableNumber tableNumber={tableNumberSS} />
+      <TableNumber />
     </>
   );
 };

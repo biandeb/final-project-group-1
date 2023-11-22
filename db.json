@@ -15,7 +15,7 @@
         {
             "name": "hamburguesa",
             "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-            "price": "$700",
+            "price": "700",
             "description": "descripcion breve de maximo 3 lineas",
             "isAvailable": false,
             "isOrdered": false,
@@ -25,7 +25,7 @@
     {
         "name": "pizza",
         "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-        "price": "$700",
+        "price": "700",
         "description": "descripcion breve de maximo 3 lineas",
         "isAvailable": false,
         "isOrdered": false,
@@ -35,7 +35,7 @@
 {
     "name": "empanadas",
     "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-    "price": "$700",
+    "price": "700",
     "description": "descripcion breve de maximo 3 lineas",
     "isAvailable": false,
     "isOrdered": false,
@@ -51,7 +51,7 @@
                 {
                     "name": "hamburguesa",
                     "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-                    "price": "$700",
+                    "price": "700",
                     "description": "descripcion breve de maximo 3 lineas",
                     "isAvailable": false,
                     "isOrdered": false,
@@ -61,7 +61,7 @@
                 {
                     "name": "empanadas",
                     "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
-                    "price": "$700",
+                    "price": "700",
                     "description": "descripcion breve de maximo 3 lineas",
                     "isAvailable": false,
                     "isOrdered": false,

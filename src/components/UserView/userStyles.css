@@ -1,45 +1,45 @@
 /* PRODUCT CARD */
 
-.product-card{
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.product-card {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.card-img{
-    max-width: 100%;
-    height: auto;
+.card-img {
+  max-width: 100%;
+  height: auto;
 }
 
-.amount-btn{
-    border: none;
-    text-align: center;
-    border-radius: 50%;
-    background-color: var(--tertiary-color) ;
-    color: var(--background);
-    font-size: 1rem;
-    font-weight: 800;
+.amount-btn {
+  border: none;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--tertiary-color);
+  color: var(--background);
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-.submit-btn{
-    border: none;
-    background-color: var(--primary-color);
+.submit-btn {
+  border: none;
+  background-color: var(--primary-color);
 }
 
 /* TABLE NUMBER */
 .table-number-container {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
-.table-btn{
-    background-color: var(--secondary-color);
-    color: var(--background);
+.table-btn {
+  background-color: var(--secondary-color);
+  color: var(--background);
 }
 
 /* CHECKOUT */
-.total-container{
-    background-color: var(--primary-color);
+.total-container {
+  background-color: var(--primary-color);
 }
 
-.order-btn{
-    background-color: var(--tertiary-color) !important
+.order-btn {
+  background-color: var(--tertiary-color) !important;
 }
