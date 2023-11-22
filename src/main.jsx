@@ -13,6 +13,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import NavBarMain from "./commos/navBar/navBarMain";
 import ErrorView from "./views/ErrorView";
 import AboutUs from "./views/AboutUs";
+import Contact from "./views/Contact";
 
 
 
@@ -34,6 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
         <Route exact path='/error' element={<ErrorView />} />
         <Route exact path='/about-us' element={<AboutUs />} />
+        <Route exact path='/contact-us' element={<Contact />} />
         </Routes>
         </main>
       </BrowserRouter>
