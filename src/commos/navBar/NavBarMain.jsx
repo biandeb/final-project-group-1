@@ -5,10 +5,10 @@ import NavBarMobile from './NavBarMobile'
 const NavBarMain = () => {
   return (
     <div>
-        <Navbar></Navbar>
+    <Navbar></Navbar>
     <NavBarMobile></NavBarMobile>
     </div>
   )
 }
 
-export default NavBarMain
+export default NavBarMain;
