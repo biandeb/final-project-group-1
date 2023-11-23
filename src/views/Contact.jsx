@@ -7,7 +7,7 @@ import "../styles/contact.css";
 const Contact = () => {
   return (
     <div className="back-photo">
-      <div className="container w-50 form-content">
+      <div className="container form-content">
         <p className="text-center fs-1 title">CONTACT US</p>
         <p className="text-center second-title">
           Do not hesitate to contact us if you have questions or suggestions.
@@ -15,7 +15,7 @@ const Contact = () => {
         <div className="text-center third-title">
           <p>
             If you want to work with us,
-            <Link to="/error" className="mt-3 link-contact fw-bold">
+            <Link to="/error" className="link-contact fw-bold">
               {" "}
               apply here.
             </Link>

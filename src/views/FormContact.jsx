@@ -17,7 +17,7 @@ const FormContact = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(newContact)} className="container mt-5" >
+      <form onSubmit={handleSubmit(newContact)} className="container mt-4" >
         <fieldset>
           <label htmlFor="name-input" className="form-label">
             Name
@@ -100,7 +100,7 @@ const FormContact = () => {
           />
           <p className="text-danger">{errors.message?.message}</p>
         </fieldset>
-        <button type="submit" className="btn btn-submit mt-3">
+        <button type="submit" className="btn btn-submit mt-3 mb-3">
           Submit
         </button>
       </form>
