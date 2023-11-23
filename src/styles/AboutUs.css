@@ -40,34 +40,80 @@ h2{
     width: 100%;
 }
   
+.grill-subtitle{
+    margin-top: 6%;
+    font-size: 50px;
+    font-weight: bold;
+}
 
+.grill-text{
+    font-size: 18px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
 
 @media (max-width: 767px) {
-    h1 {
+    #mobileFirst{
+        height: 0;
+    }
+    
+    .header{
+        height: 0;
+    }
+    
+    h1{
         font-size: 25px;
         position: relative;
-        bottom: 50px;
-        text-shadow: 8px 8px 9px rgba(0, 0, 0, 0.932);
+        bottom: 300px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
-
-    h2 {
-        font-size: 17px;
-        font-weight: bold;
+    
+    h2{
+        font-size: 18px;
         position: relative;
-        bottom: 70px;
-        text-shadow: 8px 8px 9px rgba(0, 0, 0, 0.932);
+        bottom: 320px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
-    .first-text {
-        position: absolute;
-        /* left: 50%; */
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: #fff; /* Ajusta el color según sea necesario */
-      }
+      
+    .grill-subtitle{
+        font-size: 20px;
+    }
+    
+    .grill-text{
+        font-size: 10px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+#mobileFirst{
+    height: 0;
+}
 
+.header{
+    height: 0;
+}
+
+h1{
+    font-size: 45px;
+    position: relative;
+    bottom: 260px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+}
+
+h2{
+    font-size: 35px;
+    position: relative;
+    bottom: 260px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+}
+  
+.grill-subtitle{
+    font-size: 35px;
+}
+
+.grill-text{
+    font-size: 14px;
+}
     
 }
 
