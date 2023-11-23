@@ -7,9 +7,11 @@ import "../styles/contact.css";
 
 const Contact = () => {
   return (
-    <section className="back-photo">
+    <section className="back-photo pt-5">
       <div className="container form-content">
-        <p className="text-center fs-1 title">CONTACT US</p>
+        <p className="text-center first-title">
+          <span className="part-text">CONTACT</span> US
+        </p>
         <p className="text-center second-title">
           Do not hesitate to contact us if you have questions or suggestions.
         </p>

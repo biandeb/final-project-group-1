@@ -8,14 +8,14 @@ const FormContact = () => {
     reset,
   } = useForm();
 
-  const newContact = (data) => {
+  const newMessage = (data) => {
     console.log(data);
     reset();
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(newContact)} className="container mt-5" noValidate>
+    <section className="text-form">
+      <form onSubmit={handleSubmit(newMessage)} className="container form-inputs">
         <fieldset>
           <label htmlFor="name-input" className="form-label">
             Name
@@ -98,11 +98,11 @@ const FormContact = () => {
           />
           <p className="text-danger">{errors.message?.message}</p>
         </fieldset>
-        <button type="submit" className="btn btn-submit mt-3 mb-3 fw-bold">
+        <button type="submit" className="btn-submit fw-bold">
           Submit
         </button>
       </form>
-    </>
+    </section>
   );
 };
 

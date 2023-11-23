@@ -7,18 +7,19 @@ import { BrowserRouter , Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 //Importaciones de componentes nuestros
-import NavBarMain from "./commos/navBar/navBarMain";
-import ErrorView from "./views/ErrorView";
-import AboutUs from "./views/AboutUs";
-import Contact from "./views/Contact";
+import NavBarMain from "./commos/navBar/navBarMain.jsx";
+import ErrorView from "./views/ErrorView.jsx";
+import AboutUs from "./views/AboutUs.jsx";
+import Contact from "./views/Contact.jsx";
 
 
 
 //importaciones de estilos
 import "./index.css";
+
 
 
 
