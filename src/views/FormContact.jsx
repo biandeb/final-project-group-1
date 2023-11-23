@@ -1,7 +1,5 @@
 import { useForm } from "react-hook-form";
 
-// import GoogleMap from "../helpers/GoogleMap.jsx";
-
 const FormContact = () => {
   const {
     register,
@@ -104,7 +102,6 @@ const FormContact = () => {
           Submit
         </button>
       </form>
-    {/* <GoogleMap /> */}
     </>
   );
 };

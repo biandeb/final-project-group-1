@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import FormContact from "./FormContact.jsx";
+import GoogleMap from "../helpers/GoogleMap.jsx";
 
 import "../styles/contact.css";
 
@@ -23,6 +24,7 @@ const Contact = () => {
         </div>
         <FormContact />
       </div>
+      <GoogleMap />
     </div>
   );
 };
