@@ -49,8 +49,38 @@ h2{
 .grill-text{
     font-size: 18px;
     margin-top: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
 }
+
+.back-three{
+    background-color: #3e1706;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.first-member{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.second-member{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.third-member{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
 
 @media (max-width: 767px) {
     #mobileFirst{
