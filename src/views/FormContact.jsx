@@ -15,7 +15,7 @@ const FormContact = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(newContact)} className="container mt-4" >
+      <form onSubmit={handleSubmit(newContact)} className="container mt-5" noValidate>
         <fieldset>
           <label htmlFor="name-input" className="form-label">
             Name
@@ -86,7 +86,7 @@ const FormContact = () => {
             {...register("message", {
               required: "This field is required.",
               minLength: {
-                value: 5,
+                value: 3,
                 message: "This field has a minimum of 3 characters.",
               },
               maxLength: {
@@ -98,7 +98,7 @@ const FormContact = () => {
           />
           <p className="text-danger">{errors.message?.message}</p>
         </fieldset>
-        <button type="submit" className="btn btn-submit mt-3 mb-3">
+        <button type="submit" className="btn btn-submit mt-3 mb-3 fw-bold">
           Submit
         </button>
       </form>

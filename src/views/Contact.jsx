@@ -7,7 +7,7 @@ import "../styles/contact.css";
 
 const Contact = () => {
   return (
-    <div className="back-photo">
+    <section className="back-photo">
       <div className="container form-content">
         <p className="text-center fs-1 title">CONTACT US</p>
         <p className="text-center second-title">
@@ -25,7 +25,7 @@ const Contact = () => {
         <FormContact />
       </div>
       <GoogleMap />
-    </div>
+    </section>
   );
 };
 
