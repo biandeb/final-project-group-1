@@ -11,7 +11,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 //Importaciones de componentes nuestros
 import NavBarMain from "./commos/navBar/NavBarMain";
-import ErrorView from "./views/ErrorView";
+import ErrorView from "./commos/ErrorView";
 
 
 

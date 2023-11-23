@@ -1,4 +1,14 @@
 .photo-error{
     display: flex;
     align-content: center;
+    max-width: 30%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .photo-error{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 }
