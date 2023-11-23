@@ -2,6 +2,8 @@ import { useFormAction } from "react-router-dom";
 
 import Input from "../helpers/Input.jsx";
 
+import GoogleMap from "../helpers/GoogleMap.jsx";
+
 const FormContact = () => {
     const {
         register, 
@@ -99,6 +101,7 @@ const FormContact = () => {
             <button className="btn-sign-up mt-3" type="submit">Submit</button>
             </div>
         </form>
+    <GoogleMap />
     );
 };
 export default FormContact;
