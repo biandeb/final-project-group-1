@@ -6,8 +6,8 @@ import '../styles/error.css'
 
 const ErrorView = () => {
   return (
-    <>
-    <section className='text-center'>
+    <section className='hola'>
+    <div className='text-center'>
     <img 
     src={errorPhoto}
     alt='Photo error 404'
@@ -22,8 +22,8 @@ const ErrorView = () => {
           Back
         </Link>
       </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 export default ErrorView;
