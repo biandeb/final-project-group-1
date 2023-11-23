@@ -15,10 +15,8 @@ import Swal from "sweetalert2";
 
 const Checkout = () => {
   //ZUSTAND
-  const { productsOrdered } = useOrder();
+  const { productsOrdered , clearProductOrder} = useOrder();
   const { tablenumberForOrder } = useTable();
-
-  console.log(productsOrdered)
 
   //TQUERY
 
@@ -42,8 +40,9 @@ const Checkout = () => {
     productsordered: productsOrdered,
     tablenumber: tablenumberForOrder,
   };
-
-    postOrders(newOrder)
+console.log(newOrder)
+    postOrders(newOrder);
+    clearProductOrder();
 }
 
     return (

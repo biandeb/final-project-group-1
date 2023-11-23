@@ -17,6 +17,7 @@ import CheckoutView from "./views/CheckoutView";
 
 //importaciones de estilos
 import "./index.css";
+import { Toaster } from "sonner";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Routes>
         </main>
       </BrowserRouter>
+      <Toaster position='top-right' richColors/>
     </QueryClientProvider>
   </React.StrictMode>
 );

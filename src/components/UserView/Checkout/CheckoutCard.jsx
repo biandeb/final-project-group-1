@@ -1,28 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Counter from "../Products/Counter";
 import "../userStyles.css";
+import { useOrder } from "../../../stores/useOrder";
 
 
 const CheckoutCard = (props) => {
   const { product } = props;
 
-  // const count = product.amount
+  const productId = product.id;
+  const {setAmount} = useOrder();
 
 
-  //USE STATE para counter
-  const [count, setCount] = useState(product.amount);
-  console.log(product)
+    // USE STATE para counter
+    const [count, setCount] = useState(product.amount);
 
-  // setCount(product.amount);
+//useEffect que registra si hubo cambios en count y cuando eso ocurre ejecuta setAmount      
+      useEffect(()=>{
+        setAmount(productId, count);
+      }, [count, setAmount])
 
-    //USE STATE para counter
-    // const [count, setCount] = useState(0);
-
-    // product.amount = count;
-    // console.log(product.amount)
-
-
-  //defino contexto para renderizado diferencial en counter
+    
+    //defino contexto para renderizado diferencial en counter
   const context = 'CheckoutCard';
 
   return (
@@ -33,8 +31,8 @@ const CheckoutCard = (props) => {
       </div>
 
       <div className="d-flex justify-content-between">
-        <p>Subtotal: ${product.price * count}</p>
-        <Counter count={count} setCount={setCount} context={context} product={product} />
+        <p>Subtotal: ${product.price * product.amount}</p>
+        <Counter count={count} setCount={setCount} context={context} product={product} productId={productId}/>
       </div>
     </article>
   );

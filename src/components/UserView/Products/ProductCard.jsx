@@ -9,20 +9,20 @@ import Counter from "./Counter.jsx";
 const ProductCard = (props) => {
   const { product } = props;
 
-  //USE STATE para counter
+  // //USE STATE para counter
   const [count, setCount] = useState(0);
 
-  product.amount = count;
+  // //revisar si esto es buena practica
+  // product.amount = count
 
   //ZUSTAND
 
   const { setProductForOrder } = useOrder();
-  
 
   //HANDLERS
 
   const handleOrder = () => {
-    setProductForOrder(product);
+    setProductForOrder({...product, amount: count});
   };
 
     //defino contexto para renderizado diferencial en counter
@@ -46,7 +46,7 @@ const ProductCard = (props) => {
 
       <div className="d-flex justify-content-between">
         <h5>${product.price}</h5>
-        <Counter count={count} setCount={setCount} context={context}/>
+        <Counter count={count} setCount={setCount} context={context} productId={product.id} product={product}/>
       </div>
 
       <div className="text-end mt-2">

@@ -1,8 +1,6 @@
 import { useOrder } from "../../../stores/useOrder"
 
-const Total = (props) => {
-
-  const {count} = props
+const Total = () => {
 
   //ZUSTAND
 

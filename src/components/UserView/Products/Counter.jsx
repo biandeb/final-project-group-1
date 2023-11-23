@@ -2,11 +2,14 @@ import { useOrder } from "../../../stores/useOrder";
 import "../userStyles.css";
 
 const Counter = (props) => {
-  const { count, setCount, context, product } = props;
+  const { count, setCount, context, productId } = props;
+
 
   //ZUSTAND
-  const { productsOrdered} = useOrder();
+  const { deleteProductFromOrder } = useOrder();
 
+
+  //HANDLERS
   const handleChange = (quantity) => {
     setCount(count + quantity);
   };
@@ -14,9 +17,9 @@ const Counter = (props) => {
   const handleDelete = () => {
     //funcion para remover este producto de la lista de productos en el store
 
-    let filteredOrder = productsOrdered.filter((item) => item !== product);
-    console.log(filteredOrder);
-    console.log('hola')
+    deleteProductFromOrder(productId)
+    // let filteredOrder = productsOrdered.filter((item) => item !== product);
+    // console.log(filteredOrder);
   };
 
   if(context === "CheckoutCard"){
@@ -29,14 +32,13 @@ const Counter = (props) => {
             <i className="bi bi-trash text-danger" />
           </button>
         ) : (
-          <button className="amount-btn" onClick={() => handleChange(-1)}>
+          <button className="amount-btn" onClick={() => {handleChange(-1)}}>
             <i className="bi bi-dash text-danger" />
           </button>
         )}
-  
         <p className="m-2">{count}</p>
   
-        <button className="amount-btn" onClick={() => handleChange(+1)}>
+        <button className="amount-btn" onClick={() => {handleChange(+1)}}>
           <i className="bi bi-plus text-danger"></i>
         </button>
       </div>
