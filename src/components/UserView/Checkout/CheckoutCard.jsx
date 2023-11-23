@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Counter from "../Products/Counter";
 import "../userStyles.css";
 
@@ -5,11 +6,12 @@ import "../userStyles.css";
 const CheckoutCard = (props) => {
   const { product } = props;
 
-  const count = product.amount
+  // const count = product.amount
 
 
-  // //USE STATE para counter
-  // const [count, setCount] = useState(0);
+  //USE STATE para counter
+  const [count, setCount] = useState(product.amount);
+  console.log(product)
 
   // setCount(product.amount);
 
@@ -31,8 +33,8 @@ const CheckoutCard = (props) => {
       </div>
 
       <div className="d-flex justify-content-between">
-        <h5>Total: ${product.price * product.amount}</h5>
-        <Counter count={count} context={context} product={product} />
+        <p>Subtotal: ${product.price * count}</p>
+        <Counter count={count} setCount={setCount} context={context} product={product} />
       </div>
     </article>
   );

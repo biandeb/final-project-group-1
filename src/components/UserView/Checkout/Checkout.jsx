@@ -18,6 +18,8 @@ const Checkout = () => {
   const { productsOrdered } = useOrder();
   const { tablenumberForOrder } = useTable();
 
+  console.log(productsOrdered)
+
   //TQUERY
 
       //POST
