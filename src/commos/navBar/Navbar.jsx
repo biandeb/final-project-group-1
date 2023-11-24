@@ -4,6 +4,7 @@ import "./navbar.css";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
 
+
 const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
@@ -30,9 +31,9 @@ const Navbar = () => {
         <div className="container">
           <Link to="/">
             <img
-              src="https://trello.com/1/cards/6553e17ebd7c340d40f7a7a4/attachments/6555759498880ba20d2fcdfe/download/logo_pagina.png"
+              src="https://i.postimg.cc/VvvFvjYT/logo.png"
               alt="logo"
-              className=" imgLogo mx-5"
+              className="imgLogo mx-5"
             ></img>
           </Link>
           <button
@@ -128,6 +129,7 @@ const Navbar = () => {
                 </div>
               </li>
             </ul>
+
             {!isLoggedIn && (
               <Link to={"/login"}>
                 <button className="ms-5">Ingresar</button>
@@ -142,6 +144,11 @@ const Navbar = () => {
                 Salir
               </button>
             )}
+
+            <Link to={"/register"}>
+              <button className="ms-5">Ingresar</button>
+            </Link>
+
           </div>
         </div>
       </nav>
