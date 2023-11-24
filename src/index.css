@@ -17,6 +17,7 @@
   font-family: "Noto Sans JP", sans-serif;
 }
 
+<<<<<<< HEAD
 #root {
   display: flex !important;
   flex-direction: column;
@@ -42,3 +43,18 @@ footer{
 .order-status{
   background-color: rgba(58, 142, 71, 0.581);
 }
+=======
+#root{
+    display: flex!important;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main{
+    flex: 1 0 auto;
+     overflow: hidden;
+  }
+  .header{
+    flex-shrink: 0;
+    padding: 1rem 0 0.5rem 0;
+  }
+>>>>>>> 105ba840e9dbddd6d8e0aa7fd57c6d28eca5a6e8
