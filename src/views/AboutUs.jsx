@@ -3,7 +3,7 @@ import bianca from "../img/deblinger-bianca.jpeg";
 import juliana from "../img/elias-juliana.jpeg";
 import martin from "../img/cardozo-martin.jpeg";
 
-import "../styles/aboutUs.css";
+import "../styles/AboutUs.css";
 
 const AboutUs = () => {
   return (
