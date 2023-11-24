@@ -45,7 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
        <NavBarMain></NavBarMain>
-        <main className="mt-0">
+        <main className="mt-5">
         <Routes>
        
         <Route
