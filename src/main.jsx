@@ -7,13 +7,20 @@ import { BrowserRouter , Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 //Importaciones de componentes nuestros
+
 import NavBarMain from "./commos/navBar/NavBarMain";
 
 
-import ErrorView from "./commos/ErrorView";
+
+
+
+import ErrorView from "./views/ErrorView.jsx";
+import AboutUs from "./views/AboutUs.jsx";
+import Contact from "./views/Contact.jsx";
+
 
 
 
@@ -31,9 +38,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
        <NavBarMain></NavBarMain>
-        <main>
+        <main className="mt-0">
         <Routes>
         <Route exact path='/error' element={<ErrorView />} />
+
+        <Route exact path='/about-us' element={<AboutUs />} />
+        <Route exact path='/contact-us' element={<Contact />} />
+
         </Routes>
         </main>
       </BrowserRouter>

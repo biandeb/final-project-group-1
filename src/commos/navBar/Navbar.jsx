@@ -105,7 +105,7 @@ const Navbar = () => {
               </li>
             </ul>
             <Link to={"/register"}>
-            <button className="ms-5">Ingresar</button>
+              <button className="ms-5">Ingresar</button>
             </Link>
           </div>
         </div>
