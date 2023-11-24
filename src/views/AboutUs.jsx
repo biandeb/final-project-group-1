@@ -32,10 +32,19 @@ const AboutUs = () => {
       {/* Tercera sección */}
       <article>
         <div className="back-three">
-            <div className="text-center py-4">
+            <p className="text-members text-center">MEMBERS</p>
+            <hr className="hr-members" />
+            <br />
+            <div className="text-center members">
+                <div className="first-member-name">
                 <img src={bianca} className="first-member" alt="Bianca is a member from grill and thrill's restaurant" />
+                </div>
+                <div className="second-member-name">
                 <img src={juliana} className="second-member" alt="Juliana is a member from grill and thrill's restaurant" />
+                </div>
+                <div className="third-member-name">
                 <img src={martin} className="third-member" alt="Martin is a member from grill and thrill's restaurant" />
+                </div>
             </div>
         </div>
       </article>
