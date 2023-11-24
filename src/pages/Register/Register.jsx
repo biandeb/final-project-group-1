@@ -2,7 +2,11 @@ import Swal from "sweetalert2";
 
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+
+import { Link, useNavigate } from "react-router-dom";
+=======
 // import { useNavigate } from "react-router-dom";
+
 
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
@@ -137,10 +141,9 @@ const Register = () => {
                   <div className="text-center">
                     <p className="small">
                       Already have an account?
-                      <a href="#" className="fw-bolder">
-                        {" "}
+                      <Link to={"/login"} className="fw-bolder">
                         Login
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>
