@@ -41,7 +41,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <main className="mt-0">
         <Routes>
         <Route exact path='/error' element={<ErrorView />} />
-
+        
         <Route exact path='/about-us' element={<AboutUs />} />
         <Route exact path='/contact-us' element={<Contact />} />
 

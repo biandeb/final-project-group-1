@@ -97,14 +97,26 @@ const Navbar = () => {
                     className={`nav-link text-dark  ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/contact-us"
                   >
-                    Ayuda
+                    Contact
+                  </NavLink>
+                </div>
+              </li>
+              <li>
+                <div className="text-center ms-2 mx-4 ">
+                  <NavLink
+                    className={`nav-link text-dark  ${({ isActive }) =>
+                      isActive ? "active" : ""}`}
+                    aria-current="page"
+                    to="/about-us"
+                  >
+                    About
                   </NavLink>
                 </div>
               </li>
             </ul>
-            <Link to={"/register"}>
+            <Link to={"/login"}>
               <button className="ms-5">Ingresar</button>
             </Link>
           </div>
