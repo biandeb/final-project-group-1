@@ -203,7 +203,7 @@ h2{
 
 @media (max-width: 767px) {
     #mobileFirst{
-        height: 0;
+        padding: 0;
     }
     
     .header{
@@ -213,14 +213,14 @@ h2{
     h1{
         font-size: 25px;
         position: relative;
-        bottom: 300px;
+        bottom: 310px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
     
     h2{
         font-size: 18px;
         position: relative;
-        bottom: 320px;
+        bottom: 340px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
       
@@ -378,7 +378,7 @@ h2{
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 #mobileFirst{
-    height: 0;
+    padding: 0;
 }
 
 .header{
