@@ -141,9 +141,20 @@ const Navbar = () => {
                 </div>
               </li>
             </ul>
-            <Link to={"/register"}>
-              <button className="ms-5">Ingresar</button>
-            </Link>
+            {!isLoggedIn && (
+              <Link to={"/login"}>
+                <button className="ms-5">Ingresar</button>
+              </Link>
+            )}
+            {isLoggedIn && (
+              <button
+                className="btn btn-danger"
+                type="button"
+                onClick={handleLogout}
+              >
+                Salir
+              </button>
+            )}
 
           </div>
         </div>
