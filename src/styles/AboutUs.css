@@ -231,6 +231,149 @@ h2{
     .grill-text{
         font-size: 10px;
     }
+
+    /* FOTOS */
+.back-three{
+    padding: 8%;
+    background-color: #3e1706;
+    max-width: 100%;
+}
+
+.first-member{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 180%;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+    }
+
+}
+
+.first-member-name{
+    position: relative;
+
+    &::after {
+        content: "Bianca Deblinger";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.second-member{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+      }
+}
+
+.second-member-name{
+    position: relative;
+
+    &::after {
+        content: "Juliana Elias";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 15px;
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.third-member{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+      }
+}
+
+.third-member-name{
+    position: relative;
+
+    &::after {
+        content: "Martín Cardozo";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.members{
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+    
+.text-members{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.932);
+    margin-bottom: 4%;
+}
+
+.hr-members{
+    margin-bottom: 2%;
+}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -263,7 +406,7 @@ h2{
 .grill-text{
     font-size: 14px;
 }
-/* FOTOS */
+
 .back-three{
     padding: 8%;
     background-color: #3e1706;
