@@ -53,7 +53,9 @@ const OrderView = () => {
             aria-current="page"
             to="/checkout"
           >
-            Checkout
+                      <span className="p-4">
+                      Checkout
+            </span>
           </NavLink>
           <svg
             xmlns="http://www.w3.org/2000/svg"

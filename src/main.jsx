@@ -9,7 +9,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Toaster } from "sonner";
 
-import { Toaster } from "sonner";
 
 //importaciones de estilos
 import "./index.css";
@@ -24,19 +23,18 @@ import NavBarMain from "./commos/navBar/NavBarMain";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
 
-
-
-
-
 import ErrorView from "./views/ErrorView.jsx";
 import AboutUs from "./views/AboutUs.jsx";
 import Contact from "./views/Contact.jsx";
-
+import OrderView from "./views/OrderView.jsx";
+import CheckoutView from "./views/CheckoutView.jsx";
+import OrderStatus from "./views/OrderStatus.jsx";
 
 
 
 //importaciones de estilos
 import "./index.css";
+
 
 
 
@@ -65,6 +63,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/error' element={<ErrorView />} />
         
         <Route exact path='/about-us' element={<AboutUs />} />
+        <Route exact path='/order' element={<OrderView />} />
+        <Route exact path='/checkout' element={<CheckoutView />} />
+        <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
 
 
