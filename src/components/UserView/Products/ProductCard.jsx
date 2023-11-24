@@ -12,9 +12,6 @@ const ProductCard = (props) => {
   // //USE STATE para counter
   const [count, setCount] = useState(0);
 
-  // //revisar si esto es buena practica
-  // product.amount = count
-
   //ZUSTAND
 
   const { setProductForOrder } = useOrder();
@@ -29,13 +26,13 @@ const ProductCard = (props) => {
     const context = 'ProductCard';
 
   return (
-    <article className="p-2 mb-2 product-card col-12 col-md-3 me-md-3">
+    <article className="p-4 mb-2 product-card col-12 col-md-3 me-md-3">
       <div className="row">
-        <div className="col-7">
+        <div className="col-6">
           <h5>{product.name}</h5>
           <p>{product.description}</p>
         </div>
-        <div className="col-4">
+        <div className="col-6">
           <img
             className="card-img"
             src={product.image}
@@ -50,7 +47,7 @@ const ProductCard = (props) => {
       </div>
 
       <div className="text-end mt-2">
-        <button className="order-btn w-100 text-light" onClick={handleOrder}>
+        <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
           Add
         </button>
       </div>

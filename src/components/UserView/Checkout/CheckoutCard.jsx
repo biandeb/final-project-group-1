@@ -24,9 +24,9 @@ const CheckoutCard = (props) => {
   const context = 'CheckoutCard';
 
   return (
-    <article className="border-bottom border-secondary p-3 checkout-card col-12 col-md-3">
+    <article className="border-bottom border-secondary p-4 checkout-card col-12 m-2">
       <div className="d-flex justify-content-between">
-        <p>{product.name}</p>
+        <p className="fs-2">{product.name}</p>
         <p>${product.price}</p>
       </div>
 

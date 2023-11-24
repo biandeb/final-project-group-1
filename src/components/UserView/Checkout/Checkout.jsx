@@ -12,51 +12,66 @@ import { postOrderFn } from "../../../api/orders";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   //ZUSTAND
-  const { productsOrdered , clearProductOrder} = useOrder();
+  const { productsOrdered, clearProductOrder } = useOrder();
   const { tablenumberForOrder } = useTable();
+
+  //RRD
+  const navigate = useNavigate();
 
   //TQUERY
 
-      //POST
-  const {mutate: postOrders} = useMutation({
+  //POST
+  const { mutate: postOrders } = useMutation({
     mutationFn: postOrderFn,
     //mensaje de exito
-    onSuccess: ()=>{
-        // Swal.close();
-        toast.success('Your order was succesfully placed');
+    onSuccess: () => {
+      // Swal.close();
+      toast.success("Your order was succesfully placed");
+      setTimeout(() => {
+        //navegar a pagina de estado de pedido
+        navigate("/orderstatus");
+      }, 2000);
     },
 
-    onError: (e)=>{
-        Swal.close();
-        toast.error(e.message)
-    }
-})
+    onError: (e) => {
+      Swal.close();
+      toast.error(e.message);
+    },
+  });
 
-  const handleOrder = () =>{
-      const newOrder = {
-    productsordered: productsOrdered,
-    tablenumber: tablenumberForOrder,
-  };
-console.log(newOrder)
+  const handleOrder = () => {
+    const newOrder = {
+      productsordered: productsOrdered,
+      tablenumber: tablenumberForOrder,
+    };
     postOrders(newOrder);
     clearProductOrder();
-}
-
-    return (
-      <div className="container-fluid">
-        <h5>Order</h5>
-        <TableNumber  />
-        <CheckoutList productsOrdered={productsOrdered} />
-        <Total />
-        <button className="btn w-100 order-btn text-light mt-4" onClick={handleOrder}>Order</button>
-      </div>
-    );
   };
 
-
-
+  return (
+    <div className="container-fluid">
+      <div className="d-flex justify-content-end">
+        <NavLink
+          className={(isActive) => (isActive ? "nav-link active" : "nav-link")}
+          aria-current="page"
+          to="/order"
+        >
+          <i className="bi bi-x-lg"></i>
+        </NavLink>
+      </div>
+      <h5>Order</h5>
+      <TableNumber />
+      <CheckoutList productsOrdered={productsOrdered} />
+      <Total />
+      <div className="checkout-btn-container  text-light">
+        <p onClick={handleOrder}>Order</p>
+      </div>
+    </div>
+  );
+};
 
 export default Checkout;

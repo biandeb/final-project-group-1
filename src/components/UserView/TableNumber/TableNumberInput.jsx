@@ -27,39 +27,9 @@ const TableNumberInput = () => {
 
   return (
     <>
-      <button
-        type="button"
-        className="btn table-btn"
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
-      >
-        Enter your table number
-      </button>
+      <h5>Enter your table number here:</h5>
 
-      <div
-        className="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                Enter your table number here
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <form onSubmit={onSubmitRHF(handleSubmit)}>
+      <form className="w-md-50" onSubmit={onSubmitRHF(handleSubmit)}>
                 <Input
                   register={register}
                   option={{
@@ -79,12 +49,8 @@ const TableNumberInput = () => {
                   placeholder="0"
                   error={!!errors.tablenumber}
                 />
-                <button className="submit-btn">Save</button>
+                <button className="submit-btn mt-2">Save</button>
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
       <TableNumber />
     </>
   );

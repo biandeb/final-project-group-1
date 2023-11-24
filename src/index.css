@@ -4,7 +4,7 @@
   --primary-color: #ffb703;
   --secondary-color: #e97700;
   --tertiary-color: #d1470b;
-  --red: #cd1d00;
+  --red-color: #cd1d00;
   --background: #fafafa;
   --shadow: #dcdbdb;
   --black: #020202;
@@ -26,8 +26,8 @@
 main {
   flex: 1 0 auto;
   overflow: hidden;
-  margin-top: 60px;
-  margin-bottom: 25px;
+  /* margin-top: 60px; */
+  margin-bottom: 100px;
 }
 
 .header {
@@ -37,4 +37,8 @@ main {
 
 footer{
   flex-shrink: 0;
+}
+
+.order-status{
+  background-color: rgba(58, 142, 71, 0.581);
 }
