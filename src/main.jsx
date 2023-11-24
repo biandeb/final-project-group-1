@@ -58,7 +58,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           />
 
         <Route exact path='/error' element={<ErrorView />} />
-
+        
         <Route exact path='/about-us' element={<AboutUs />} />
         <Route exact path='/contact-us' element={<Contact />} />
 

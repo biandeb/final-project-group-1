@@ -7,7 +7,7 @@ const GoogleMap = () => {
       allowFullScreen=""
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-      className="map-restaurant"
+      className="map-restaurant rounded-5"
     ></iframe>
   );
 };

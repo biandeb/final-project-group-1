@@ -21,7 +21,7 @@ const AboutUs = () => {
         </article>
         {/* Segunda sección */}
 
-        <article className='container'>
+        <article className='container mt-4'>
             <div className='row'>
         <div className="text-center col-lg-6 col-md-6 col-sm-12 background-container">
         <div className="div-text">
@@ -39,7 +39,7 @@ const AboutUs = () => {
         </div>
         </article>
         {/* Tercera sección */}
-        <article className='container'>
+        <article className='container mt-4'>
             <div className='row'>
         <div className="text-center col-6">
         <img
