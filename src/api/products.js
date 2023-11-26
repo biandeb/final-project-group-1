@@ -20,5 +20,13 @@ export const postProductsFn = async (data) => {
   if (!res.ok) {
     throw new Error("Ocurrio un error al cargar un  los product");
   }
+};
 
+export const deleteProductFn = async (productId) => {
+  const res = await fetch(`${API_URL}/products/${productId}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Ocurrio un error al eliminar un  los product");
+  }
 };
