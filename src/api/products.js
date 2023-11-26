@@ -21,6 +21,16 @@ export const postProductsFn = async (data) => {
     throw new Error("Ocurrio un error al cargar un  los product");
   }
 };
+export const putProductsFn = async (data) => {
+    const res = await fetch(`${API_URL}/products/${data.id}`, {
+      method: "put",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!res.ok) {
+      throw new Error("Ocurrio un error al cargar un  los product");
+    }
+  };
 
 export const deleteProductFn = async (productId) => {
   const res = await fetch(`${API_URL}/products/${productId}`, {

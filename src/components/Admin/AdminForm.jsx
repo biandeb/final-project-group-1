@@ -6,9 +6,11 @@ import Swal from "sweetalert2";
 import Input from "../Input/Input";
 import Textarea from "../TextArea/TextArea";
 
-import { postProductsFn } from "../../api/products";
+import { postProductsFn, putProductsFn } from "../../api/products";
+import { useProduct } from "../../stores/useProduct";
 
 const AdminForm = () => {
+
   // RHF -----------------------------------------------------
 
   const {
@@ -16,10 +18,26 @@ const AdminForm = () => {
     handleSubmit: onSubmitRHF,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
+
+  // Zustand -------------------------------------------------
+  const { product , clearProduct } = useProduct();
+
+  const isEditing = !!product
+  if(isEditing){
+    setValue("name", product.name);
+    setValue("image", product.image);
+    setValue("price", product.price);
+    setValue("description", product.description);
+
+
+  }
+
 
   //  Tquery -----------------------------------------------------
   const queryClient = useQueryClient();
+  //Post
   const { mutate: postProdcuts } = useMutation({
     mutationFn: postProductsFn,
     onSuccess: () => {
@@ -35,13 +53,35 @@ const AdminForm = () => {
       toast.error("ocurrio un error al guardar el procuto");
     },
   });
+//PUT
+  const { mutate: putProdcuts } = useMutation({
+    mutationFn: putProductsFn,
+    onSuccess: () => {
+      Swal.close();
+      toast.success("producto editado correctamente");
+
+      reset();
+      clearProduct();
+
+      queryClient.invalidateQueries("products");
+    },
+    onError: () => {
+      Swal.close();
+
+      toast.error("ocurrio un error al editar el procuto");
+    },
+  });
 
   //  Handle -----------------------------------------------------
 
   const handleSubmit = (data) => {
     Swal.showLoading();
-
-    postProdcuts(data);
+    if (isEditing) {
+      putProdcuts({...data, id: product.id});
+    } else {
+      postProdcuts(data);
+      
+    }
   };
   return (
     <section className="container mt-1 ">
