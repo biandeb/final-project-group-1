@@ -14,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif !important;
 }
 
 #root {
@@ -34,10 +34,10 @@ main {
   padding: 1rem 0 0.5rem 0;
 }
 
-footer{
+footer {
   flex-shrink: 0;
 }
 
-.order-status{
+.order-status {
   background-color: rgba(58, 142, 71, 0.581);
 }
