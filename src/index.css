@@ -33,3 +33,8 @@ footer{
 .order-status{
   background-color: rgba(58, 142, 71, 0.581);
 }
+@media screen and (max-width: 991px) {
+  footer{
+    display: none!important;
+  }
+}
