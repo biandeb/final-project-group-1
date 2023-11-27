@@ -1,13 +1,15 @@
+import './accountStyles.css'
+
 const AccountBtn = (props) => {
-  const { title, icon, btnId, handleClick } = props;
+  const { title, icon, onClick } = props;
 
 
   return (
     <>
-      <div  onClick={() => handleClick(btnId)} className="btn col-2 border d-flex flex-column justify-content-center align-content-even">
+      <button onClick={onClick}  className="btn col-3 border d-flex flex-column justify-content-center align-content-even btn-account">
         <div>{icon}</div>
         <p className="btn-title">{title}</p>
-      </div>
+      </button>
     </>
   );
 };

@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-import UserForm from  "./UserForm"
+import UserForm from "./UserForm";
 
 const MyInfo = (props) => {
+  const { user } = props;
+  console.log(user);
 
-    const {user} = props;   
-    console.log(user) 
+  const [isEditing, setIsEditing] = useState(false);
 
-    const [isEditing, setIsEditing] = useState(false);
+  const handleCancel = () => {
+    setIsEditing(false);
+  };
 
   //HANDLERS
 
@@ -16,17 +19,20 @@ const MyInfo = (props) => {
   };
 
   return (
-    <div>
+    <div className="mt-5 mb-5">
       {isEditing ? (
-        <UserForm user={user} onCancel={() => setIsEditing(false)} />
+        <div className="d-flex flex-column justify-content-center">
+          <UserForm user={user} isEditing={isEditing} setIsEditing={setIsEditing} />
+          <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">Cancel</button>
+        </div>
       ) : (
         <div>
-          <h5>My personal information</h5>
+          <h5 className="mb-4">My personal information</h5>
           <p>Name: {user.firstname}</p>
           <p>Lastname: {user.lastname}</p>
           <p>Email: {user.email}</p>
-          <button onClick={handleEdit}>Edit</button>
-          <button>Sign out</button>
+
+          <button onClick={handleEdit} className="btn-edit">Edit</button>
         </div>
       )}
     </div>

@@ -8,7 +8,7 @@
 .camera-span{
     width: 3rem;
     height: auto;
-    background-color: grey;
+    background-color: rgb(202, 202, 202);
     padding: 0.4rem 0.6rem;
     border-radius: 50%;
     position: relative;
@@ -20,4 +20,23 @@
 .btn-title{
     font-size: 0.8rem;
     text-align: center;
+}
+
+.btn-edit{
+    background-color: var(--primary-color);
+}
+
+.btn-account {
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Agregamos una transición para un cambio suave de color */
+  }
+
+.btn-account:focus {
+    background-color: var(--tertiary-color);
+    color: var(--background);
+}
+
+.btn-cancel{
+    border: solid 2px var(--red-color);
+    color: var(--red-color);
 }

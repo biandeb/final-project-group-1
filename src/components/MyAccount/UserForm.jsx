@@ -6,9 +6,9 @@ import { toast } from "sonner";
 import { putUserFn } from "../../api/users";
 import { useEffect } from "react";
 
+
 const UserForm = (props) => {
-  const { user } = props;
-  // console.log(user);
+  const { user, setIsEditing} = props;
 
   // RHF -----------------------------------------------------
 
@@ -20,13 +20,6 @@ const UserForm = (props) => {
     reset,
   } = useForm();
 
-  // seteo valores para editar usuario
-  // if(user){
-  //   setValue("firstname", user.firstName);
-  //   setValue("lastname", user.lastName);
-  //   setValue("email", user.email);
-  //   setValue("password", user.password);
-  // }
 
   useEffect(() => {
     if (user) {
@@ -38,12 +31,16 @@ const UserForm = (props) => {
   }, [user, setValue]);
 
 
+// HANDLERS____________________________
 
   const handleSubmit = (data) => {
     Swal.showLoading();
 
     if(user)
     putUser({...data, id: user.id});
+
+    //volver a myinfo
+    setIsEditing(false)
   };
 
   //useMutation para UPDATE(PUT)
@@ -73,8 +70,9 @@ const UserForm = (props) => {
 
   return (
     <div>
-      <p>formulario</p>
-      <form className="user" onSubmit={onSubmitRHF(handleSubmit)}>
+      
+      <form className="form-floating" onSubmit={onSubmitRHF(handleSubmit)}>
+        <p>Firstname</p>
         <Input
           register={register}
           options={{
@@ -86,6 +84,7 @@ const UserForm = (props) => {
           placeholder="First Name"
           error={!!errors.firstName}
         ></Input>
+        <p>Lastname</p>
         <Input
           register={register}
           options={{
@@ -97,6 +96,7 @@ const UserForm = (props) => {
           placeholder="Last Name"
           error={!!errors.lastName}
         ></Input>
+        <p>Email</p>
         <Input
           register={register}
           options={{
@@ -109,7 +109,7 @@ const UserForm = (props) => {
           placeholder="Email Address"
           error={!!errors.email}
         ></Input>
-
+        <p>Password</p>
         <Input
           register={register}
           options={{
@@ -125,12 +125,9 @@ const UserForm = (props) => {
         <div className="d-flex gap-3 justify-content-center">
           <button
             // type="submit"
-            className="btn btn-primary button btn-user"
+            className="btn btn-primary button btn-user w-50"
           >
             Save
-          </button>
-          <button type="button" className="btn btn-primary button btn-user ">
-            Cancel
           </button>
         </div>
       </form>
