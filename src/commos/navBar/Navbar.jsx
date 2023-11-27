@@ -77,7 +77,7 @@ const Navbar = () => {
                   </NavLink>
                 </div>
               </li>)}
-              { !user?.isAdmin && (<li>
+              { !user?.isAdmin && isLoggedIn && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -89,7 +89,7 @@ const Navbar = () => {
                   </NavLink>
                 </div>
               </li>)}
-              { !user?.isAdmin && (<li>
+              { !user?.isAdmin && isLoggedIn && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark ${({ isActive }) =>
@@ -115,7 +115,7 @@ const Navbar = () => {
                   </div>
                 </li>
               )}
-            { !user?.isAdmin && (
+            { !user?.isAdmin &&  (
               <li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
