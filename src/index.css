@@ -14,30 +14,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif !important;
 }
 
-#root {
-  display: flex !important;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-main {
-  flex: 1 0 auto;
-  overflow: hidden;
-  margin-bottom: 100px;
-}
 
 .header {
   flex-shrink: 0;
   padding: 1rem 0 0.5rem 0;
 }
 
-footer{
+footer {
   flex-shrink: 0;
+  padding: 1rem 0 0.5rem 0;
+  margin-top: auto;
 }
 
-.order-status{
+.order-status {
   background-color: rgba(58, 142, 71, 0.581);
+}
+@media screen and (max-width: 991px) {
+  footer{
+    display: none!important;
+  }
 }
