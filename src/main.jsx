@@ -38,6 +38,7 @@ import OrderStatus from "./views/OrderStatus.jsx";
 //importaciones de estilos
 import "./index.css";
 import AdminViews from "./views/AdminViews.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 
 const queryClient = new QueryClient();
@@ -72,6 +73,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         </Routes>
         <Toaster position='top-right' richColors />
+        <Footer></Footer>
         </main>
       </BrowserRouter>
       <Toaster position='top-right' richColors/>
