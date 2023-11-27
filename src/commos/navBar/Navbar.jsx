@@ -4,7 +4,6 @@ import "./navbar.css";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
@@ -20,6 +19,7 @@ const Navbar = () => {
       if (res.isConfirmed) {
         toast.success("Sesión cerrada exitosamente. Hasta luego!");
         logout();
+
         navigate("/login");
       }
     });
@@ -141,12 +141,11 @@ const Navbar = () => {
                 </div>
               </li>)}
             </ul>
-            {!isLoggedIn && (
-              <Link to={"/login"}>
+            {!isLoggedIn ? (
+              <Link to="/login">
                 <button className="ms-5">Ingresar</button>
               </Link>
-            )}
-            {isLoggedIn && (
+            ) : (
               <button
                 className="btn btn-danger"
                 type="button"
@@ -155,7 +154,6 @@ const Navbar = () => {
                 Salir
               </button>
             )}
-
           </div>
         </div>
       </nav>
