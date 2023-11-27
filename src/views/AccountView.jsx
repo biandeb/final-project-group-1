@@ -17,8 +17,8 @@ const AccountView = () => {
     <div className="container-fluid mt-5 pt-5">
       {isLoading ? <h3>Loading...</h3> : <Account users={users} />}
 
-      <div className="me-4">
-        <button className="btn w-100 bg-danger text-light m-4">Sign out</button>
+      <div className="me-4 d-flex justify-content-end">
+        <button className="btn w-100 bg-danger text-light m-4 btn-signout">Sign out</button>
       </div>
     </div>
   );

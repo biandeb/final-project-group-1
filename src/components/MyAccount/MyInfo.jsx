@@ -26,7 +26,7 @@ const MyInfo = (props) => {
           <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">Cancel</button>
         </div>
       ) : (
-        <div>
+        <div className="info-container">
           <h5 className="mb-4">My personal information</h5>
           <p>Name: {user.firstname}</p>
           <p>Lastname: {user.lastname}</p>

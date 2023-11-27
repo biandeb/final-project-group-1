@@ -125,7 +125,7 @@ const UserForm = (props) => {
         <div className="d-flex gap-3 justify-content-center">
           <button
             // type="submit"
-            className="btn btn-primary button btn-user w-50"
+            className="btn btn-primary button btn-save w-50"
           >
             Save
           </button>

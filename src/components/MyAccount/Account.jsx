@@ -44,7 +44,7 @@ const Account = (props) => {
 
       <hr />
 
-      <div className="mt-5 row gap-2 d-flex justify-content-center">
+      <div className="mt-5 row gap-2 d-flex justify-content-center justify-content-md-start">
         <AccountBtn
           onClick={() => showTab(<MyInfo user={user}/>)}
           title="My Info"

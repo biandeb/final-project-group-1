@@ -17,6 +17,14 @@
     right: 30px;
 }
 
+.btn-signout{
+    max-width: 10rem;
+}
+
+.btn-save{
+    max-width: 20rem;
+}
+
 .btn-title{
     font-size: 0.8rem;
     text-align: center;
@@ -39,4 +47,10 @@
 .btn-cancel{
     border: solid 2px var(--red-color);
     color: var(--red-color);
+    max-width: 20rem;
+}
+
+
+@media (width > 1000px){
+
 }
