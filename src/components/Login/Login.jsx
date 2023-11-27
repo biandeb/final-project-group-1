@@ -9,6 +9,8 @@ import Input from "../Input/Input";
 
 import "./login.css";
 import { postLoginFn } from "../../api/auth";
+import { toast } from "sonner";
+
 
 const Login = () => {
   // Zustabd -------------------------------------
@@ -47,13 +49,11 @@ const Login = () => {
       });
 
       login(data);
+      navigate("/")
     },
     onError: (e) => {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: e.message,
-      });
+      Swal.close();
+      toast.error(e.message)
     },
   });
 
@@ -63,7 +63,7 @@ const Login = () => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
-      navigate("/")
+      
     }
   };
   // Render -----------------------------------------------------

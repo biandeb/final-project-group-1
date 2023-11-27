@@ -14,13 +14,14 @@ import { useSession } from "../../stores/useSessions";
 import Input from "../../components/Input/Input.jsx";
 
 import "./registerStyle.css";
+import { toast } from "sonner";
 
 const Register = () => {
   // ZUSTAND --------------------------------------------
 
   const { login } = useSession();
   // RRD -----------------------------------------------------
-
+  const navigate = useNavigate();
   // const navigate = useNavigate();
 
   // RHF -----------------------------------------------------
@@ -52,10 +53,14 @@ const Register = () => {
         icon: "success",
         title: "Bienvenido",
       });
+      navigate("/");
 
       login({ ...data, password: undefined });
     },
-    onError: () => {},
+    onError: () => {
+      Swal.close();
+      toast.error("Ocurrio un error al registrar el usuario !!!")
+    },
   });
 
   // Handlers -----------------------------------------------------
