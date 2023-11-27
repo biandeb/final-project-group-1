@@ -49,7 +49,14 @@ const Login = () => {
       });
 
       login(data);
-      navigate("/")
+
+      if (data.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+      
+
     },
     onError: (e) => {
       Swal.close();
@@ -60,6 +67,7 @@ const Login = () => {
   // Handle -------------------------------------
 
   const handleSubmit = (data) => {
+
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
