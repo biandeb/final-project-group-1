@@ -108,14 +108,14 @@ const Navbar = () => {
                       className={`nav-link text-dark  ${({ isActive }) =>
                         isActive ? "active" : ""}`}
                       aria-current="page"
-                      to="/"
+                      to="/admin"
                     >
                       Admin
                     </NavLink>
                   </div>
                 </li>
               )}
-
+            { !user?.isAdmin && (
               <li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
@@ -127,8 +127,8 @@ const Navbar = () => {
                     Contact
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -139,7 +139,7 @@ const Navbar = () => {
                     About
                   </NavLink>
                 </div>
-              </li>
+              </li>)}
             </ul>
             {!isLoggedIn && (
               <Link to={"/login"}>
