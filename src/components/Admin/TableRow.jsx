@@ -9,10 +9,9 @@ const TableRow = (props) => {
 
   // Zustand -------------------------------------------------
 
-const { setProductIsEdit } = useProduct();
+  const { setProductIsEdit } = useProduct();
 
   // TQuery -------------------------------------------------
-
 
   const queryClient = useQueryClient();
   const { mutate: deleteProduct } = useMutation({
@@ -32,7 +31,7 @@ const { setProductIsEdit } = useProduct();
   // HANDLERS -------------------------------------------------
 
   const handleEdit = () => {
-    console.log("hola")
+    console.log("hola");
     setProductIsEdit(product);
   };
 
@@ -52,31 +51,50 @@ const { setProductIsEdit } = useProduct();
   };
 
   return (
-    <tr>
-      <td>{index + 1}</td>
-      <td>{product.name}</td>
-      <td>
+    <>
+   <div className="col-md-6">
+  <div className="card mb-3">
+    <div className="row g-0">
+      <div className="col-md-4 ">
         <img
           src={product.image}
+          className="img-fluid rounded-start mt-4 h-75"
           alt={product.name}
-          className="admin-table-img w-25"
         />
-      </td>
-      <td>{product.price}</td>
-      <td>
-        <button type="button" className="btn btn-warning"
-        onClick={handleEdit}>
-          Editar
-        </button>
-        <button
-          type="button"
-          className="btn btn-danger ms-2"
-          onClick={handleDelete}
-        >
-          Eliminar
-        </button>
-      </td>
-    </tr>
+      </div>
+      <div className="col-md-8">
+        <div className="card-body">
+          <p className="card-text fw-bolder fs-4">{index + 1}</p>
+          <h5 className="card-title fw-bolder">{product.name}</h5>
+          <p className="card-text"> $ {product.price}</p>
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={handleEdit}
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            className="btn btn-danger ms-2"
+            onClick={handleDelete}
+          >
+            Eliminar
+          </button>
+          <button
+            type="button"
+            className="btn btn-success ms-2"
+           
+          >
+            Activar 
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </>
   );
 };
 
