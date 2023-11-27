@@ -53,7 +53,7 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-lg-0 nav-links ">
-              <li>
+            { !user?.isAdmin && ( <li>
                 <div className="text-center mx-4">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -64,8 +64,8 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && ( <li>
                 <div className="text-center ms-2 mx-4">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -76,8 +76,8 @@ const Navbar = () => {
                     Menu
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -88,8 +88,8 @@ const Navbar = () => {
                     Pedidos
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark ${({ isActive }) =>
@@ -100,7 +100,7 @@ const Navbar = () => {
                     Perfil
                   </NavLink>
                 </div>
-              </li>
+              </li>)}
               {user?.isAdmin && (
                 <li>
                   <div className="text-center ms-2 mx-4 ">
