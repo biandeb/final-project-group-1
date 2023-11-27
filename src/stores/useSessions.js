@@ -4,5 +4,5 @@ export const useSession = create((set) => ({
   user: null,
   isLoggedIn: false,
   login: (newUser) => set({ user: newUser, isLoggedIn: true }),
-  logaut: () => set({ user: null, isLoggedIn: false }),
+  logout: () => set({ user: null, isLoggedIn: false }),
 }));

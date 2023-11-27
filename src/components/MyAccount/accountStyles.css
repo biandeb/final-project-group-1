@@ -1,0 +1,23 @@
+.profile-picture{
+    width: 6rem;
+    height: auto;
+    border: solid 2px var(--black);
+    border-radius: 50%;
+}
+
+.camera-span{
+    width: 3rem;
+    height: auto;
+    background-color: grey;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    position: relative;
+    z-index: 4;
+    top: 40px;
+    right: 30px;
+}
+
+.btn-title{
+    font-size: 0.8rem;
+    text-align: center;
+}
