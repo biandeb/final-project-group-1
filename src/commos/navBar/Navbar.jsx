@@ -72,7 +72,7 @@ const Navbar = () => {
                     className={`nav-link text-dark  ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/order"
                   >
                     Menu
                   </NavLink>
@@ -84,7 +84,7 @@ const Navbar = () => {
                     className={`nav-link text-dark  ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/checkout"
                   >
                     Pedidos
                   </NavLink>
@@ -96,7 +96,7 @@ const Navbar = () => {
                     className={`nav-link text-dark ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/myaccount"
                   >
                     Perfil
                   </NavLink>
@@ -144,7 +144,7 @@ const Navbar = () => {
             </ul>
             {!isLoggedIn ? (
               <Link to="/login">
-                <button className="ms-5">Ingresar</button>
+                <button className="ms-5">Login</button>
               </Link>
             ) : (
               <button
@@ -152,7 +152,7 @@ const Navbar = () => {
                 type="button"
                 onClick={handleLogout}
               >
-                Salir
+                Logout
               </button>
             )}
           </div>
