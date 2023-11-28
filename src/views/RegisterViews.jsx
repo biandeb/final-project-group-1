@@ -1,4 +1,5 @@
-import Register from "../pages/Register/Register"
+import Register from "../components/Register/Register";
+
 
 
 const RegisterViews = () => {

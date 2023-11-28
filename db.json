@@ -387,7 +387,37 @@
         "tablenumber": "7"
       },
       "id": 22
-
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 1
+        },
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 2
+        }
+      ],
+      "tablenumber": null,
+      "id": 23
+    },
+    {
+      "productsordered": [],
+      "tablenumber": null,
+      "id": 24
     }
   ]
 }
