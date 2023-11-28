@@ -11,7 +11,7 @@ const AboutUs = () => {
       <section className="text-center">
         <article>
           {/* Primera sección */}
-          <img src={grillImage} alt="Grill meat" className="grill-image" />
+          <img src={grillImage} alt="Grill meat background photo" className="grill-image" />
           <div className="position-absolute first-text">
             <p className="text-light flame-title">
               FLAME GRILLED, JUST TASTES BETTER!
