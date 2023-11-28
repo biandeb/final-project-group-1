@@ -26,7 +26,6 @@
     background-image: url(https://wallpapercave.com/wp/wp3617900.jpg);
     background-size: cover;
     position: relative;
-    margin: 0;
 }
 
 .back-photo::before {
@@ -85,7 +84,8 @@
     .form-content{
         margin-bottom: 13%;
         border-radius: 25px;
-        width: 65%;
+        width: 70%;
+        margin-top: 0.1px;
     }
 
     .text-form{
@@ -93,12 +93,12 @@
     }
 
     input {
-        height: 3vh;
+        height: 4vh;
     }
 
     .first-title{
-        margin: 8%;
-        margin-bottom: 15px;
+        margin: 2%;
+        margin-bottom: 5px;
         font-size: 150%;
     }
 
@@ -108,9 +108,9 @@
 
     .form-inputs {
         font-size: 70%;
-        height: 43vh;
+        height: 58vh;
         width: 50vw;
-        padding: 5%;
+        padding: 2%;
     }
 
     .btn-submit {
