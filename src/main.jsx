@@ -40,6 +40,7 @@ import "./index.css";
 import AdminViews from "./views/AdminViews.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
+import AccountView from "./views/AccountView.jsx";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/checkout' element={<CheckoutView />} />
         <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
+        <Route exact path='/myaccount' element={<AccountView />} />
 
 
         </Routes>
