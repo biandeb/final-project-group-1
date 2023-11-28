@@ -18,8 +18,7 @@ const Counter = (props) => {
     //funcion para remover este producto de la lista de productos en el store
 
     deleteProductFromOrder(productId)
-    // let filteredOrder = productsOrdered.filter((item) => item !== product);
-    // console.log(filteredOrder);
+
   };
 
   if(context === "CheckoutCard"){

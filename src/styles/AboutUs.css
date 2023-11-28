@@ -1,45 +1,16 @@
-h1{
+.flame-title{
     font-size: 85px;
     font-weight: bold;
     text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.932);
 }
 
-h2{
-    font-size: 60px;
-    text-shadow: 8px 8px 4px rgba(0, 0, 0, 0.932);
+.grill-title{
+    font-size: 55px;
+    font-weight: bold;
+    text-shadow: 5px 5px 1px rgba(20, 20, 20, 0.932);
 }
 
-h3{
-    font-size: 35px;
-    text-shadow: 8px 8px 6px #E97700;
-    color: rgb(255, 255, 255);
-}
-
-.p-one{
-    font-size: 16px;
-    text-shadow: 2px 5px 10px rgba(255, 255, 255, 0.63);
-}
-
-
-.background-container{
-    background-color: rgb(20, 20, 20);
-}
-
-.div-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Ajusta el ancho según tus necesidades */
-  }
-  
-  .background-container {
-    background-color: rgb(0, 0, 0); /* Ajusta la transparencia según sea necesario */
-    /* padding: 20px; */
-    position: relative;
-  }
-  
-  .article-container {
+.article-container {
     position: relative;
 }
 
@@ -51,7 +22,7 @@ h3{
 
 .first-text {
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -82,9 +53,10 @@ h3{
 }
 
 .back-three{
-    padding: 5%;
+    padding: 3%;
     background-color: #3e1706;
     max-width: 100%;
+    padding-bottom: 5%;
 }
 
 .first-member{
@@ -239,32 +211,30 @@ h3{
         height: 0;
     }
     
-    h1{
-        font-size: 25px;
+    .flame-title{
+        font-size: 20px;
         position: relative;
-        bottom: 390px;
+        bottom: 100px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
     
-    h2{
-        font-size: 18px;
+    .grill-title{
+        font-size: 15px;
         position: relative;
-        bottom: 420px;
+        bottom: 140px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
       
     .grill-subtitle{
-        font-size: 20px;
-        margin-bottom: 1%;
+        font-size: 18px;
+        margin-bottom: 0;
     }
     
     .grill-text{
         font-size: 10px;
     }
 
-    /* FOTOS */
 .back-three{
-    padding: 7%;
     background-color: #3e1706;
     max-width: 100%;
 }
@@ -296,8 +266,8 @@ h3{
         left: 50%;
         transform: translateX(-50%);
         color: white;
-        font-size: 14px;
-        margin-bottom: 100px;
+        font-size: 10px;
+        margin-bottom: 150px;
         opacity: 0;
         transition: opacity 0.3s ease;
         background-color: rgba(0, 0, 0, 0.635);
@@ -334,8 +304,8 @@ h3{
         left: 50%;
         transform: translateX(-50%);
         color: white;
-        font-size: 15px;
-        margin-bottom: 100px;
+        font-size: 10px;
+        margin-bottom: 150px;
         opacity: 0;
         transition: opacity 0.3s ease;
         background-color: rgba(0, 0, 0, 0.635);
@@ -372,8 +342,8 @@ h3{
         left: 50%;
         transform: translateX(-50%);
         color: white;
-        font-size: 14px;
-        margin-bottom: 100px;
+        font-size: 10px;
+        margin-bottom: 150px;
         opacity: 0;
         transition: opacity 0.3s ease;
         background-color: rgba(0, 0, 0, 0.635);
@@ -390,6 +360,7 @@ h3{
     display: flex;
     justify-content: center;
     gap: 8%;
+    margin-top: 2%;
 }
     
 .text-members{
@@ -397,7 +368,7 @@ h3{
     font-size: 20px;
     font-weight: bold;
     text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.932);
-    margin-bottom: 4%;
+    margin-bottom: 5%;
 }
 
 .hr-members{
@@ -415,17 +386,17 @@ h3{
     height: 0;
 }
 
-h1{
+.flame-title{
     font-size: 45px;
     position: relative;
-    bottom: 500px;
+    bottom: 90px;
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
 }
 
-h2{
+.grill-title{
     font-size: 35px;
     position: relative;
-    bottom: 530px;
+    bottom: 115px;
     text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
 }
   
@@ -457,7 +428,6 @@ h2{
         transform: scale(1.1);
         background-color: #282828;
     }
-
 }
 
 .first-member-name{

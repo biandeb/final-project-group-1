@@ -12,10 +12,10 @@ import "./footer.css";
 const Footer = () => {
   return (
     <>
-    <footer className="container-fluid mt-5" id="footer-page">
+    <footer className="container-fluid" id="footer-page">
         <section className="row footer-section">
         <div className="col-4 col-md-6 col-sm-12">
-        <p className="footer-title">Grill <strong>&amp; Thrill</strong></p>
+        <p className="footer-title mt-5">Grill <strong>&amp; Thrill</strong></p>
         <img src={googlePlayImg} className='img-google' alt="Get it on google play" />
         <img src={appStoreImg} className='img-apple' alt="Get it on app store" />
         </div>
@@ -33,14 +33,17 @@ const Footer = () => {
         </section>
         <hr />
         <section className="container text-center mt-4 mb-4">
-        <img src={awardOne} className='award-one me-3' alt="First achievement reached by the restaurant" />
-        <img src={awardTwo} className='award-two me-3' alt="Second achievement reached by the restaurant" />
-        <img src={awardThree} className='award-three' alt="Third achievement reached by the restaurant" />
+        <img src={awardOne} className='award-one me-5' alt="First achievement reached by the restaurant" />
+        <img src={awardTwo} className='award-two me-5' alt="Second achievement reached by the restaurant" />
+        <img src={awardThree} className='award-three me-1' alt="Third achievement reached by the restaurant" />
         </section>
         <hr />
-        <section>
-          <p className="text-end">&copy; 2015 - 2023 Grill &amp; Thrill Restaurant</p>
+        <section className="container only-icons">
+        <i className="bi bi-facebook fs-5 me-3"></i>
+        <i className="bi bi-instagram fs-5 me-3"></i>
+        <i className="bi bi-twitter fs-5"></i>
         </section>
+        <p className="text-end">&copy; 2015 - 2023 Grill &amp; Thrill Restaurant</p>
     </footer>
   </>
   )

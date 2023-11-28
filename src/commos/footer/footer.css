@@ -1,3 +1,7 @@
+#footer-page{
+    background-color: #fafbfc;
+}
+
 .footer-section{ 
     display: flex;
     align-items: center;
@@ -34,6 +38,14 @@
 
 .award-three{
     max-width: 20%;
+}
+
+.only-icons{
+    margin-right: 30%;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 767px) {
