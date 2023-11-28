@@ -22,9 +22,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 //Importaciones de componentes nuestros
 
 import NavBarMain from "./commos/navBar/NavBarMain";
+import Footer from "./commos/footer/Footer.jsx";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
-
 
 import ErrorView from "./views/ErrorView.jsx";
 import AboutUs from "./views/AboutUs.jsx";
@@ -38,7 +38,6 @@ import OrderStatus from "./views/OrderStatus.jsx";
 //importaciones de estilos
 import "./index.css";
 import AdminViews from "./views/AdminViews.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 
 import AccountView from "./views/AccountView.jsx";
 
@@ -75,8 +74,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         </Routes>
         <Toaster position='top-right' richColors />
-        <Footer></Footer>
         </main>
+        <Footer />
       </BrowserRouter>
       <Toaster position='top-right' richColors/>
 

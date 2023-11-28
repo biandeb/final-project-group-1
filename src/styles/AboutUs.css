@@ -14,6 +14,26 @@
     position: relative;
 }
 
+
+.div-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  .background-container {
+    background-color: rgb(0, 0, 0); /* Ajusta la transparencia según sea necesario */
+    /* padding: 20px; */
+    position: relative;
+  }
+  
+  .article-container {
+    position: relative;
+}
+
+
 .article-container img {
     width: 100%;
     height: auto;
@@ -22,7 +42,9 @@
 
 .first-text {
     position: absolute;
-    top: 23%;
+
+    top: 25%;
+
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -53,10 +75,11 @@
 }
 
 .back-three{
-    padding: 3%;
+
+    padding: 5%;
     background-color: #3e1706;
     max-width: 100%;
-    padding-bottom: 5%;
+
 }
 
 .first-member{
@@ -211,6 +234,34 @@
         height: 0;
     }
     
+
+    h1{
+        font-size: 25px;
+        position: relative;
+        bottom: 390px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+    }
+    
+    h2{
+        font-size: 18px;
+        position: relative;
+        bottom: 420px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+    }
+      
+    .grill-subtitle{
+        font-size: 20px;
+        margin-bottom: 1%;
+    }
+    
+    .grill-text{
+        font-size: 10px;
+    }
+
+    /* FOTOS */
+.back-three{
+    padding: 7%;
+
     .flame-title{
         font-size: 20px;
         position: relative;
@@ -235,6 +286,7 @@
     }
 
 .back-three{
+
     background-color: #3e1706;
     max-width: 100%;
 }
@@ -246,6 +298,19 @@
     object-fit: cover;
     overflow: hidden;
     margin-bottom: 180%;
+
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+    }
+
+}
+
+.first-member-name{
+    position: relative;
 
     &:hover{
         z-index: 1;
@@ -433,6 +498,186 @@
 .first-member-name{
     position: relative;
 
+
+    &::after {
+        content: "Bianca Deblinger";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.second-member{
+    border-radius: 50%;
+
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+      }
+}
+
+.second-member-name{
+    position: relative;
+
+    &::after {
+        content: "Juliana Elias";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 15px;
+
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.third-member{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+      }
+}
+
+.third-member-name{
+    position: relative;
+
+    &::after {
+        content: "Martín Cardozo";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+        margin-bottom: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.635);
+        border-radius: 14%;
+        padding: 5%;
+      }
+    
+      &:hover::after {
+        opacity: 1;
+      }
+}
+
+.members{
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+    
+.text-members{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.932);
+    margin-bottom: 4%;
+}
+
+.hr-members{
+    margin-bottom: 2%;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+#mobileFirst{
+    padding: 0;
+}
+
+.header{
+    height: 0;
+}
+
+h1{
+    font-size: 45px;
+    position: relative;
+    bottom: 500px;
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);
+}
+
+h2{
+    font-size: 35px;
+    position: relative;
+    bottom: 530px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+}
+  
+.grill-subtitle{
+    font-size: 35px;
+}
+
+.grill-text{
+    font-size: 14px;
+}
+
+.back-three{
+    padding: 7%;
+    background-color: #3e1706;
+    max-width: 100%;
+}
+
+.first-member{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 65%;
+
+    &:hover{
+        z-index: 1;
+        box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.658);
+        transform: scale(1.1);
+        background-color: #282828;
+    }
+
+}
+
+.first-member-name{
+    position: relative;
+
     &::after {
         content: "Bianca Deblinger";
         position: absolute;
@@ -481,6 +726,7 @@
         transform: translateX(-50%);
         color: white;
         font-size: 15px;
+
         font-weight: bold;
         margin-bottom: 100px;
         opacity: 0;
