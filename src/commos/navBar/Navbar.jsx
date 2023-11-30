@@ -5,7 +5,6 @@ import "./navbar.css";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
@@ -21,6 +20,7 @@ const Navbar = () => {
       if (res.isConfirmed) {
         toast.success("Sesión cerrada exitosamente. Hasta luego!");
         logout();
+
         navigate("/login");
       }
     });
@@ -54,7 +54,7 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-lg-0 nav-links ">
-              <li>
+            { !user?.isAdmin && ( <li>
                 <div className="text-center mx-4">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -65,43 +65,43 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && ( <li>
                 <div className="text-center ms-2 mx-4">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/order"
                   >
                     Menu
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && isLoggedIn && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/checkout"
                   >
                     Pedidos
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && isLoggedIn && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark ${({ isActive }) =>
                       isActive ? "active" : ""}`}
                     aria-current="page"
-                    to="/"
+                    to="/myaccount"
                   >
                     Perfil
                   </NavLink>
                 </div>
-              </li>
+              </li>)}
               {user?.isAdmin && (
                 <li>
                   <div className="text-center ms-2 mx-4 ">
@@ -109,14 +109,14 @@ const Navbar = () => {
                       className={`nav-link text-dark  ${({ isActive }) =>
                         isActive ? "active" : ""}`}
                       aria-current="page"
-                      to="/"
+                      to="/admin"
                     >
                       Admin
                     </NavLink>
                   </div>
                 </li>
               )}
-
+            { !user?.isAdmin &&  (
               <li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
@@ -128,8 +128,8 @@ const Navbar = () => {
                     Contact
                   </NavLink>
                 </div>
-              </li>
-              <li>
+              </li>)}
+              { !user?.isAdmin && (<li>
                 <div className="text-center ms-2 mx-4 ">
                   <NavLink
                     className={`nav-link text-dark  ${({ isActive }) =>
@@ -140,23 +140,21 @@ const Navbar = () => {
                     About
                   </NavLink>
                 </div>
-              </li>
+              </li>)}
             </ul>
-            {!isLoggedIn && (
-              <Link to={"/login"}>
-                <button className="ms-5">Ingresar</button>
+            {!isLoggedIn ? (
+              <Link to="/login">
+                <button className="ms-5">Login</button>
               </Link>
-            )}
-            {isLoggedIn && (
+            ) : (
               <button
                 className="btn btn-danger"
                 type="button"
                 onClick={handleLogout}
               >
-                Salir
+                Logout
               </button>
             )}
-
           </div>
         </div>
       </nav>

@@ -9,6 +9,8 @@ import Input from "../Input/Input";
 
 import "./login.css";
 import { postLoginFn } from "../../api/auth";
+import { toast } from "sonner";
+
 
 const Login = () => {
   // Zustabd -------------------------------------
@@ -47,23 +49,29 @@ const Login = () => {
       });
 
       login(data);
+
+      if (data.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/order");
+      }
+      
+
     },
     onError: (e) => {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: e.message,
-      });
+      Swal.close();
+      toast.error(e.message)
     },
   });
 
   // Handle -------------------------------------
 
   const handleSubmit = (data) => {
+
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
-      navigate("/")
+      
     }
   };
   // Render -----------------------------------------------------
