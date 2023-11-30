@@ -1,0 +1,56 @@
+.profile-picture{
+    width: 6rem;
+    height: auto;
+    border: solid 2px var(--black);
+    border-radius: 50%;
+}
+
+.camera-span{
+    width: 3rem;
+    height: auto;
+    background-color: rgb(202, 202, 202);
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    position: relative;
+    z-index: 4;
+    top: 40px;
+    right: 30px;
+}
+
+.btn-signout{
+    max-width: 10rem;
+}
+
+.btn-save{
+    max-width: 20rem;
+}
+
+.btn-title{
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.btn-edit{
+    background-color: var(--primary-color);
+}
+
+.btn-account {
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Agregamos una transición para un cambio suave de color */
+  }
+
+.btn-account:focus {
+    background-color: var(--tertiary-color);
+    color: var(--background);
+}
+
+.btn-cancel{
+    border: solid 2px var(--red-color);
+    color: var(--red-color);
+    max-width: 20rem;
+}
+
+
+@media (width > 1000px){
+
+}
