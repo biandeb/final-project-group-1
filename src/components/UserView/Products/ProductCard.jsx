@@ -43,7 +43,7 @@ const ProductCard = (props) => {
   const context = "ProductCard";
 
   return (
-    <article className="p-4 mb-2 product-card col-12 col-md-3 me-md-3">
+    <article className="p-4 mb-2 product-card col-12 col-md-5 col-lg-3 me-md-3">
       <div className="row">
         <div className="col-6">
           <h5>{product.name}</h5>

@@ -36,7 +36,7 @@ const OrderView = () => {
 
   return (
     <>
-      <div className="m-5 pt-5">
+      <div className="m-5 pt-5 order-container pb-5">
         <TableNumberInput />
         <hr/>
         {isLoading ? (
