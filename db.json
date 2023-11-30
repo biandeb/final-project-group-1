@@ -418,6 +418,23 @@
       "productsordered": [],
       "tablenumber": null,
       "id": 24
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 2,
+          "id": 1
+        }
+      ],
+      "tablenumber": null,
+      "userId": 1,
+      "id": 25
     }
   ]
 }

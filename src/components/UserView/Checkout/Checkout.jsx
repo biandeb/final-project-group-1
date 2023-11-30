@@ -13,11 +13,15 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useSession } from "../../../stores/useSessions";
 
 const Checkout = () => {
   //ZUSTAND
   const { productsOrdered, clearProductOrder } = useOrder();
   const { tablenumberForOrder } = useTable();
+  const { user } = useSession();
+
+  const userId = user.id
 
   //RRD
   const navigate = useNavigate();
@@ -47,6 +51,7 @@ const Checkout = () => {
     const newOrder = {
       productsordered: productsOrdered,
       tablenumber: tablenumberForOrder,
+      userId: userId,
     };
     postOrders(newOrder);
     clearProductOrder();
