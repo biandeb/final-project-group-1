@@ -1,11 +1,8 @@
 import { create } from "zustand";
 
-let user = null;
-let isLoggedIn = false;
-
 export const useSession = create((set) => ({
-  user,
-  isLoggedIn,
+  user: null,
+  isLoggedIn: false,
   login: (newUser) => set({ user: newUser, isLoggedIn: true }),
-  logout: () => set({ user: null, isLoggedIn: false }),
+  logaut: () => set({ user: null, isLoggedIn: false }),
 }));
