@@ -14,16 +14,33 @@ const ProductCard = (props) => {
 
   //ZUSTAND
 
-  const { setProductForOrder } = useOrder();
+  const { setProductForOrder, productsOrdered, updateExistingProduct } =
+    useOrder();
 
   //HANDLERS
 
   const handleOrder = () => {
-    setProductForOrder({...product, amount: count});
+    //reviso si ya existe el producto en el carrito
+    const existingProductIndex = productsOrdered.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      const existingProduct = productsOrdered[existingProductIndex];
+      const productId = product.id;
+
+      // Actualizar la cantidad del producto existente
+      const updatedAmount = existingProduct.amount + count;
+      console.log("Nueva cantidad:", updatedAmount);
+
+      updateExistingProduct(productId, updatedAmount);
+    } else {
+      setProductForOrder({ ...product, amount: count });
+    }
   };
 
-    //defino contexto para renderizado diferencial en counter
-    const context = 'ProductCard';
+  //defino contexto para renderizado diferencial en counter
+  const context = "ProductCard";
 
   return (
     <article className="p-4 mb-2 product-card col-12 col-md-3 me-md-3">
@@ -43,7 +60,13 @@ const ProductCard = (props) => {
 
       <div className="d-flex justify-content-between">
         <h5>${product.price}</h5>
-        <Counter count={count} setCount={setCount} context={context} productId={product.id} product={product}/>
+        <Counter
+          count={count}
+          setCount={setCount}
+          context={context}
+          productId={product.id}
+          product={product}
+        />
       </div>
 
       <div className="text-end mt-2">

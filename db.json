@@ -4,7 +4,7 @@
       "firstname": "Juliana Maria",
       "lastname": "Elias Carrasco",
       "email": "julielias@gmail.com",
-      "password": "aA1=1111",
+      "password": "1234",
       "id": 1
     },
     {
@@ -435,6 +435,33 @@
       "tablenumber": null,
       "userId": 1,
       "id": 25
+    },
+    {
+      "productsordered": [
+        {
+          "name": "hamburguesa",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 3,
+          "id": 1
+        },
+        {
+          "name": "pizza",
+          "image": "https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/fruco-tomate-cocineros/HAMBURGUESA%201200x709.png",
+          "price": "700",
+          "description": "descripcion breve de maximo 3 lineas",
+          "isAvailable": false,
+          "isOrdered": false,
+          "amount": 1,
+          "id": 3
+        }
+      ],
+      "tablenumber": null,
+      "userId": 1,
+      "id": 26
     }
   ]
 }
