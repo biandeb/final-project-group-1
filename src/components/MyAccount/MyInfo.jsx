@@ -4,7 +4,6 @@ import UserForm from "./UserForm";
 
 const MyInfo = (props) => {
   const { user } = props;
-  console.log(user);
 
   const [isEditing, setIsEditing] = useState(false);
 
