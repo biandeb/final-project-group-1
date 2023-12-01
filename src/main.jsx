@@ -22,9 +22,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 //Importaciones de componentes nuestros
 
 import NavBarMain from "./commos/navBar/NavBarMain";
+import Footer from "./commos/footer/Footer.jsx";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
-
 
 import ErrorView from "./views/ErrorView.jsx";
 import AboutUs from "./views/AboutUs.jsx";
@@ -39,8 +39,8 @@ import HomeView from "./views/HomeView.jsx";
 //importaciones de estilos
 import "./index.css";
 import AdminViews from "./views/AdminViews.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 
+import AccountView from "./views/AccountView.jsx";
 
 const queryClient = new QueryClient();
 
@@ -70,13 +70,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/checkout' element={<CheckoutView />} />
         <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
+        <Route exact path='/myaccount' element={<AccountView />} />
         <Route exact path='/home' element={<HomeView />} />
 
 
         </Routes>
         <Toaster position='top-right' richColors />
-        <Footer></Footer>
         </main>
+        <Footer />
       </BrowserRouter>
       <Toaster position='top-right' richColors/>
 

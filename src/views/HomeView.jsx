@@ -1,5 +1,5 @@
-import HomeDesktop from "../pages/HomeDesktop.jsx";
-import HomeMobile from "../pages/HomeMobile.jsx";
+import HomeDesktop from '../components/Home/HomeDesktop.jsx';
+import HomeMobile from '../components/Home/HomeMobile.jsx';
 
 const HomeView = () => {
   return (

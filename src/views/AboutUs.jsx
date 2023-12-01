@@ -1,69 +1,57 @@
-import grillImage from '../img/grill2.jpg';
-import grillMeat from '../img/meat.jpg';
-import grillCook from '../img/meat-cook.jpg';
+import grillImage from "../img/grill3.jpg";
+import bianca from "../img/deblinger-bianca.jpeg";
+import juliana from "../img/elias-juliana.jpeg";
+import martin from "../img/cardozo-martin.jpeg";
 
-import "../styles/aboutUs.css";
+import "../styles/AboutUs.css";
 
 const AboutUs = () => {
-    return (
-        <section className="text-center">
+  return (
+    <>
+      <section className="text-center">
         <article>
-            {/* Primera sección */}
-        <img
-            src={grillImage}
-            alt='Grill meat'
-            className='w-100 '
-        />
-        <div className="position-absolute first-text">
-        <h1 className="text-light mt-5">FLAME GRILLED, JUST TASTES BETTER!</h1>
-        <h2 className="text-light mt-5">WE GRILL • YOU CHILL</h2>
-        </div>
-        </article>
-        {/* Segunda sección */}
+          {/* Primera sección */}
+ 
+          <img src={grillImage} alt="Grill meat" className="grill-image" />
+          <div className="position-absolute first-text">
+            <h1 className="text-light">
+              FLAME GRILLED, JUST TASTES BETTER!
+            </h1>
+            <h2 className="text-light mt-5">WE GRILL • YOU CHILL</h2>
 
-        <article className='container mt-4'>
-            <div className='row'>
-        <div className="text-center col-lg-6 col-md-6 col-sm-12 background-container">
-        <div className="div-text">
-            <h3 className='fw-bold'>Grill & Thrill ARE WILD ABOUT FOOD</h3>
-            <p className='text-light fw-bold p-one'>Value, quality, and good times are what Grill & Thrill strives for. We prepare, cook, and serve in our unique Wild Way and sincerely hope you enjoy your time with us as much as we appreciate yours. Flame-grilled Steaks, Ribs, and Chicken are our specialities but we also do amazing Calamari, Pizza, and much more. We realise that not everyone is a carnivore, so we continue to expand our menu to suit all. We only use the very best free-range, grass-fed Argentina Beef available. We carefully selected our Steaks and ensure they are aged until perfect, our Ribs cook overnight and our Chicken marinade for at least 24 hours before being flame-grilled to perfection. Eat delicious food. Grab a drink. But most of all, relax! And please enjoy our little corner of Argentina, Tucuman. We thank you from the bottom of our hearts for your continued support.</p>
-            </div>
-        </div>
-        <div className="text-center col-lg-6 col-md-6 col-sm-12">
-        <img
-            src={grillMeat}
-            alt='Grill meat'
-            className='w-100'
-        />
-        </div>
-        </div>
-        </article>
-        {/* Tercera sección */}
-        <article className='container mt-4'>
-            <div className='row'>
-        <div className="text-center col-6">
-        <img
-            src={grillCook}
-            alt='Grill meat cook'
-            className='w-100'
-        />
-        </div>
-        <div className="text-center col-6 background-container">
-        <div className="div-text container">
-            <h4 className='fw-bold p-open'>OPENING HOURS</h4>
-            <div className='p-hours'>
-            <p className='text-light fw-bold'>Monday- 05.00pm-9.30pm</p>
-            <p className='text-light fw-bold'>Tuesday- 05.00pm-9.30pm</p>
-            <p className='text-light fw-bold'>Wednesday- 05.00pm-9.30pm</p>
-            <p className='text-light fw-bold'>Thursday- 01.00pm-9.00pm</p>
-            <p className='text-light fw-bold'>Friday- 08.00am-9.00pm</p>
-            <p className='text-light fw-bold'>Saturday- 08.00am-9.00pm</p>
-            </div>
-            </div>
-        </div>
-        </div>
+          
+          </div>
         </article>
       </section>
-      )
-}
+      {/* Segunda sección */}
+      <article className="text-center container">
+        <p className="grill-subtitle">GRILL &amp; THRILL
+        <br />
+        RESTAURANT</p>
+        <br />
+        <hr />
+        <p className="grill-text fw-bold">Value, quality, and good times are what Grill & Thrill strives for. We prepare, cook, and serve in our unique Wild Way and sincerely hope you enjoy your time with us as much as we appreciate yours. Flame-grilled Steaks, Ribs, and Chicken are our specialities but we also do amazing Burguers, Pizza, and much more. We realise that not everyone is a carnivore, so we continue to expand our menu to suit all. We only use the very best free-range, grass-fed New Tucson Burguer available. We carefully selected our Steaks and ensure they are aged until perfect, our Burguers cook overnight and our Chicken marinade for at least 24 hours before being flame-grilled to perfection. Eat delicious food. Grab a drink. But most of all, relax! And please enjoy our little corner of America in Argentina. We thank you from the bottom of our hearts for your continued support.</p>
+      </article>
+      {/* Tercera sección */}
+      <article>
+        <div className="back-three">
+            <p className="text-members text-center">MEMBERS</p>
+            <hr className="hr-members" />
+            <br />
+            <div className="text-center members">
+                <div className="first-member-name">
+                <img src={bianca} className="first-member" alt="Bianca is a member from grill and thrill's restaurant" />
+                </div>
+                <div className="second-member-name">
+                <img src={juliana} className="second-member" alt="Juliana is a member from grill and thrill's restaurant" />
+                </div>
+                <div className="third-member-name">
+                <img src={martin} className="third-member" alt="Martin is a member from grill and thrill's restaurant" />
+                </div>
+            </div>
+        </div>
+      </article>
+    </>
+  );
+};
 export default AboutUs;

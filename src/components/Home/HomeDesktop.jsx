@@ -1,16 +1,16 @@
-import "../styles/HomeDesktop.css";
+import "../../styles/homeDesktop.css";
 
 import { Link } from "react-router-dom";
 
-import bannerOne from "../img/first-banner.png";
-import bannerTwo from "../img/second-banner.png";
-import bannerThree from "../img/third-banner.png";
-import firstCateg from "../img/first-categ.jpg";
-import secondCateg from "../img/second-categ.jpg";
-import thirdCateg from "../img/third-categ.jpg";
-import cellphonePhoto from "../img/cellphone.png";
-import googlePlay from "../img/google-play.png";
-import appStore from "../img/app-store.png";
+import bannerOne from "../../img/first-banner.png";
+import bannerTwo from "../../img/second-banner.png";
+import bannerThree from "../../img/third-banner.png";
+import firstCateg from "../../img/first-categ.jpg";
+import secondCateg from "../../img/second-categ.jpg";
+import thirdCateg from "../../img/third-categ.jpg";
+import cellphonePhoto from "../../img/cellphone.png";
+import googlePlay from "../../img/google-play.png";
+import appStore from "../../img/app-store.png";
 
 const HomeDesktop = () => {
   return (

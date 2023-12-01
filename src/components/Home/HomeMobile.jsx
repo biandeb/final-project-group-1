@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import "../styles/HomeMobile.css";
+import "../../styles/homeMobile.css";
 
-import logoBlack from '../img/logo-fondo-negro.png'
+import logoBlack from '../../img/logo-fondo-negro.png'
 
 const HomeMobile = () => {
   return (
