@@ -32,6 +32,7 @@ import Contact from "./views/Contact.jsx";
 import OrderView from "./views/OrderView.jsx";
 import CheckoutView from "./views/CheckoutView.jsx";
 import OrderStatus from "./views/OrderStatus.jsx";
+import HomeView from "./views/HomeView.jsx";
 
 
 
@@ -70,6 +71,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
         <Route exact path='/myaccount' element={<AccountView />} />
+        <Route exact path='/home' element={<HomeView />} />
 
 
         </Routes>
