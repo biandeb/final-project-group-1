@@ -4,14 +4,20 @@ import MyInfo from "./MyInfo";
 import Coupons from "./Coupons";
 import MyOrders from './MyOrders';
 import { useState } from "react";
+import { useSession } from "../../stores/useSessions";
 
-const Account = (props) => {
-  const { users } = props;
+const Account = () => {
 
-  const userId = 1;
+  const {user} = useSession();
+  // console.log(user)
 
-  const user = users.find((user) => user.id === userId);
-  console.log(user);
+  // const { users } = props;
+
+  // const userId = user.id;
+  // console.log(userId)
+
+  // const user = users.find((user) => user.id === userId);
+  // console.log(user);
 
   //USE STATE para cambiar componente hijo o tab
 
