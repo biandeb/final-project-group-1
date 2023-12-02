@@ -8,7 +8,7 @@ import ErrorView from "./views/ErrorView";
 import AboutUs from "./views/AboutUs";
 import OrderView from "./views/OrderView";
 import CheckoutView from "./views/CheckoutView";
-import OrderStatus from "./views/OrderStatus";
+import OrderStats from "./views/OrderStats";
 import Contact from "./views/Contact";
 import AccountView from "./views/AccountView";
 import HomeView from "./views/HomeView";
@@ -42,7 +42,7 @@ const Router = () => {
           <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/order" element={<OrderView />} />
           <Route exact path="/checkout" element={<CheckoutView />} />
-          <Route exact path="/orderstatus" element={<OrderStatus />} />
+          <Route exact path="/orderstatus" element={<OrderStats />} />
           <Route exact path="/contact-us" element={<Contact />} />
           <Route exact path="/myaccount" element={<AccountView />} />
           <Route exact path="/home" element={<HomeView />} />
