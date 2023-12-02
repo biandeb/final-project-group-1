@@ -1,13 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { getProductsFn } from "../api/products";
 import { NavLink } from "react-router-dom";
+import { useOrder } from "../stores/useOrder";
 
 import ProductsGallery from "../components/UserView/Products/ProductsGallery";
 import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
 
 import "../components/UserView/userStyles.css";
-import { useOrder } from "../stores/useOrder";
-
 
 const OrderView = () => {
 
@@ -37,7 +36,7 @@ const OrderView = () => {
 
   return (
     <>
-      <div className="m-5 pt-5">
+      <div className="m-5 pt-5 order-container pb-5">
         <TableNumberInput />
         <hr/>
         {isLoading ? (

@@ -10,7 +10,6 @@ import { postProductsFn, putProductsFn } from "../../api/products";
 import { useProduct } from "../../stores/useProduct";
 
 const AdminForm = () => {
-
   // RHF -----------------------------------------------------
 
   const {
@@ -18,22 +17,19 @@ const AdminForm = () => {
     handleSubmit: onSubmitRHF,
     formState: { errors },
     reset,
-    setValue
+    setValue,
   } = useForm();
 
   // Zustand -------------------------------------------------
-  const { product , clearProduct } = useProduct();
+  const { product, clearProduct } = useProduct();
 
-  const isEditing = !!product
-  if(isEditing){
+  const isEditing = !!product;
+  if (isEditing) {
     setValue("name", product.name);
     setValue("image", product.image);
     setValue("price", product.price);
     setValue("description", product.description);
-
-
   }
-
 
   //  Tquery -----------------------------------------------------
   const queryClient = useQueryClient();
@@ -53,7 +49,7 @@ const AdminForm = () => {
       toast.error("ocurrio un error al guardar el procuto");
     },
   });
-//PUT
+  //PUT
   const { mutate: putProdcuts } = useMutation({
     mutationFn: putProductsFn,
     onSuccess: () => {
@@ -77,11 +73,18 @@ const AdminForm = () => {
   const handleSubmit = (data) => {
     Swal.showLoading();
     if (isEditing) {
-      putProdcuts({...data, id: product.id});
+      putProdcuts({ ...data, id: product.id });
     } else {
       postProdcuts(data);
-      
     }
+  };
+
+  const handleCancelEdition = () => {
+    // Resetear el formulario
+    reset();
+
+    // Limpiar estado global
+    clearProduct();
   };
   return (
     <section className="container mt-1 ">
@@ -95,7 +98,17 @@ const AdminForm = () => {
                     Administration Panel
                   </h1>
                 </div>
-                <form className="user" onSubmit={onSubmitRHF(handleSubmit)}>
+                {isEditing && (
+                  <div className="alert alert-info">
+                    Estás editando el producto &quot;
+                    <span className="fw-bold">{product.name}</span>&quot;
+                  </div>
+                )}
+                <form
+                  className="user"
+                  id="adminForm"
+                  onSubmit={onSubmitRHF(handleSubmit)}
+                >
                   <Input
                     register={register}
                     options={{
@@ -153,6 +166,15 @@ const AdminForm = () => {
                   >
                     Submit
                   </button>
+                  {isEditing && (
+                    <button
+                      type="button"
+                      className="ms-2 btn btn-secondary"
+                      onClick={handleCancelEdition}
+                    >
+                      Cancelar edición
+                    </button>
+                  )}
                 </form>
               </div>
             </div>

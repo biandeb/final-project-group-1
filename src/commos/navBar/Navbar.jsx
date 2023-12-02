@@ -1,5 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSession } from "../../stores/useSessions";
+
 import "./navbar.css";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
@@ -53,54 +54,62 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-lg-0 nav-links ">
-            { !user?.isAdmin && ( <li>
-                <div className="text-center mx-4">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Home
-                  </NavLink>
-                </div>
-              </li>)}
-              { !user?.isAdmin && ( <li>
-                <div className="text-center ms-2 mx-4">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Menu
-                  </NavLink>
-                </div>
-              </li>)}
-              { !user?.isAdmin && isLoggedIn && (<li>
-                <div className="text-center ms-2 mx-4 ">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Pedidos
-                  </NavLink>
-                </div>
-              </li>)}
-              { !user?.isAdmin && isLoggedIn && (<li>
-                <div className="text-center ms-2 mx-4 ">
-                  <NavLink
-                    className={`nav-link text-dark ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Perfil
-                  </NavLink>
-                </div>
-              </li>)}
+              {!user?.isAdmin && (
+                <li>
+                  <div className="text-center mx-4">
+                    <NavLink
+                      className="nav-link text-dark"
+                      activeClassName="activeLink"
+                      aria-current="page"
+                      to="/"
+                    >
+                      Home
+                    </NavLink>
+                  </div>
+                </li>
+              )}
+              {!user?.isAdmin && (
+                <li>
+                  <div className="text-center ms-2 mx-4">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/order"
+                    >
+                      Menu
+                    </NavLink>
+                  </div>
+                </li>
+              )}
+              {!user?.isAdmin && isLoggedIn && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/checkout"
+                    >
+                      Pedidos
+                    </NavLink>
+                  </div>
+                </li>
+              )}
+              {!user?.isAdmin && isLoggedIn && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/myaccount"
+                    >
+                      Perfil
+                    </NavLink>
+                  </div>
+                </li>
+              )}
               {user?.isAdmin && (
                 <li>
                   <div className="text-center ms-2 mx-4 ">
@@ -115,43 +124,46 @@ const Navbar = () => {
                   </div>
                 </li>
               )}
-            { !user?.isAdmin &&  (
-              <li>
-                <div className="text-center ms-2 mx-4 ">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/contact-us"
-                  >
-                    Contact
-                  </NavLink>
-                </div>
-              </li>)}
-              { !user?.isAdmin && (<li>
-                <div className="text-center ms-2 mx-4 ">
-                  <NavLink
-                    className={`nav-link text-dark  ${({ isActive }) =>
-                      isActive ? "active" : ""}`}
-                    aria-current="page"
-                    to="/about-us"
-                  >
-                    About
-                  </NavLink>
-                </div>
-              </li>)}
+              {!user?.isAdmin && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/contact-us"
+                    >
+                      Contact
+                    </NavLink>
+                  </div>
+                </li>
+              )}
+              {!user?.isAdmin && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/about-us"
+                    >
+                      About
+                    </NavLink>
+                  </div>
+                </li>
+              )}
             </ul>
             {!isLoggedIn ? (
               <Link to="/login">
-                <button className="ms-5">Ingresar</button>
+                <button className="ms-5 btnLg">Login</button>
               </Link>
             ) : (
               <button
-                className="btn btn-danger"
+                className="btnSg"
                 type="button"
                 onClick={handleLogout}
               >
-                Salir
+                Logout
               </button>
             )}
           </div>

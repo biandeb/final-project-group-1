@@ -29,7 +29,7 @@ const TableNumberInput = () => {
     <>
       <h5>Enter your table number here:</h5>
 
-      <form className="w-md-50" onSubmit={onSubmitRHF(handleSubmit)}>
+      <form className="w-md-50 table-input" onSubmit={onSubmitRHF(handleSubmit)}>
                 <Input
                   register={register}
                   option={{
