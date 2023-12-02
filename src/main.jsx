@@ -24,9 +24,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import NavBarMain from "./commos/navBar/NavBarMain";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
+import ErrorView from "./commos/ErrorView.jsx";
 
 
-import ErrorView from "./views/ErrorView.jsx";
 import AboutUs from "./views/AboutUs.jsx";
 import Contact from "./views/Contact.jsx";
 import OrderView from "./views/OrderView.jsx";

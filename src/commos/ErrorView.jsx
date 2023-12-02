@@ -6,7 +6,7 @@ import '../styles/error.css'
 
 const ErrorView = () => {
   return (
-    <section className='hola'>
+    <section>
     <div className='text-center'>
     <img 
     src={errorPhoto}
