@@ -26,7 +26,7 @@ header {
 }
 
 .header .nav-links li a:hover {
-  color: #ffbc0e !important;
+  color: #f74702 !important;
   border-radius: 50%;
 }
 
@@ -110,3 +110,37 @@ control de los nav version mobile y desktop
     display: block;
   }
 }
+
+.activePage{
+  color: #f74702;
+}
+
+.activeLink {
+  /* Estilos específicos para cuando el enlace está activo */
+  font-weight: bold; /* Puedes ajustar según tus preferencias */
+  color: #f74702; /* Puedes ajustar según tus preferencias */
+}
+
+.btnLg{
+background-color: #f74702;
+color: #f3f4f6;
+border: #eceff1;
+}
+.btnLg:hover{
+  background-color: #e66b07;
+  color: #f3f4f6;
+  border: #eceff1;
+  }
+
+  .btnSg{
+    background-color: #ff5100!important;
+    border:#eceff1;
+    color: #f3f4f6;
+         
+  }
+  .btnSg:hover{
+    background-color: #b60606!important;
+    border:#050505;
+    color: #050505;
+    
+  }

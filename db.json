@@ -96,6 +96,13 @@
       "isOrdered": false,
       "amount": 0,
       "id": 7
+    },
+    {
+      "name": "Pizzanesa",
+      "image": "https://saborargento.com.ar/wp-content/uploads/2023/06/Receta-de-Pizzanesa.jpg",
+      "price": "1500",
+      "description": "8 milanesas de carne\nPan rallado, necesario\n2 huevos batidos\nHarina, necesaria\nAceite vegetal, para freír",
+      "id": 8
     }
   ],
   "orders": [
