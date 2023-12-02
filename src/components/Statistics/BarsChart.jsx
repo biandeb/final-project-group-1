@@ -1,20 +1,16 @@
-import './statsStyles.css'
+import "./statsStyles.css";
 
-import { Bar } from "react-chartjs-2"
-import {Chart as ChartJS} from 'chart.js/auto'
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
 
 const BarsChart = (props) => {
+  const { chartData } = props;
 
-  const {chartData} = props
-
-
-    
   return (
     <div className="barchart-container">
-        <Bar data={chartData} />
+      <Bar data={chartData} />
     </div>
-    
-  )
-}
+  );
+};
 
-export default BarsChart
+export default BarsChart;

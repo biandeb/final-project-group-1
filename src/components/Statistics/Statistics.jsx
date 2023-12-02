@@ -27,22 +27,27 @@ const Statistics = (props) => {
   // Ordeno el array en forma descendente
   productArray.sort((a, b) => b.count - a.count);
 
-
   const [chartData, setChartData] = useState({
     labels: productArray.map((data) => data.name),
     datasets: [
       {
         label: "Product amount",
         data: productArray.map((data) => data.count),
-        backgroundColor: ['#ffb703', '#e97700']
+        backgroundColor: ["#ffb703", "#e97700"],
       },
     ],
-    
   });
 
   return (
     <div className="container m-4">
-        <h5>Most ordered products</h5>
+      <p>
+        Welcome to the heart of culinary insights! Gain a deeper understanding
+        of your customers, menu items, and overall business dynamics with
+        real-time data and intuitive visualizations.
+      </p>
+
+      <h5>Most ordered products</h5>
+      <hr />
       <BarsChart chartData={chartData} />
     </div>
   );

@@ -70,7 +70,7 @@
   z-index: 1000; }
 
   .btn-order{
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
     box-shadow: none;
     color: var(--background);
@@ -78,7 +78,7 @@
   }
 
   .btn-order:hover{
-    background-color: transparent;
+    background-color: transparent !important;
   }
 
 
@@ -132,4 +132,29 @@
   padding: 10px;
   text-align: center;
   z-index: 1000;
+}
+
+@media (width < 400px){
+  .checkout-btn-container{
+    position: sticky;
+    bottom: 100px; 
+    left: 0;
+    width: 100%;
+    background-color: var(--red-color); 
+    padding: 10px;
+    text-align: center;
+    z-index: 1000; }
+
+    .order-btn-container{
+      position: sticky;
+      /* bottom: 85px;  */
+      bottom: 150px !important;
+      left: 0;
+      max-width: 100%;
+      background-color: var(--red-color); 
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+      /* width: 100vw; */
+    }
 }

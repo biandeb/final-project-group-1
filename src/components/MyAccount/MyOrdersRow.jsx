@@ -1,6 +1,5 @@
 const MyOrdersRow = (props) => {
   const { order } = props;
-  console.log(order);
 
   const productDetails = [];
   let total = 0;
@@ -22,8 +21,8 @@ const MyOrdersRow = (props) => {
   });
 
   return (
-    <li className="list-group-item">
-      <h5>Order n°: {order.id}</h5>
+    <li className="list-group-item mt-4">
+      <h5 className="badge bg-danger p-3">Order n°: {order.id}</h5>
       {productDetails.map((product, index) => (
         <p key={index}>
           <div className="d-flex flex-column">
