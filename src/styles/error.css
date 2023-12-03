@@ -1,18 +1,18 @@
-.photo-error {
-  display: flex;
-  align-content: center;
-  max-width: 30%;
-  height: auto;
-  margin-top: 7%;
+.photo-error{
+    display: flex;
+    align-content: center;
+    max-width: 30%;
+    height: auto;
+    margin-top: 5%;
 }
 
 @media (max-width: 767px) {
-  .photo-error {
-    max-width: 100%;
+    .photo-error{
+    max-width: 120%;
     height: auto;
     display: block;
-    margin-top: 20%;
-  }
+    margin-top: 5%;
+}
 }
 
 @media (max-width: 1024px) {
@@ -20,6 +20,6 @@
     max-width: 70%;
     height: auto;
     display: block;
-    margin-top: 10%;
-  }
+    margin-top: 28%;
+}
 }
