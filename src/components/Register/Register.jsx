@@ -66,7 +66,7 @@ const Register = () => {
 
   const handleSubmit = (data) => {
     Swal.showLoading();
-    postUser({ ...data, isAdmin: false, isAuthenticated: false });
+    postUser(data);
   };
 
   // Render -----------------------------------------------------

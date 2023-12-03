@@ -14,13 +14,14 @@ import AccountView from "./views/AccountView";
 import HomeView from "./views/HomeView";
 import Footer from "./commos/footer/Footer";
 import AdminViews from "./views/AdminViews";
-import StatsView from './views/StatsView'
+import StatsView from "./views/StatsView";
 
 import { useSession } from "./stores/useSessions";
 import DetailsViews from "./views/DetailsViews";
 
 const Router = () => {
   const { user, isLoggedIn } = useSession();
+
   return (
     <BrowserRouter>
       <NavBarMain></NavBarMain>
@@ -29,13 +30,13 @@ const Router = () => {
           <Route
             path="/register"
             element={
-              isLoggedIn ? <Navigate to="/order"></Navigate> : <RegisterViews />
+              isLoggedIn && user.isAdmin === false? <Navigate to="/order"></Navigate> : <OrderView />
             }
           />
           <Route
             path="/login"
             element={
-              isLoggedIn ? <Navigate to="/order"></Navigate> : <LoginViews />
+              isLoggedIn && user.isAdmin===false? <Navigate to="/order"></Navigate> : <LoginViews />
             }
           />
 
@@ -56,7 +57,7 @@ const Router = () => {
           <Route exact path="/orderstatus" element={<OrderStatus />} />
           <Route exact path="/contact-us" element={<Contact />} />
           <Route exact path="/myaccount" element={<AccountView />} />
-          <Route exact path="/home" element={<HomeView />} />
+          <Route exact path="/" element={<HomeView />} />
           <Route exact path="/stats" element={<StatsView />} />
         </Routes>
         <Toaster position="top-right" richColors />
