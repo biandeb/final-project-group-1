@@ -12,7 +12,7 @@ const MyOrders = () => {
   if (isError) {
     return (
       <>
-        <div className="alert alert-danger">
+        <div className="alert alert-danger mt-3">
           An error occurred while getting the orders
         </div>
       </>

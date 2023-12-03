@@ -61,7 +61,7 @@ const Navbar = () => {
                       className="nav-link text-dark"
                       activeClassName="activeLink"
                       aria-current="page"
-                      to="/"
+                      to="/home"
                     >
                       Home
                     </NavLink>

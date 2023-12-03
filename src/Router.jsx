@@ -39,13 +39,13 @@ const Router = () => {
             }
           />
 
-          <Route exact path="/about-us" element={<AboutUs />} />
-          <Route exact path="/order" element={<OrderView />} />
-          <Route exact path="/checkout" element={<CheckoutView />} />
-          <Route exact path="/orderstatus" element={<OrderStats />} />
-          <Route exact path="/contact-us" element={<Contact />} />
-          <Route exact path="/myaccount" element={<AccountView />} />
-          <Route exact path="/home" element={<HomeView />} />
+          <Route exact path="/about-us" element={ !user?.isAdmin ?<AboutUs /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/order" element={ !user?.isAdmin ? <OrderView /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/checkout" element={ !user?.isAdmin ? <CheckoutView /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/orderstatus" element={!user?.isAdmin ? <OrderStats /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/contact-us" element={!user?.isAdmin ?<Contact /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/myaccount" element={!user?.isAdmin ?<AccountView /> : <Navigate to="/home"></Navigate>} />
+          <Route exact path="/home" element={!user?.isAdmin ?<HomeView /> : <Navigate to="/home"></Navigate>} />
         </Routes>
         <Toaster position="top-right" richColors />
       </main>

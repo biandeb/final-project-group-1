@@ -7,10 +7,12 @@ import ProductsGallery from "../components/UserView/Products/ProductsGallery";
 import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
 
 import "../components/UserView/userStyles.css";
+import { useSession } from "../stores/useSessions";
 
 const OrderView = () => {
 
     //ZUSTAND
+    const { isLoggedIn, logout, user } = useSession();
     const {productsOrdered} = useOrder();
 
     const orderQuantity = productsOrdered.length;
@@ -44,7 +46,7 @@ const OrderView = () => {
         ) : (
           <ProductsGallery products={products} />
         )}
-        <div className="checkout-btn-container p-4 text-light d-flex justify-content-center">
+         {isLoggedIn && <div className="checkout-btn-container p-4 text-light d-flex justify-content-center">
           <NavLink
             className={(isActive) =>
               isActive ? "nav-link active" : "nav-link"
@@ -68,7 +70,7 @@ const OrderView = () => {
           </svg>
           {orderQuantity === 0 ? <span></span> : <span className="widget-span">{orderQuantity}</span>}
 
-        </div>
+        </div>}
       </div>
     </>
   );
