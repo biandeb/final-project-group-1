@@ -18,7 +18,8 @@ import { useSession } from "../../../stores/useSessions";
 const Checkout = () => {
   //ZUSTAND
   const { productsOrdered, clearProductOrder } = useOrder();
-  const { tablenumberForOrder } = useTable();
+  console.log(productsOrdered)
+  // const { tablenumberForOrder } = useTable();
   const { user } = useSession();
 
   // const{ clearProductOrder} = useOrder()
