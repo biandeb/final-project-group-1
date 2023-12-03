@@ -124,6 +124,20 @@ const Navbar = () => {
                   </div>
                 </li>
               )}
+              {user?.isAdmin && (
+                <li>
+                  <div className="text-center ms-2 mx-4 ">
+                    <NavLink
+                      className={`nav-link text-dark  ${({ isActive }) =>
+                        isActive ? "active" : ""}`}
+                      aria-current="page"
+                      to="/stats"
+                    >
+                      Analytics
+                    </NavLink>
+                  </div>
+                </li>
+              )}
               {!user?.isAdmin && (
                 <li>
                   <div className="text-center ms-2 mx-4 ">
@@ -158,11 +172,7 @@ const Navbar = () => {
                 <button className="ms-5 btnLg">Login</button>
               </Link>
             ) : (
-              <button
-                className="btnSg"
-                type="button"
-                onClick={handleLogout}
-              >
+              <button className="btnSg" type="button" onClick={handleLogout}>
                 Logout
               </button>
             )}

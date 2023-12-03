@@ -2,14 +2,13 @@ import AccountBtn from "./accountBtn";
 import "./accountStyles.css";
 import MyInfo from "./MyInfo";
 import Coupons from "./Coupons";
-import MyOrders from './MyOrders';
+import MyOrders from "./MyOrders";
 import { useState } from "react";
 import { useSession } from "../../stores/useSessions";
 
 const Account = () => {
-
-  const {user} = useSession();
-  // console.log(user)
+  const { user } = useSession();
+  console.log(user);
 
   // const { users } = props;
 
@@ -21,12 +20,27 @@ const Account = () => {
 
   //USE STATE para cambiar componente hijo o tab
 
-  const [tab, setTab] = useState(() => <MyInfo user={user} />);
+  const [tab, setTab] = useState("info");
 
-  const showTab = (component) => {
-    setTab(component);
+  let element = null;
+
+  switch (tab) {
+    case "info":
+      element = <MyInfo user={user} />;
+      break;
+    case "coupons":
+      element = <Coupons />;
+      break;
+    case "orders":
+      element = <MyOrders />;
+      break;
+    default:
+      break;
+  }
+
+  const showTab = (tabName) => {
+    setTab(tabName);
   };
-
 
   return (
     <div className="container-fluid">
@@ -52,26 +66,26 @@ const Account = () => {
 
       <div className="mt-5 row gap-2 d-flex justify-content-center justify-content-md-start">
         <AccountBtn
-          onClick={() => showTab(<MyInfo user={user}/>)}
+          onClick={() => showTab("info")}
           title="My Info"
           icon={<i className="bi bi-person"></i>}
           btnId={"info"}
         ></AccountBtn>
         <AccountBtn
-          onClick={() => showTab(<Coupons />)}
+          onClick={() => showTab("coupons")}
           title="Coupons"
           icon={<i className="bi bi-ticket-perforated"></i>}
           btnId={"coupons"}
         ></AccountBtn>
         <AccountBtn
-          onClick={() => showTab(<MyOrders />)}
+          onClick={() => showTab("orders")}
           title="My orders"
           icon={<i className="bi bi-card-list"></i>}
           btnId={"myorders"}
         ></AccountBtn>
       </div>
       {/* Renderizo el componente hijo seleccionado */}
-      {tab}
+      {element}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import "../../../index.css";
 import "../userStyles.css";
 import { useOrder } from "../../../stores/useOrder.js";
@@ -15,7 +14,7 @@ const ProductCard = (props) => {
 
   const handleOrder = () => {
     const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id
+      (item) => item.id === product.id,
     );
 
     if (existingProductIndex !== -1) {
@@ -66,10 +65,7 @@ const ProductCard = (props) => {
       </div>
 
       <div className="text-end mt-2">
-        <button
-          className="add-btn w-100 text-light mt-2"
-          onClick={handleOrder}
-        >
+        <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
           Add
         </button>
       </div>

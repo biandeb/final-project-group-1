@@ -11,7 +11,6 @@ import "./login.css";
 import { postLoginFn } from "../../api/auth";
 import { toast } from "sonner";
 
-
 const Login = () => {
   // Zustabd -------------------------------------
   const { login } = useSession();
@@ -55,23 +54,19 @@ const Login = () => {
       } else {
         navigate("/order");
       }
-      
-
     },
     onError: (e) => {
       Swal.close();
-      toast.error(e.message)
+      toast.error(e.message);
     },
   });
 
   // Handle -------------------------------------
 
   const handleSubmit = (data) => {
-
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
-      
     }
   };
   // Render -----------------------------------------------------
@@ -88,7 +83,9 @@ const Login = () => {
                   <div className="col-lg-6">
                     <div className="p-5">
                       <div className="text-center">
-                        <h1 className=" text-gray-900 mb-4 fw-bold h1Color">Login</h1>
+                        <h1 className=" text-gray-900 mb-4 fw-bold h1Color">
+                          Login
+                        </h1>
                       </div>
                       <form
                         className="user"

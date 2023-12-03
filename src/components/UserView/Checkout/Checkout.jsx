@@ -59,9 +59,14 @@ const Checkout = () => {
       cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
+        const products = productsOrdered.map((product) => ({
+          ...product,
+          id: undefined,
+        }));
+
         const newOrder = {
-          productsordered: productsOrdered,
-          tablenumber: tablenumberForOrder,
+          productsOrdered: products,
+          // tablenumber: tablenumberForOrder,
           userId: userId,
         };
 
@@ -89,7 +94,9 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <button className=" m-4 p-2 fs-5 bg-warning" onClick={clearProductOrder}>Clear order</button>
+      <button className=" m-4 p-2 fs-5 bg-warning" onClick={clearProductOrder}>
+        Clear order
+      </button>
       <div className="order-btn-container  text-light">
         <button className="btn-order" onClick={handleOrder}>
           Confirm Order

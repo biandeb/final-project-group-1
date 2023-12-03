@@ -6,11 +6,11 @@ const CheckoutList = () => {
   //ZUSTAND
   const { productsOrdered } = useOrder();
 
-  useEffect(()=>{
+  useEffect(() => {
     productsOrdered.map((product) => {
       return <CheckoutCard key={product.id} product={product} />;
-    })
-  }, [productsOrdered])
+    });
+  }, [productsOrdered]);
 
   return (
     <section className="pe-3 m-4">

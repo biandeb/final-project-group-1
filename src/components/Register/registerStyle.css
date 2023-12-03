@@ -1,21 +1,17 @@
-
-
 .bg-register-image {
-    background: url("https://www.visitfinland.com/dam/jcr:7c2c8221-ace3-4362-a5b0-8073ee6967e9/Savoy-Interior-7.jpeg");
-    background-position: center;
-    background-size: cover
+  background: url("https://www.visitfinland.com/dam/jcr:7c2c8221-ace3-4362-a5b0-8073ee6967e9/Savoy-Interior-7.jpeg");
+  background-position: center;
+  background-size: cover;
 }
 
-
-.button{
-    background-color: #ee5e26;
-    border: none;
+.button {
+  background-color: #ee5e26;
+  border: none;
 }
-.button:hover{
-    background-color: #f74702;
-    color: #000;
+.button:hover {
+  background-color: #f74702;
+  color: #000;
 }
-.h1Color{
-     color: #f74702;
+.h1Color {
+  color: #f74702;
 }
-

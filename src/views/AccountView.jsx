@@ -1,6 +1,6 @@
 import Account from "../components/MyAccount/Account";
 import "../index.css";
-import "../components/MyAccount/accountStyles.css"
+import "../components/MyAccount/accountStyles.css";
 // import { getUsersFn } from "../api/users";
 
 const AccountView = () => {
@@ -17,7 +17,9 @@ const AccountView = () => {
       <Account />
 
       <div className="me-4 d-flex justify-content-end">
-        <button className="btn w-100 bg-danger text-light m-4 btn-signout">Sign out</button>
+        <button className="btn w-100 bg-danger text-light m-4 btn-signout">
+          Sign out
+        </button>
       </div>
     </div>
   );

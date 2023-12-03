@@ -2,7 +2,10 @@ import Swal from "sweetalert2";
 import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useProduct } from "../../stores/useProduct";
-import { deleteProductFn, toggleProductAvailabilityFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
+import {
+  deleteProductFn,
+  toggleProductAvailabilityFn,
+} from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
 
 const TableRow = (props) => {
   const { product, index } = props;
@@ -11,11 +14,14 @@ const TableRow = (props) => {
 
   // Nueva función de mutación para activar/desactivar el producto
   const { mutate: toggleProductAvailability } = useMutation({
-    mutationFn: () => toggleProductAvailabilityFn(product.id, !product.isAvailable),
+    mutationFn: () =>
+      toggleProductAvailabilityFn(product.id, !product.isAvailable),
     onSuccess: () => {
       Swal.close();
       toast.success(
-        `Producto ${product.isAvailable ? "Desactivado" : "Activado"} exitosamente`
+        `Producto ${
+          product.isAvailable ? "Desactivado" : "Activado"
+        } exitosamente`,
       );
 
       queryClient.invalidateQueries("products");
@@ -112,7 +118,9 @@ const TableRow = (props) => {
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${product.isAvailable ? "success" : "warning"} ms-2`}
+                  className={`btn btn-${
+                    product.isAvailable ? "success" : "warning"
+                  } ms-2`}
                   onClick={handleToggleAvailability}
                 >
                   {product.isAvailable ? "Desactivar" : "Activar"}

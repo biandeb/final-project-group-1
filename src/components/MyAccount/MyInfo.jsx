@@ -21,8 +21,17 @@ const MyInfo = (props) => {
     <div className="mt-5 mb-5">
       {isEditing ? (
         <div className="d-flex flex-column justify-content-center">
-          <UserForm user={user} isEditing={isEditing} setIsEditing={setIsEditing} />
-          <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">Cancel</button>
+          <UserForm
+            user={user}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
+          />
+          <button
+            onClick={handleCancel}
+            className="w-50 align-self-center mt-4 btn-cancel"
+          >
+            Cancel
+          </button>
         </div>
       ) : (
         <div className="info-container">
@@ -31,7 +40,9 @@ const MyInfo = (props) => {
           <p>Lastname: {user.lastname}</p>
           <p>Email: {user.email}</p>
 
-          <button onClick={handleEdit} className="btn-edit">Edit</button>
+          <button onClick={handleEdit} className="btn-edit">
+            Edit
+          </button>
         </div>
       )}
     </div>

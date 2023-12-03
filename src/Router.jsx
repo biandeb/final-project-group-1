@@ -8,12 +8,13 @@ import ErrorView from "./views/ErrorView";
 import AboutUs from "./views/AboutUs";
 import OrderView from "./views/OrderView";
 import CheckoutView from "./views/CheckoutView";
-import OrderStats from "./views/OrderStats";
+import OrderStatus from "./views/OrderStatus";
 import Contact from "./views/Contact";
 import AccountView from "./views/AccountView";
 import HomeView from "./views/HomeView";
 import Footer from "./commos/footer/Footer";
 import AdminViews from "./views/AdminViews";
+import StatsView from './views/StatsView'
 
 import { useSession } from "./stores/useSessions";
 import DetailsViews from "./views/DetailsViews";
@@ -25,12 +26,22 @@ const Router = () => {
       <NavBarMain></NavBarMain>
       <main className="mt-5">
         <Routes>
-          <Route path="/register" element={isLoggedIn ? <Navigate to="/order"></Navigate> : <RegisterViews />} />
-          <Route path="/login" element={isLoggedIn ? <Navigate to="/order"></Navigate> :<LoginViews />} />
+          <Route
+            path="/register"
+            element={
+              isLoggedIn ? <Navigate to="/order"></Navigate> : <RegisterViews />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              isLoggedIn ? <Navigate to="/order"></Navigate> : <LoginViews />
+            }
+          />
 
           <Route exact path="/error" element={<ErrorView />} />
           <Route exact path="/details/:id" element={<DetailsViews />} />
- 
+
           <Route
             exact
             path="/admin"
@@ -42,10 +53,11 @@ const Router = () => {
           <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/order" element={<OrderView />} />
           <Route exact path="/checkout" element={<CheckoutView />} />
-          <Route exact path="/orderstatus" element={<OrderStats />} />
+          <Route exact path="/orderstatus" element={<OrderStatus />} />
           <Route exact path="/contact-us" element={<Contact />} />
           <Route exact path="/myaccount" element={<AccountView />} />
           <Route exact path="/home" element={<HomeView />} />
+          <Route exact path="/stats" element={<StatsView />} />
         </Routes>
         <Toaster position="top-right" richColors />
       </main>

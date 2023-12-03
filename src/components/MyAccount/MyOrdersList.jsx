@@ -9,7 +9,7 @@ const MyOrdersList = (props) => {
 
   //filtro orders para traer solo los pedidos del user logueado
   const filteredOrders = orders.filter(
-    (order) => order.userId === userIdForOrders
+    (order) => order.userId === userIdForOrders,
   );
 
   return (

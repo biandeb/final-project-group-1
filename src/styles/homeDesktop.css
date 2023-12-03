@@ -1,62 +1,61 @@
-#home-mobile{
-    display: block;
+#home-mobile {
+  display: block;
 }
 
-#home-desktop{
-    display: none;
+#home-desktop {
+  display: none;
 }
 
-#mobileFirst{
-    padding: 0;
+#mobileFirst {
+  padding: 0;
 }
 
-.header{
-    height: 0;
+.header {
+  height: 0;
 }
 
-.section-categories{
-    margin-top: 6%;
-    margin-bottom: 6%;
+.section-categories {
+  margin-top: 6%;
+  margin-bottom: 6%;
 }
 
-.btn-order{
-    background-color: #D1470B;
+.btn-order {
+  background-color: #d1470b;
+  color: #f9f9f9;
+  text-shadow: 2px 2px 1px rgb(0, 0, 0);
+  width: 100%;
+
+  &:hover {
+    background-color: #ffb703;
     color: #f9f9f9;
-    text-shadow: 2px 2px 1px rgb(0, 0, 0);
-    width: 100%;
-
-    &:hover{
-        background-color: #FFB703;
-        color: #f9f9f9;
-    }
+  }
 }
-.bg-article{
-    background-color: #D1470B;
+.bg-article {
+  background-color: #d1470b;
 }
-.image-mobile{
-    width: 100%;
+.image-mobile {
+  width: 100%;
 }
-.iphone-download{
-    width: 50%;
-    margin-top: 20%;
-    &:hover{
-        cursor: pointer;
-    }
+.iphone-download {
+  width: 50%;
+  margin-top: 20%;
+  &:hover {
+    cursor: pointer;
+  }
 }
-.google-download{
-    width: 50%;
-    margin-top: 20%;
-    &:hover{
-        cursor: pointer;
-    }
+.google-download {
+  width: 50%;
+  margin-top: 20%;
+  &:hover {
+    cursor: pointer;
+  }
 }
-
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    #mobileFirst{
-        padding: 0;
-    }
-    .header{
-        height: 0;
-    }
+  #mobileFirst {
+    padding: 0;
+  }
+  .header {
+    height: 0;
+  }
 }

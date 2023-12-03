@@ -2,7 +2,7 @@ export const statsData = (orders) => {
   const productCount = {};
 
   orders.forEach((order) => {
-    order.productsordered.forEach((product) => {
+    order.productsOrdered.forEach((product) => {
       const productName = product.name;
 
       // Incrementar la cantidad del producto

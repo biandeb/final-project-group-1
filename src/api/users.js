@@ -15,39 +15,43 @@ export const postUserFn = async (data) => {
   return data;
 };
 
-export const getUsersFn = async () =>{
+export const getUsersFn = async () => {
   const res = await fetch(`${API_URL}/users`);
 
-  if(!res.ok){
-    throw new Error('An error occurred while getting users')
+  if (!res.ok) {
+    throw new Error("An error occurred while getting users");
   }
   const data = await res.json();
 
-  return data
-}
+  return data;
+};
 
-export const getUserByIdFn = async (id) =>{
+export const getUserByIdFn = async (id) => {
   const res = await fetch(`${API_URL}/users/${id}`);
 
-  if(!res.ok) {
-      throw new Error('An error occured while getting the user')
+  if (!res.ok) {
+    throw new Error("An error occured while getting the user");
   }
 
   const data = await res.json();
   return data;
-}
+};
 
 export const putUserFn = async (data) => {
   const res = await fetch(`${API_URL}/users/${data.id}`, {
     method: "PUT",
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, id: undefined }),
     headers: {
       "Content-type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
   });
 
   if (!res.ok) {
-    throw new Error("An error occurred while registering an user");
+    throw new Error("An error occurred while editing an user");
   }
-  return data;
+
+  const apiData = await res.json();
+  
+  return apiData;
 };

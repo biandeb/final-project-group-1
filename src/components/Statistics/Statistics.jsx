@@ -4,12 +4,13 @@ import BarsChart from "./BarsChart";
 
 const Statistics = (props) => {
   const { orders } = props;
+  console.log(orders)
 
   //PRODUCTOS MAS PEDIDOS
   const productCount = {};
 
-  orders.forEach((order) => {
-    order.productsordered.forEach((product) => {
+  orders.data.forEach((order) => {
+    order.productsOrdered.forEach((product) => {
       const productName = product.name;
 
       // contador

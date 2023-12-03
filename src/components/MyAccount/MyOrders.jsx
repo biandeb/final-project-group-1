@@ -19,9 +19,11 @@ const MyOrders = () => {
     );
   }
 
-  return (
-    <>{isLoading ? <h3>Loading...</h3> : <MyOrdersList orders={orders} />}</>
-  );
+  console.log(orders);
+  if (isLoading) {
+    return <h3>Loading...</h3>;
+  }
+  return <>{orders && <MyOrdersList orders={orders.data} />}</>;
 };
 
 export default MyOrders;

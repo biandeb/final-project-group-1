@@ -1,10 +1,11 @@
 const MyOrdersRow = (props) => {
   const { order } = props;
+  console.log(order);
 
   const productDetails = [];
   let total = 0;
 
-  order.productsordered.forEach((product) => {
+  order.productsOrdered.forEach((product) => {
     const productName = product.name;
     const productPrice = product.price;
     const productAmount = product.amount;
