@@ -1,4 +1,4 @@
-import AccountBtn from "./accountBtn";
+import AccountBtn from "./AccountBtn.jsx";
 import "./accountStyles.css";
 import MyInfo from "./MyInfo";
 import Coupons from "./Coupons";
