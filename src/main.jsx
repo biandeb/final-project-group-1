@@ -21,8 +21,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 //Importaciones de componentes nuestros
 
-import NavBarMain from "./commos/navBar/NavBarMain";
-import Footer from "./commos/footer/Footer.jsx";
+import NavBarMain from "./commons/navBar/NavBarMain.jsx";
+import Footer from "./commons/footer/Footer.jsx";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
 
@@ -71,7 +71,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
         <Route exact path='/myaccount' element={<AccountView />} />
-        <Route exact path='/home' element={<HomeView />} />
+        <Route exact path='/' element={<HomeView />} />
 
 
         </Routes>
