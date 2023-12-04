@@ -45,7 +45,7 @@ const NavBarMobile = () => {
           )}
           {!user?.isAdmin && (
             <li>
-              <div className="text-center ms-5">
+              <div className="text-center ms-3">
                 <NavLink></NavLink>
                 <NavLink
                   className={`nav-link text-secondary ${({ isActive }) =>
