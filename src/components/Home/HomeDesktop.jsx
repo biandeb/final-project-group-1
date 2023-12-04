@@ -2,9 +2,9 @@ import "../../styles/homeDesktop.css";
 
 import { Link } from "react-router-dom";
 
-import bannerOne from "../../img/first-banner.png";
-import bannerTwo from "../../img/second-banner.png";
-import bannerThree from "../../img/third-banner.png";
+import bannerOne from "../../img/first-banner.webp";
+import bannerTwo from "../../img/second-banner.webp";
+import bannerThree from "../../img/third-banner.webp";
 import firstCateg from "../../img/first-categ.jpg";
 import secondCateg from "../../img/second-categ.jpg";
 import thirdCateg from "../../img/third-categ.jpg";
@@ -16,24 +16,24 @@ const HomeDesktop = () => {
   return (
     <>
       <section id="home-desktop">
-        <article>
+        <article className="article-one">
           <div
             id="carouselExampleInterval"
             className="carousel slide carousel-photos"
             data-bs-ride="carousel"
           >
             <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval="7000">
-                <img src={bannerOne} className="d-block w-100" alt="..."></img>
+              <div className="carousel-item active" data-bs-interval="5000">
+                <img src={bannerOne} className="d-block w-100" alt="Banner one of food"></img>
               </div>
-              <div className="carousel-item" data-bs-interval="7000">
-                <img src={bannerTwo} className="d-block w-100" alt="..."></img>
+              <div className="carousel-item" data-bs-interval="5000">
+                <img src={bannerTwo} className="d-block w-100" alt="Banner two of food"></img>
               </div>
-              <div className="carousel-item" data-bs-interval="7000">
+              <div className="carousel-item" data-bs-interval="5000">
                 <img
                   src={bannerThree}
                   className="d-block w-100"
-                  alt="..."
+                  alt="Banner three of food"
                 ></img>
               </div>
             </div>
@@ -73,7 +73,7 @@ const HomeDesktop = () => {
                   <p className="card-text text-cards">
                   Succulent sirloin, meticulously marinated in a blend of savory herbs and spices, imparting a symphony of flavors
                   </p>
-                  <Link to="/menu" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order">
                     Order now
                   </Link>
                 </div>
@@ -87,7 +87,7 @@ const HomeDesktop = () => {
                   <p className="card-text text-cards">
                   Experience the pinnacle of flavor with our premium burger, elevated by the bold kick of house-made spicy hot sauce
                   </p>
-                  <Link to="/menu" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order">
                     Order now
                   </Link>
                 </div>
@@ -101,7 +101,7 @@ const HomeDesktop = () => {
                   <p className="card-text text-cards">
                   Savor the succulence of grilled chicken, heightened by fragrant thyme and zesty lemon, for a truly flavorful delight
                   </p>
-                  <Link to="/menu" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order">
                     Order now
                   </Link>
                 </div>

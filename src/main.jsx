@@ -26,7 +26,7 @@ import Footer from "./commos/footer/Footer.jsx";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
 
-import ErrorView from "./views/ErrorView.jsx";
+import ErrorView from "../src/commos/ErrorView.jsx";
 import AboutUs from "./views/AboutUs.jsx";
 import Contact from "./views/Contact.jsx";
 import OrderView from "./views/OrderView.jsx";
@@ -71,7 +71,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path='/orderstatus' element={<OrderStatus />} />
         <Route exact path='/contact-us' element={<Contact />} />
         <Route exact path='/myaccount' element={<AccountView />} />
-        <Route exact path='/home' element={<HomeView />} />
+        <Route exact path='/' element={<HomeView />} />
 
 
         </Routes>

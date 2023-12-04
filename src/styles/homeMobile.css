@@ -1,11 +1,9 @@
 #home-mobile{
     display: none;
 }
-
 #home-desktop{
     display: block;
 }
-
 
 @media (max-width: 767px) {
 #home-mobile{
@@ -23,16 +21,17 @@
 .background-photo {
     margin: 0;
     padding: 0;
-    background-image: url('../img/grill-fondo.jpg');
+    background-image: url('../img/grill-fondo.webp');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     overflow: hidden;
+    margin-top: -13%;
+    margin-bottom: -5%;
   }
   .btn-container {
     position: relative;
   }
-  
   .btn-continue {
     position: absolute;
     margin-top: 120%;
@@ -67,16 +66,16 @@
 .background-photo {
     margin: 0;
     padding: 0;
-    background-image: url('../img/grill-fondo.jpg');
+    background-image: url('../img/grill-fondo.webp');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     overflow: hidden;
+    margin-top: -7%;
   }
   .btn-container {
     position: relative;
   }
-  
   .btn-continue {
     position: absolute;
     margin-top: 90%;
