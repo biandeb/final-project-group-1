@@ -36,7 +36,7 @@ const UserForm = (props) => {
   const handleSubmit = (data) => {
     Swal.showLoading();
 
-    if (user) putUser({ ...data, id: user.id });
+    if (user) putUser({ ...data, id: user.id }, 'updateUser');
 
     //volver a myinfo
     setIsEditing(false);
@@ -107,19 +107,6 @@ const UserForm = (props) => {
           name="email"
           placeholder="Email Address"
           error={!!errors.email}
-        ></Input>
-        <p>Password</p>
-        <Input
-          register={register}
-          options={{
-            required: true,
-            minLength: 4,
-            maxLength: 60,
-          }}
-          type="password"
-          name="password"
-          placeholder="password"
-          error={!!errors.password}
         ></Input>
         <div className="d-flex gap-3 justify-content-center">
           <button

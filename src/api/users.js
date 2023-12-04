@@ -15,6 +15,7 @@ export const postUserFn = async (data) => {
   return data;
 };
 
+
 export const getUsersFn = async () => {
   const res = await fetch(`${API_URL}/users`);
 
@@ -55,3 +56,24 @@ export const putUserFn = async (data) => {
   
   return apiData;
 };
+
+export const putPasswordFn = async (data) => {
+  console.log(data)
+  const res = await fetch(`${API_URL}/users/put-password/${data.user.id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("An error occurred while reseting the password");
+  }
+
+  const newApidata = await res.json();
+  
+  return newApidata;
+};
+
