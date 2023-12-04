@@ -1,24 +1,47 @@
-import { useQuery } from "@tanstack/react-query";
 import Account from "../components/MyAccount/Account";
 import "../index.css";
-import "../components/MyAccount/accountStyles.css"
-import { getUsersFn } from "../api/users";
+import "../components/MyAccount/accountStyles.css";
+import { useSession } from "../stores/useSessions";
+import Swal from "sweetalert2";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
+
 
 const AccountView = () => {
-  //traer todos los usuarios
-  const { data: users, isLoading } = useQuery({
-    queryKey: ["users"],
-    queryFn: getUsersFn,
-  });
 
-  console.log(users);
+  const { logout } = useSession();
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Atención",
+      text: "Estás por cerrar tu sesión",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, salir",
+      cancelButtonText: "Cancelar",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        toast.success("Sesión cerrada exitosamente. Hasta luego!");
+        logout();
+
+        navigate("/login");
+      }
+    });
+  };
 
   return (
     <div className="container-fluid mt-5 pt-5">
-      {isLoading ? <h3>Loading...</h3> : <Account users={users} />}
+      <Account />
 
       <div className="me-4 d-flex justify-content-end">
-        <button className="btn w-100 bg-danger text-light m-4 btn-signout">Sign out</button>
+        <button
+          onClick={handleLogout}
+          className="btn w-100 bg-danger text-light m-4 btn-signout"
+        >
+          Sign out
+        </button>
       </div>
     </div>
   );

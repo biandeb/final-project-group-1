@@ -6,7 +6,6 @@ import Total from "./Total";
 import TableNumber from "../TableNumber/TableNumber";
 
 import { useOrder } from "../../../stores/useOrder";
-import { useTable } from "../../../stores/useTable";
 import { postOrderFn } from "../../../api/orders";
 
 import { useMutation } from "@tanstack/react-query";
@@ -18,12 +17,15 @@ import { useSession } from "../../../stores/useSessions";
 const Checkout = () => {
   //ZUSTAND
   const { productsOrdered, clearProductOrder } = useOrder();
-  const { tablenumberForOrder } = useTable();
+  console.log(productsOrdered)
+  // const { tablenumberForOrder } = useTable();
   const { user } = useSession();
+  console.log(user)
 
   // const{ clearProductOrder} = useOrder()
 
   const userId = user.id;
+  console.log(userId)
 
   //RRD
   const navigate = useNavigate();
@@ -59,9 +61,14 @@ const Checkout = () => {
       cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
+        const products = productsOrdered.map((product) => ({
+          ...product,
+          id: undefined,
+        }));
+
         const newOrder = {
-          productsordered: productsOrdered,
-          tablenumber: tablenumberForOrder,
+          productsOrdered: products,
+          // tablenumber: tablenumberForOrder,
           userId: userId,
         };
 
@@ -89,7 +96,9 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <button className=" m-4 p-2 fs-5 bg-warning" onClick={clearProductOrder}>Clear order</button>
+      <button className=" m-4 p-2 fs-5 bg-warning" onClick={clearProductOrder}>
+        Clear order
+      </button>
       <div className="order-btn-container  text-light">
         <button className="btn-order" onClick={handleOrder}>
           Confirm Order

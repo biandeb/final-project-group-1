@@ -5,10 +5,12 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { putUserFn } from "../../api/users";
 import { useEffect } from "react";
-
+import { useSession } from "../../stores/useSessions";
 
 const UserForm = (props) => {
-  const { user, setIsEditing} = props;
+  const { user, setIsEditing } = props;
+
+  const { login } = useSession();
 
   // RHF -----------------------------------------------------
 
@@ -20,57 +22,54 @@ const UserForm = (props) => {
     reset,
   } = useForm();
 
-
   useEffect(() => {
     if (user) {
-      setValue('firstname', user.firstname);
-      setValue('lastname', user.lastname);
-      setValue('email', user.email);
-      setValue('password', user.password);
+      setValue("firstname", user.firstname);
+      setValue("lastname", user.lastname);
+      setValue("email", user.email);
+      setValue("password", user.password);
     }
   }, [user, setValue]);
 
-
-// HANDLERS____________________________
+  // HANDLERS____________________________
 
   const handleSubmit = (data) => {
     Swal.showLoading();
 
-    if(user)
-    putUser({...data, id: user.id});
+    if (user) putUser({ ...data, id: user.id }, 'updateUser');
 
     //volver a myinfo
-    setIsEditing(false)
+    setIsEditing(false);
   };
 
   //useMutation para UPDATE(PUT)
-  const {mutate: putUser} = useMutation({
+  const { mutate: putUser } = useMutation({
     mutationFn: putUserFn,
     //mensaje de exito
-    onSuccess: ()=>{
-        Swal.close();
-        toast.success('Your user info was correctly updated');
+    onSuccess: (data) => {
+      login(data.data);
 
-    //resetear el form
-    reset();
+      Swal.close();
+      toast.success("Your user info was correctly updated");
 
-    //limpiar estado global
-    // clearBlog();
+      //resetear el form
+      reset();
 
-    //recargar galeria con cards
-    // QueryClient.invalidateQueries('users')
+      //limpiar estado global
+      // clearBlog();
+
+      //recargar galeria con cards
+      // queryClient.invalidateQueries('users')
     },
 
-    onError: (e)=>{
-        Swal.close();
-        toast.error(e.message)
-    }
-})
-
+    onError: (e) => {
+      Swal.close();
+      toast.error(e.message);
+    },
+  });
 
   return (
     <div>
-      
       <form className="form-floating" onSubmit={onSubmitRHF(handleSubmit)}>
         <p>Firstname</p>
         <Input
@@ -82,7 +81,7 @@ const UserForm = (props) => {
           }}
           name="firstname"
           placeholder="First Name"
-          error={!!errors.firstName}
+          error={!!errors.firstname}
         ></Input>
         <p>Lastname</p>
         <Input
@@ -94,7 +93,7 @@ const UserForm = (props) => {
           }}
           name="lastname"
           placeholder="Last Name"
-          error={!!errors.lastName}
+          error={!!errors.lastname}
         ></Input>
         <p>Email</p>
         <Input
@@ -108,19 +107,6 @@ const UserForm = (props) => {
           name="email"
           placeholder="Email Address"
           error={!!errors.email}
-        ></Input>
-        <p>Password</p>
-        <Input
-          register={register}
-          options={{
-            required: true,
-            minLength: 4,
-            maxLength: 60,
-          }}
-          type="password"
-          name="password"
-          placeholder="password"
-          error={!!errors.password}
         ></Input>
         <div className="d-flex gap-3 justify-content-center">
           <button

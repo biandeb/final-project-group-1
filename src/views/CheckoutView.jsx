@@ -1,13 +1,11 @@
 import Checkout from "../components/UserView/Checkout/Checkout";
 
-import "../components/UserView/userStyles.css"
+import "../components/UserView/userStyles.css";
 
 const CheckoutView = () => {
-
   return (
     <>
       <Checkout />
-      
     </>
   );
 };
