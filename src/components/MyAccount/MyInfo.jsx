@@ -1,14 +1,17 @@
 import { useState } from "react";
 
 import UserForm from "./UserForm";
+import PasswordForm from "./PasswordForm";
 
 const MyInfo = (props) => {
   const { user } = props;
 
   const [isEditing, setIsEditing] = useState(false);
+  const [isEditingPassword, setIsEditingPassword] = useState(false);
 
   const handleCancel = () => {
     setIsEditing(false);
+    setIsEditingPassword(false);
   };
 
   //HANDLERS
@@ -16,6 +19,23 @@ const MyInfo = (props) => {
   const handleEdit = () => {
     setIsEditing(true);
   };
+
+  const handleEditPassword = () => {
+    setIsEditingPassword(true);
+  };
+
+  if (isEditingPassword) {
+    return (
+      <div className="mt-5 mb-5">
+        <h5>reset your password</h5>
+        <p>Your new password must have at least one number, one lowercase letter, one uppercase letter,one special character and at least 8 characters</p>
+        <PasswordForm user={user} setIsEditingPassword = {setIsEditingPassword} isEditingPassword={isEditingPassword}/>
+        <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">
+          Cancel
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-5 mb-5">
@@ -40,9 +60,14 @@ const MyInfo = (props) => {
           <p>Lastname: {user.lastname}</p>
           <p>Email: {user.email}</p>
 
-          <button onClick={handleEdit} className="btn-edit">
-            Edit
-          </button>
+          <div className="d-flex gap-3">
+            <button onClick={handleEdit} className="btn-edit">
+              Edit
+            </button>
+            <button onClick={handleEditPassword} className="btn-edit">
+              Reset password
+            </button>
+          </div>
         </div>
       )}
     </div>

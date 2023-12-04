@@ -8,8 +8,6 @@ import { useSession } from "../../stores/useSessions";
 
 const Account = () => {
   const { user } = useSession();
-  console.log(user);
-
   // const { users } = props;
 
   // const userId = user.id;

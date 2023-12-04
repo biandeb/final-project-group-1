@@ -30,7 +30,7 @@ const Router = () => {
           <Route
             path="/register"
             element={
-              isLoggedIn && user.isAdmin === false? <Navigate to="/order"></Navigate> : <OrderView />
+              isLoggedIn && user.isAdmin === false? <Navigate to="/order"></Navigate> : <RegisterViews />
             }
           />
           <Route
@@ -59,6 +59,7 @@ const Router = () => {
           <Route exact path="/myaccount" element={<AccountView />} />
           <Route exact path="/" element={<HomeView />} />
           <Route exact path="/stats" element={<StatsView />} />
+          <Route exact path="/register" element={<RegisterViews />} />
         </Routes>
         <Toaster position="top-right" richColors />
       </main>
