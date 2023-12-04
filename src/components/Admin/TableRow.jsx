@@ -2,27 +2,25 @@ import Swal from "sweetalert2";
 import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useProduct } from "../../stores/useProduct";
-import {
-  deleteProductFn,
-  toggleProductAvailabilityFn,
-} from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
+import { deleteProductFn,  putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
+import { useEffect, useState } from "react";
 
 const TableRow = (props) => {
   const { product, index } = props;
   const { setProductIsEdit } = useProduct();
   const queryClient = useQueryClient();
 
-  // Nueva función de mutación para activar/desactivar el producto
-  const { mutate: toggleProductAvailability } = useMutation({
-    mutationFn: () =>
-      toggleProductAvailabilityFn(product.id, !product.isAvailable),
+  //USE STATE 
+  const [availability, setAvailability] = useState(false)
+  //USE EFFECT
+
+  // TQUERY________________
+
+  const { mutate: deleteProduct } = useMutation({
+    mutationFn: deleteProductFn,
     onSuccess: () => {
       Swal.close();
-      toast.success(
-        `Producto ${
-          product.isAvailable ? "Desactivado" : "Activado"
-        } exitosamente`,
-      );
+      toast.success("Product deleted");
 
       queryClient.invalidateQueries("products");
     },
@@ -32,12 +30,14 @@ const TableRow = (props) => {
     },
   });
 
+  //HANDLERS
+
   const handleEdit = () => {
     Swal.fire({
-      title: "¿Estás seguro?",
-      text: `Estas por editar el producto "${product.name}"`,
+      title: "¿Are you sure?",
+      text: `You're about to edit the product "${product.name}"`,
       showCancelButton: true,
-      confirmButtonText: "Si, editar",
+      confirmButtonText: "Yes, edit",
       cancelButtonText: "No",
     }).then((res) => {
       if (res.isConfirmed) {
@@ -56,33 +56,25 @@ const TableRow = (props) => {
 
   const handleDelete = () => {
     Swal.fire({
-      title: "¿Estás seguro?",
-      text: `Estas por eliminar el producto "${product.name}"`,
+      title: "¿Are you sure?",
+      text: `You're aboute to delete the product "${product.name}"`,
       showCancelButton: true,
-      confirmButtonText: "Si, eliminar",
+      confirmButtonText: "Yes, delete",
       cancelButtonText: "No",
     }).then((res) => {
       if (res.isConfirmed) {
         Swal.showLoading();
-        deleteProductFn(product.id);
+        deleteProduct(product.id);
+        console.log(product.id);
       }
     });
   };
 
-  const handleToggleAvailability = () => {
-    Swal.fire({
-      title: `¿Estás seguro de ${
-        product.isAvailable ? "desactivar" : "activar"
-      } el producto "${product.name}"?`,
-      showCancelButton: true,
-      confirmButtonText: product.isAvailable ? "Si, Desactivar" : "Si, Activar",
-      cancelButtonText: "Cancelar",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        Swal.showLoading();
-        toggleProductAvailability(); // Llama a la función de mutación para activar/desactivar
-      }
-    });
+  const handleAvailability = () => {
+    const newAvailability = !availability;
+    setAvailability(newAvailability)
+    console.log(newAvailability);
+    putProductsFn(product, newAvailability);
   };
 
   return (
@@ -107,24 +99,45 @@ const TableRow = (props) => {
                   className="btn btn-warning"
                   onClick={handleEdit}
                 >
-                  Editar
+                  Edit
                 </button>
                 <button
                   type="button"
                   className="btn btn-danger ms-2"
                   onClick={handleDelete}
                 >
-                  Eliminar
+                  Delete
                 </button>
-                <button
-                  type="button"
-                  className={`btn btn-${
-                    product.isAvailable ? "success" : "warning"
-                  } ms-2`}
-                  onClick={handleToggleAvailability}
-                >
-                  {product.isAvailable ? "Desactivar" : "Activar"}
-                </button>
+
+                <div className="form-check" onClick={handleAvailability}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor="flexCheckDefault"
+                  >
+                    is available?
+                  </label>
+                </div>
+                {/* <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckChecked"
+                    checked
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor="flexCheckChecked"
+                  >
+                    is available?
+                  </label>
+                </div> */}
               </div>
             </div>
           </div>
