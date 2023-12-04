@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import UserForm from "./UserForm";
-import PasswordForm from "./PasswordForm";
+import UserForm from "./UserForm.jsx";
+import PasswordForm from "./PasswordForm.jsx";
 
 const MyInfo = (props) => {
   const { user } = props;
@@ -14,8 +14,6 @@ const MyInfo = (props) => {
     setIsEditingPassword(false);
   };
 
-  //HANDLERS
-
   const handleEdit = () => {
     setIsEditing(true);
   };
@@ -27,8 +25,8 @@ const MyInfo = (props) => {
   if (isEditingPassword) {
     return (
       <div className="mt-5 mb-5">
-        <h5>reset your password</h5>
-        <p>Your new password must have at least one number, one lowercase letter, one uppercase letter,one special character and at least 8 characters</p>
+        <h5>Reset your password</h5>
+        <p>Your new password must have at least one number, one lowercase letter, one uppercase letter, one special character and at least 8 characters.</p>
         <PasswordForm user={user} setIsEditingPassword = {setIsEditingPassword} isEditingPassword={isEditingPassword}/>
         <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">
           Cancel

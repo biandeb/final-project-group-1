@@ -1,22 +1,16 @@
-import AccountBtn from "./accountBtn";
-import "./accountStyles.css";
-import MyInfo from "./MyInfo";
-import Coupons from "./Coupons";
-import MyOrders from "./MyOrders";
 import { useState } from "react";
-import { useSession } from "../../stores/useSessions";
+
+import AccountBtn from "./accountBtn.jsx";
+import MyInfo from "./MyInfo.jsx";
+import Coupons from "./Coupons.jsx";
+import MyOrders from "./MyOrders.jsx";
+
+import { useSession } from "../../stores/useSessions.js";
+
+import "./accountStyles.css";
 
 const Account = () => {
   const { user } = useSession();
-  // const { users } = props;
-
-  // const userId = user.id;
-  // console.log(userId)
-
-  // const user = users.find((user) => user.id === userId);
-  // console.log(user);
-
-  //USE STATE para cambiar componente hijo o tab
 
   const [tab, setTab] = useState("info");
 
@@ -53,15 +47,12 @@ const Account = () => {
             <i className="bi bi-camera"></i>
           </span>
         </div>
-
         <div className="mt-3 d-flex flex-column">
           <h3>{user.firstname}</h3>
           <p>{user.email}</p>
         </div>
       </div>
-
       <hr />
-
       <div className="mt-5 row gap-2 d-flex justify-content-center justify-content-md-start">
         <AccountBtn
           onClick={() => showTab("info")}
@@ -82,7 +73,6 @@ const Account = () => {
           btnId={"myorders"}
         ></AccountBtn>
       </div>
-      {/* Renderizo el componente hijo seleccionado */}
       {element}
     </div>
   );

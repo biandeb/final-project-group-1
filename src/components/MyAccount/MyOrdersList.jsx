@@ -1,5 +1,6 @@
-import { useSession } from "../../stores/useSessions";
-import MyOrdersRow from "./MyOrdersRow";
+import { useSession } from "../../stores/useSessions.js";
+
+import MyOrdersRow from "./MyOrdersRow.jsx";
 
 const MyOrdersList = (props) => {
   const { orders } = props;
@@ -7,7 +8,6 @@ const MyOrdersList = (props) => {
   const { user } = useSession();
   const userIdForOrders = user.id;
 
-  //filtro orders para traer solo los pedidos del user logueado
   const filteredOrders = orders.filter(
     (order) => order.userId === userIdForOrders,
   );

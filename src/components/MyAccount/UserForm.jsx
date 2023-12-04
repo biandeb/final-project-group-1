@@ -1,18 +1,17 @@
 import { useForm } from "react-hook-form";
-import Input from "../Input/Input";
-import Swal from "sweetalert2";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { putUserFn } from "../../api/users";
 import { useEffect } from "react";
-import { useSession } from "../../stores/useSessions";
+import Swal from "sweetalert2";
+
+import { putUserFn } from "../../api/users.js";
+import { useSession } from "../../stores/useSessions.js";
+import Input from "../Input/Input.jsx";
 
 const UserForm = (props) => {
   const { user, setIsEditing } = props;
 
   const { login } = useSession();
-
-  // RHF -----------------------------------------------------
 
   const {
     register,
@@ -31,35 +30,23 @@ const UserForm = (props) => {
     }
   }, [user, setValue]);
 
-  // HANDLERS____________________________
-
   const handleSubmit = (data) => {
     Swal.showLoading();
 
     if (user) putUser({ ...data, id: user.id }, 'updateUser');
 
-    //volver a myinfo
     setIsEditing(false);
   };
 
-  //useMutation para UPDATE(PUT)
   const { mutate: putUser } = useMutation({
     mutationFn: putUserFn,
-    //mensaje de exito
     onSuccess: (data) => {
       login(data.data);
 
       Swal.close();
       toast.success("Your user info was correctly updated");
 
-      //resetear el form
       reset();
-
-      //limpiar estado global
-      // clearBlog();
-
-      //recargar galeria con cards
-      // queryClient.invalidateQueries('users')
     },
 
     onError: (e) => {
@@ -110,7 +97,6 @@ const UserForm = (props) => {
         ></Input>
         <div className="d-flex gap-3 justify-content-center">
           <button
-            // type="submit"
             className="btn btn-primary button btn-save w-50"
           >
             Save
