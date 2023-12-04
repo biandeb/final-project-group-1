@@ -1,10 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
 
-import NavBarMain from "./commos/navBar/NavBarMain";
+import NavBarMain from "./commons/navBar/NavBarMain";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
-import ErrorView from "./views/ErrorView";
+import ErrorView from "../src/commons/ErrorView.jsx";
 import AboutUs from "./views/AboutUs";
 import OrderView from "./views/OrderView";
 import CheckoutView from "./views/CheckoutView";
@@ -12,7 +12,7 @@ import OrderStatus from "./views/OrderStatus";
 import Contact from "./views/Contact";
 import AccountView from "./views/AccountView";
 import HomeView from "./views/HomeView";
-import Footer from "./commos/footer/Footer";
+import Footer from "./commons/footer/Footer";
 import AdminViews from "./views/AdminViews";
 import StatsView from "./views/StatsView";
 

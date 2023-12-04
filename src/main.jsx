@@ -12,21 +12,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 //Importaciones de componentes nuestros
-
-import NavBarMain from "./commons/navBar/NavBarMain.jsx";
-import Footer from "./commons/footer/Footer.jsx";
-import RegisterViews from "./views/RegisterViews";
-import LoginViews from "./views/LoginViews";
-
-import ErrorView from "./views/ErrorView.jsx";
-import AboutUs from "./views/AboutUs.jsx";
-import Contact from "./views/Contact.jsx";
-import OrderView from "./views/OrderView.jsx";
-import CheckoutView from "./views/CheckoutView.jsx";
-import OrderStatus from "./views/OrderStatus.jsx";
-import HomeView from "./views/HomeView.jsx";
-
-
+import Router from "./Router";
 
 //importaciones de estilos
 import "./index.css";
@@ -36,41 +22,7 @@ const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-
-       <NavBarMain></NavBarMain>
-        <main className="mt-5">
-        <Routes>
-       
-        <Route
-            path='/register'
-            element={<RegisterViews/>}
-          />
-          <Route
-            path='/login'
-            element={<LoginViews/>}
-          />
-
-        <Route exact path='/error' element={<ErrorView />} />
-        <Route exact path='/admin' element={<AdminViews />} />
-        
-        <Route exact path='/about-us' element={<AboutUs />} />
-        <Route exact path='/order' element={<OrderView />} />
-        <Route exact path='/checkout' element={<CheckoutView />} />
-        <Route exact path='/orderstatus' element={<OrderStatus />} />
-        <Route exact path='/contact-us' element={<Contact />} />
-        <Route exact path='/myaccount' element={<AccountView />} />
-        <Route exact path='/home' element={<HomeView />} />
-
-
-        </Routes>
-        <Toaster position='top-right' richColors />
-        </main>
-        <Footer />
-      </BrowserRouter>
-      <Toaster position='top-right' richColors/>
-
+      <Router />
     </QueryClientProvider>
-    ,
   </React.StrictMode>,
 );

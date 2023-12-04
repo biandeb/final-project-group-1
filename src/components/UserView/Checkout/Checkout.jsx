@@ -17,15 +17,9 @@ import { useSession } from "../../../stores/useSessions";
 const Checkout = () => {
   //ZUSTAND
   const { productsOrdered, clearProductOrder } = useOrder();
-  console.log(productsOrdered)
-  // const { tablenumberForOrder } = useTable();
   const { user } = useSession();
-  console.log(user)
-
-  // const{ clearProductOrder} = useOrder()
 
   const userId = user.id;
-  console.log(userId)
 
   //RRD
   const navigate = useNavigate();
@@ -68,7 +62,6 @@ const Checkout = () => {
 
         const newOrder = {
           productsOrdered: products,
-          // tablenumber: tablenumberForOrder,
           userId: userId,
         };
 
@@ -79,7 +72,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="pb-5 pt-5 mb-5">
+    <div className="checkout-container pt-5">
       <div className="d-flex justify-content-end">
         <NavLink
           className={(isActive) => (isActive ? "nav-link active" : "nav-link")}
