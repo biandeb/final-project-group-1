@@ -4,7 +4,6 @@ import { Toaster } from "sonner";
 import NavBarMain from "./commos/navBar/NavBarMain";
 import RegisterViews from "./views/RegisterViews";
 import LoginViews from "./views/LoginViews";
-import ErrorView from "./views/ErrorView";
 import AboutUs from "./views/AboutUs";
 import OrderView from "./views/OrderView";
 import CheckoutView from "./views/CheckoutView";
@@ -15,6 +14,7 @@ import HomeView from "./views/HomeView";
 import Footer from "./commos/footer/Footer";
 import AdminViews from "./views/AdminViews";
 import StatsView from "./views/StatsView";
+import ErrorView from "../src/commos/ErrorView.jsx";
 
 import { useSession } from "./stores/useSessions";
 import DetailsViews from "./views/DetailsViews";
