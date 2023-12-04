@@ -26,7 +26,7 @@ const TableNumberInput = () => {
   };
 
   return (
-    <>
+    <div className="ms-5">
       <h5>Enter your table number here:</h5>
 
       <form
@@ -52,10 +52,10 @@ const TableNumberInput = () => {
           placeholder="0"
           error={!!errors.tablenumber}
         />
-        <button className="submit-btn mt-2">Save</button>
+        <button className="submit-btn mt-2 px-5">Save</button>
       </form>
       <TableNumber />
-    </>
+    </div>
   );
 };
 

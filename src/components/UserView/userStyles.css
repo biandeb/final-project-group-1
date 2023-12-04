@@ -6,7 +6,7 @@
 }
 
 .card-img {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
 
   float: right;
@@ -26,7 +26,8 @@
 
 .submit-btn {
   border: none;
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
+  color: var(--background);
 }
 
 /* TABLE NUMBER */
@@ -76,6 +77,8 @@
   box-shadow: none;
   color: var(--background);
   max-width: 80%;
+  font-size: 1.2rem;
+  text-shadow: none !important;
 }
 
 .btn-order:hover {
@@ -125,7 +128,7 @@
 .order-btn-container {
   position: sticky;
   /* bottom: 85px;  */
-  bottom: 100px;
+  bottom: 80px;
   left: 0;
   width: 100%;
   background-color: var(--red-color);
@@ -134,10 +137,10 @@
   z-index: 1000;
 }
 
-@media (width < 400px) {
+@media (width < 576px) {
   .checkout-btn-container {
     position: sticky;
-    bottom: 100px;
+    bottom: 60px;
     left: 0;
     width: 100%;
     background-color: var(--red-color);
@@ -147,9 +150,9 @@
   }
 
   .order-btn-container {
-    position: sticky;
+    position: fixed;
     /* bottom: 85px;  */
-    bottom: 150px !important;
+    bottom: 70px ;
     left: 0;
     max-width: 100%;
     background-color: var(--red-color);
@@ -158,4 +161,12 @@
     z-index: 1000;
     /* width: 100vw; */
   }
+
+  .checkout-container{
+    padding-bottom: 8rem;
+  }
+}
+
+.checkout-container{
+  padding-bottom: 8rem;
 }

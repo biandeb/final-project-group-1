@@ -5,10 +5,9 @@ import { useSession } from "../stores/useSessions";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-
+import LogoutBtn from "../commos/LogoutBtn";
 
 const AccountView = () => {
-
   const { logout } = useSession();
 
   const navigate = useNavigate();
@@ -32,18 +31,24 @@ const AccountView = () => {
   };
 
   return (
-    <div className="container-fluid mt-5 pt-5">
-      <Account />
+    <>
+    <div className="d-flex justify-content-end me-5">
+    <LogoutBtn />
+    </div>
 
-      <div className="me-4 d-flex justify-content-end">
+      <div className="container-fluid mt-5 pt-5">
+        <Account />
+
+        {/* <div className="me-4 d-flex justify-content-end">
         <button
           onClick={handleLogout}
           className="btn w-100 bg-danger text-light m-4 btn-signout"
         >
           Sign out
         </button>
+      </div> */}
       </div>
-    </div>
+    </>
   );
 };
 
