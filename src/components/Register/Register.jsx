@@ -3,14 +3,9 @@ import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 
-
-
-
 import { Link, useNavigate } from "react-router-dom";
 
-
 // import { useNavigate } from "react-router-dom";
-
 
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
@@ -26,7 +21,6 @@ const Register = () => {
   const { login } = useSession();
   // RRD -----------------------------------------------------
   const navigate = useNavigate();
-  // const navigate = useNavigate();
 
   // RHF -----------------------------------------------------
 
@@ -55,15 +49,16 @@ const Register = () => {
       });
       Toast.fire({
         icon: "success",
-        title: "Bienvenido",
+        title: "Welcome",
       });
-      navigate("/");
 
       login({ ...data, password: undefined });
+      navigate("/");
+      
     },
     onError: () => {
       Swal.close();
-      toast.error("Ocurrio un error al registrar el usuario !!!")
+      toast.error("Ocurrio un error al registrar el usuario !!!");
     },
   });
 
@@ -71,7 +66,8 @@ const Register = () => {
 
   const handleSubmit = (data) => {
     Swal.showLoading();
-    postUser({ ...data, isAdmin: false, isAuthenticated: false });
+    postUser(data);
+    console.log(data)
   };
 
   // Render -----------------------------------------------------
@@ -98,9 +94,9 @@ const Register = () => {
                         minLength: 4,
                         maxLength: 60,
                       }}
-                      name="firstName"
+                      name="firstname"
                       placeholder="First Name"
-                      error={!!errors.firstName}
+                      error={!!errors.firstname}
                     ></Input>
                     <div className="col-sm-6"></div>
                     <Input
@@ -110,9 +106,9 @@ const Register = () => {
                         minLength: 4,
                         maxLength: 60,
                       }}
-                      name="lastName"
+                      name="lastname"
                       placeholder="Last Name"
-                      error={!!errors.lastName}
+                      error={!!errors.lastname}
                     ></Input>
                     <Input
                       register={register}

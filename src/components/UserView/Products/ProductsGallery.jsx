@@ -8,7 +8,7 @@ const ProductsGallery = (props) => {
       <section className="row justify-content-center">
         <h3 className="pb-2 mb-2">Menu</h3>
         {products.length === 0 ? <p>No products available</p> : null}
-        {products.map((product) => {
+        {products.data.filter((product)=> product.isAvailable === true).map((product) => {
           return <ProductCard key={product.id} product={product} />;
         })}
       </section>

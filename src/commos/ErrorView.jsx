@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import errorPhoto from '../img/error-photo.png'
+import errorPhoto from "../img/error-photo.png";
 
-import '../styles/error.css'
+import "../styles/error.css";
 
 const ErrorView = () => {
   return (
-    <section className='hola'>
+    <section>
     <div className='text-center'>
     <img 
     src={errorPhoto}
-    alt='Photo error 404'
+    alt='Photo error 404 not found'
     className='photo-error container'
     />
       <h3 className='text-center mt-5'>Oh oh. We cant find this page!</h3>

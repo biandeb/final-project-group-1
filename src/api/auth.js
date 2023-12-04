@@ -1,20 +1,29 @@
+import { jwtDecode } from "jwt-decode";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const postLoginFn = async (formData) => {
-  const response = await fetch(`${API_URL}/users`);
+  const response = await fetch(`${API_URL}/auth/login`, {
+    method: "POST",
+    body: JSON.stringify(formData),
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
 
-  if(!response.ok){
-    throw new Error("ocurrio un error al loguearse")
+  const data = await response.json();
+
+  if (!response.ok) {
+    const message = data.message;
+    throw new Error(message || "Ocurrio un error al loguearse");
   }
 
-  const users = await response.json();
+  //guardo el token que viene de data.data
+  const token = data.data;
 
-  const foundUser = users.find((item) => item.email === formData.email && item.password === formData.password);
+  sessionStorage.setItem("token", token);
 
+  const userData = jwtDecode(token).user;
 
-  if(!foundUser){
-    throw new Error("Usuario o contraseña incorrecto")
-  }
-
-  return {...foundUser, password: undefined}
+  return userData;
 };

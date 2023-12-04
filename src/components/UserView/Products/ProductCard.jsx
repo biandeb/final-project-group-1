@@ -1,45 +1,35 @@
 import "../../../index.css";
 import "../userStyles.css";
-
 import { useOrder } from "../../../stores/useOrder.js";
-import { useState } from "react";
-
 import Counter from "./Counter.jsx";
+import { useState } from "react";
 
 const ProductCard = (props) => {
   const { product } = props;
-
-  // //USE STATE para counter
   const [count, setCount] = useState(0);
-
-  //ZUSTAND
+  const [showModal, setShowModal] = useState(false);
 
   const { setProductForOrder, productsOrdered, updateExistingProduct } =
     useOrder();
 
-  //HANDLERS
-
   const handleOrder = () => {
-    //reviso si ya existe el producto en el carrito
     const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id
+      (item) => item.id === product.id,
     );
 
     if (existingProductIndex !== -1) {
       const existingProduct = productsOrdered[existingProductIndex];
       const productId = product.id;
-
-      // Actualizar la cantidad del producto existente
       const updatedAmount = existingProduct.amount + count;
-      console.log("Nueva cantidad:", updatedAmount);
-
       updateExistingProduct(productId, updatedAmount);
     } else {
       setProductForOrder({ ...product, amount: count });
     }
   };
 
-  //defino contexto para renderizado diferencial en counter
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   const context = "ProductCard";
 
   return (
@@ -47,7 +37,12 @@ const ProductCard = (props) => {
       <div className="row">
         <div className="col-6">
           <h5>{product.name}</h5>
-          <p>{product.description}</p>
+          <button
+            className="btn btn-dark w-100 mb-5 mt-3"
+            onClick={handleShowModal}
+          >
+            Ver Info
+          </button>
         </div>
         <div className="col-6">
           <img
@@ -73,6 +68,41 @@ const ProductCard = (props) => {
         <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
           Add
         </button>
+      </div>
+
+      {/* Modal para mostrar detalles */}
+      <div
+        className={`modal fade${showModal ? " show" : ""}`}
+        tabIndex="-1"
+        style={{ display: showModal ? "block" : "none" }}
+        onClick={handleCloseModal}
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">{product.name}</h5>
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={handleCloseModal}
+              ></button>
+            </div>
+            <div className="modal-body">
+              <p>{product.description}</p>
+              {/* Agrega aquí más detalles del producto según sea necesario */}
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={handleCloseModal}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   );
