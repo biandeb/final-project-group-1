@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import Counter from "../Products/Counter";
-import "../userStyles.css";
+
 import { useOrder } from "../../../stores/useOrder";
+import Counter from "../Products/Counter";
+
+import "../userStyles.css";
 
 const CheckoutCard = (props) => {
   const { product } = props;
@@ -9,15 +11,12 @@ const CheckoutCard = (props) => {
   const productId = product.id;
   const { setAmount } = useOrder();
 
-  // USE STATE para counter
   const [count, setCount] = useState(product.amount);
 
-  //useEffect que registra si hubo cambios en count y cuando eso ocurre ejecuta setAmount
   useEffect(() => {
     setAmount(productId, count);
   }, [count, setAmount]);
 
-  //defino contexto para renderizado diferencial en counter
   const context = "CheckoutCard";
 
   return (

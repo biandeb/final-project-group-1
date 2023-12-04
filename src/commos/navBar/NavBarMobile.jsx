@@ -1,24 +1,25 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-
-import "./navbar.css";
-import { useSession } from "../../stores/useSessions";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+
+import { useSession } from "../../stores/useSessions";
+
+import "./navbar.css";
 
 const NavBarMobile = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
   const handleLogout = () => {
     Swal.fire({
-      title: "Atención",
-      text: "Estás por cerrar tu sesión",
+      title: "Warning",
+      text: "You are about to log out",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Si, salir",
-      cancelButtonText: "Cancelar",
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
-        toast.success("Sesión cerrada exitosamente. Hasta luego!");
+        toast.success("Session closed successfully. See you later!");
         logout();
 
         navigate("/login");

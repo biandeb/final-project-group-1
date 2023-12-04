@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
-import Swal from "sweetalert2";
 import { create } from "zustand";
+import Swal from "sweetalert2";
 
 let user = null;
 let isLoggedIn = false;

@@ -11,17 +11,6 @@ export const getProductsFn = async () => {
   return data;
 };
 
-// export const getProducts = async () => {
-//   const res = await fetch(`${API_URL}/products`);
-
-//   if (!res.ok) {
-//     throw new Error('An error occurred while getting the products');
-//   }
-
-//   const data = await res.json();
-//   return data;
-// };
-
 export const postProductsFn = async (data) => {
   const res = await fetch(`${API_URL}/products`, {
     method: "POST",
@@ -40,7 +29,7 @@ export const putProductsFn = async (data) => {
     headers: { "Content-Type": "application/json" },
   });
   if (!res.ok) {
-    throw new Error("Ocurrio un error al cargar los product");
+    throw new Error("An error occurred while loading the products");
   }
 };
 
@@ -49,7 +38,7 @@ export const deleteProductFn = async (productId) => {
     method: "DELETE",
   });
   if (!res.ok) {
-    throw new Error("Ocurrió un error al eliminar el producto");
+    throw new Error("An error occurred while deleting the product");
   }
 };
 

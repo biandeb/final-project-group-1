@@ -8,18 +8,13 @@ import TableNumber from "./TableNumber";
 import { useTable } from "../../../stores/useTable";
 
 const TableNumberInput = () => {
-  //RHF
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
   } = useForm();
 
-  //ZUSTAND
-
   const { setTableNumber } = useTable();
-
-  //HANDLERS
 
   const handleSubmit = (tablenumber) => {
     setTableNumber(tablenumber);
@@ -39,11 +34,11 @@ const TableNumberInput = () => {
             required: true,
             min: {
               value: 1,
-              message: "El número debe ser mayor o igual a 1",
+              message: "The number must be greater than or equal to 1",
             },
             max: {
-              value: 20,
-              message: "El número debe ser menor o igual a 25",
+              value: 25,
+              message: "The number must be less than or equal to 25",
             },
           }}
           type="number"

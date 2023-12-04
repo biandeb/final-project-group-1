@@ -1,11 +1,9 @@
-import Swal from "sweetalert2";
-
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import Swal from "sweetalert2";
 
-// import { useNavigate } from "react-router-dom";
 
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
@@ -13,24 +11,18 @@ import { useSession } from "../../stores/useSessions";
 import Input from "../../components/Input/Input.jsx";
 
 import "./registerStyle.css";
-import { toast } from "sonner";
 
 const Register = () => {
-  // ZUSTAND --------------------------------------------
 
   const { login } = useSession();
-  // RRD -----------------------------------------------------
-  const navigate = useNavigate();
 
-  // RHF -----------------------------------------------------
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
   } = useForm();
-
-  // Tquery -----------------------------------------------------
 
   const { mutate: postUser } = useMutation({
     mutationFn: postUserFn,
@@ -58,19 +50,15 @@ const Register = () => {
     },
     onError: () => {
       Swal.close();
-      toast.error("Ocurrio un error al registrar el usuario !!!");
+      toast.error("An error occurred while registering the user");
     },
   });
-
-  // Handlers -----------------------------------------------------
 
   const handleSubmit = (data) => {
     Swal.showLoading();
     postUser(data);
     console.log(data)
   };
-
-  // Render -----------------------------------------------------
 
   return (
     <>
@@ -139,13 +127,13 @@ const Register = () => {
                       type="submit"
                       className="btn btn-primary button btn-user btn-block"
                     >
-                      Sing Up
+                      Sign Up
                     </button>
                   </form>
 
                   <div className="text-center">
                     <p className="small">
-                      Already have an account?
+                      ¿Already have an account?
                       <Link to={"/login"} className="fw-bolder">
                         Login
                       </Link>

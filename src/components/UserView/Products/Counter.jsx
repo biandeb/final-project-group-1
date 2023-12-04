@@ -1,19 +1,17 @@
 import { useOrder } from "../../../stores/useOrder";
+
 import "../userStyles.css";
 
 const Counter = (props) => {
   const { count, setCount, context, productId } = props;
 
-  //ZUSTAND
   const { deleteProductFromOrder } = useOrder();
 
-  //HANDLERS
   const handleChange = (quantity) => {
     setCount(count + quantity);
   };
 
   const handleDelete = () => {
-    //funcion para remover este producto de la lista de productos en el store
 
     deleteProductFromOrder(productId);
   };

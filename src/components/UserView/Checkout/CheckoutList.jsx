@@ -1,9 +1,9 @@
 import { useEffect } from "react";
+
 import { useOrder } from "../../../stores/useOrder.js";
-import CheckoutCard from "./CheckoutCard";
+import CheckoutCard from "./CheckoutCard.jsx";
 
 const CheckoutList = () => {
-  //ZUSTAND
   const { productsOrdered } = useOrder();
 
   useEffect(() => {

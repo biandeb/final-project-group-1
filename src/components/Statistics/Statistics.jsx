@@ -1,31 +1,27 @@
 import { useState } from "react";
-import { statsData } from "../../helpers/datasets";
-import BarsChart from "./BarsChart";
+
+import BarsChart from "./BarsChart.jsx";
 
 const Statistics = (props) => {
   const { orders } = props;
   console.log(orders)
 
-  //PRODUCTOS MAS PEDIDOS
   const productCount = {};
 
   orders.data.forEach((order) => {
     order.productsOrdered.forEach((product) => {
       const productName = product.name;
 
-      // contador
       productCount[productName] =
         (productCount[productName] || 0) + product.amount;
     });
   });
 
-  // Creo un array con nombre y cantidades
   const productArray = Object.entries(productCount).map(([name, count]) => ({
     name,
     count,
   }));
 
-  // Ordeno el array en forma descendente
   productArray.sort((a, b) => b.count - a.count);
 
   const [chartData, setChartData] = useState({

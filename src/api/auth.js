@@ -15,10 +15,9 @@ export const postLoginFn = async (formData) => {
 
   if (!response.ok) {
     const message = data.message;
-    throw new Error(message || "Ocurrio un error al loguearse");
+    throw new Error(message || "An error occurred while logging in");
   }
 
-  //guardo el token que viene de data.data
   const token = data.data;
 
   sessionStorage.setItem("token", token);

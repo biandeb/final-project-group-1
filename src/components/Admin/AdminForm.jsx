@@ -109,7 +109,7 @@ const AdminForm = () => {
                       maxLength: 60,
                     }}
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     error={!!errors.name}
                   ></Input>
                   <Input
@@ -149,7 +149,7 @@ const AdminForm = () => {
                     }}
                     className="mt-2"
                     name="description"
-                    placeholder="description the product"
+                    placeholder="Description the product"
                     error={!!errors.description}
                   />
                   <button
