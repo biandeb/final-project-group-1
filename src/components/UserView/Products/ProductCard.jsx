@@ -3,8 +3,10 @@ import "../userStyles.css";
 import { useOrder } from "../../../stores/useOrder.js";
 import Counter from "./Counter.jsx";
 import { useState } from "react";
+import { useSession } from "../../../stores/useSessions.js";
 
 const ProductCard = (props) => {
+  const { isLoggedIn } = useSession();
   const { product } = props;
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +16,7 @@ const ProductCard = (props) => {
 
   const handleOrder = () => {
     const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id,
+      (item) => item.id === product.id
     );
 
     if (existingProductIndex !== -1) {
@@ -52,23 +54,27 @@ const ProductCard = (props) => {
           ></img>
         </div>
       </div>
+      {isLoggedIn && <article>
+        <div className="d-flex justify-content-between">
+          <h5>${product.price}</h5>
+          <Counter
+            count={count}
+            setCount={setCount}
+            context={context}
+            productId={product.id}
+            product={product}
+          />
+        </div>
 
-      <div className="d-flex justify-content-between">
-        <h5>${product.price}</h5>
-        <Counter
-          count={count}
-          setCount={setCount}
-          context={context}
-          productId={product.id}
-          product={product}
-        />
-      </div>
-
-      <div className="text-end mt-2">
-        <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
-          Add
-        </button>
-      </div>
+        <div className="text-end mt-2">
+          <button
+            className="add-btn w-100 text-light mt-2"
+            onClick={handleOrder}
+          >
+            Add
+          </button>
+        </div>
+      </article>}
 
       {/* Modal para mostrar detalles */}
       <div

@@ -21,7 +21,6 @@ const Register = () => {
   const { login } = useSession();
   // RRD -----------------------------------------------------
   const navigate = useNavigate();
-  // const navigate = useNavigate();
 
   // RHF -----------------------------------------------------
 
@@ -50,11 +49,12 @@ const Register = () => {
       });
       Toast.fire({
         icon: "success",
-        title: "Bienvenido",
+        title: "Welcome",
       });
-      navigate("/");
 
       login({ ...data, password: undefined });
+      navigate("/");
+      
     },
     onError: () => {
       Swal.close();
@@ -66,7 +66,8 @@ const Register = () => {
 
   const handleSubmit = (data) => {
     Swal.showLoading();
-    postUser({ ...data, isAdmin: false, isAuthenticated: false });
+    postUser(data);
+    console.log(data)
   };
 
   // Render -----------------------------------------------------

@@ -48,8 +48,9 @@ const Login = () => {
       });
 
       login(data);
+      console.log(data.isAdmin)
 
-      if (data.isAdmin) {
+      if (data.isAdmin === true) {
         navigate("/admin");
       } else {
         navigate("/order");

@@ -21,6 +21,7 @@ import DetailsViews from "./views/DetailsViews";
 
 const Router = () => {
   const { user, isLoggedIn } = useSession();
+
   return (
     <BrowserRouter>
       <NavBarMain></NavBarMain>
@@ -30,13 +31,13 @@ const Router = () => {
           <Route
             path="/register"
             element={
-              isLoggedIn ? <Navigate to="/order"></Navigate> : <RegisterViews />
+              isLoggedIn && user.isAdmin === false? <Navigate to="/order"></Navigate> : <RegisterViews />
             }
           />
           <Route
             path="/login"
             element={
-              isLoggedIn ? <Navigate to="/order"></Navigate> : <LoginViews />
+              isLoggedIn && user.isAdmin===false? <Navigate to="/order"></Navigate> : <LoginViews />
             }
           />
 
@@ -82,6 +83,7 @@ const Router = () => {
               isLoggedIn ? <StatsView /> : <Navigate to="/login"></Navigate>
             }
           />
+
         </Routes>
         <Toaster position="top-right" richColors />
       </main>

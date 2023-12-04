@@ -6,7 +6,6 @@ import Total from "./Total";
 import TableNumber from "../TableNumber/TableNumber";
 
 import { useOrder } from "../../../stores/useOrder";
-import { useTable } from "../../../stores/useTable";
 import { postOrderFn } from "../../../api/orders";
 
 import { useMutation } from "@tanstack/react-query";
@@ -18,12 +17,15 @@ import { useSession } from "../../../stores/useSessions";
 const Checkout = () => {
   //ZUSTAND
   const { productsOrdered, clearProductOrder } = useOrder();
-  const { tablenumberForOrder } = useTable();
+  console.log(productsOrdered)
+  // const { tablenumberForOrder } = useTable();
   const { user } = useSession();
+  console.log(user)
 
   // const{ clearProductOrder} = useOrder()
 
   const userId = user.id;
+  console.log(userId)
 
   //RRD
   const navigate = useNavigate();
