@@ -34,6 +34,10 @@ Stored in the assets folder, including images, gif, webPG, svg, etc.
 - React Hook Form.
 - React Query.
 - React Router Dom.
+- Sonner.
+- JWT.
+- Joi.
+- Bcrypts.
 
 
 
