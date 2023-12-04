@@ -43,5 +43,5 @@ Stored in the assets folder, including images, gif, webPG, svg, etc.
 
 ## Admin
 
--   Usuario:  [juliana@gmail.com](mailto:admin@admin.com)
+-   User:  [juliana@gmail.com](mailto:admin@admin.com)
 
