@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useProduct } from "../../stores/useProduct";
-import { deleteProductFn, productAvailableFn, putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
+import { deleteProductFn,  putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
 import { useEffect, useState } from "react";
 
 const TableRow = (props) => {
