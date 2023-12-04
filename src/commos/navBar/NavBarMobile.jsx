@@ -26,8 +26,7 @@ const NavBarMobile = () => {
     });
   };
   return (
-    <header className="header" id="mobileFirst">
-      <nav className="navbar bg-body-tertiary fixed-bottom border-top">
+      <nav className="navbar bg-body-tertiary fixed-bottom border-top mt-5" id="mobileFirst">
         <ul className="nav-links mx-auto">
           {!user?.isAdmin && (
             <li>
@@ -36,7 +35,7 @@ const NavBarMobile = () => {
                   className={`nav-link text-secondary ${({ isActive }) =>
                     isActive ? "active" : ""}`}
                   aria-current="page"
-                  to="/Home"
+                  to="/"
                 >
                   <i className="bi bi-house fs-2 text-secondary "></i>
                 </NavLink>
@@ -111,7 +110,7 @@ const NavBarMobile = () => {
           </li>
         </ul>
       </nav>
-    </header>
+  
   );
 };
 

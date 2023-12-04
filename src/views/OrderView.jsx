@@ -12,7 +12,7 @@ import { useSession } from "../stores/useSessions";
 const OrderView = () => {
 
     //ZUSTAND
-    const { isLoggedIn, logout, user } = useSession();
+    const { isLoggedIn } = useSession();
     const {productsOrdered} = useOrder();
 
   const orderQuantity = productsOrdered.length;
@@ -71,7 +71,7 @@ const OrderView = () => {
           ) : (
             <span className="widget-span">{orderQuantity}</span>
           )}
-        </div>
+        </div>}
       </div>
     </>
   );

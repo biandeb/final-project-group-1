@@ -1,12 +1,14 @@
 import Navbar from "./Navbar";
 import NavBarMobile from "./NavBarMobile";
+import "./navbar.css";
+
 
 const NavBarMain = () => {
   return (
-    <div>
+    <header className="header text-center">
       <Navbar></Navbar>
       <NavBarMobile></NavBarMobile>
-    </div>
+    </header>
   );
 };
 

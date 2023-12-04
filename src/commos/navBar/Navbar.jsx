@@ -27,8 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="header " id="desktop">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
+    
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom" id="desktop">
         <div className="container">
           <Link to="/">
             <img
@@ -61,7 +61,7 @@ const Navbar = () => {
                       className="nav-link text-dark"
                       activeClassName="activeLink"
                       aria-current="page"
-                      to="/home"
+                      to="/"
                     >
                       Home
                     </NavLink>
@@ -179,7 +179,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </header>
+
   );
 };
 
