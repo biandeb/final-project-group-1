@@ -21,7 +21,7 @@ There is also the option to register and log in as an administrator to perform f
 
 Stored in the assets folder, including images, gif, webPG, svg, etc.
 
-## Capturas de Pantalla 
+## Screenshots
 ![Home](https://i.postimg.cc/0yFLRmyr/home.png) ![Register](https://i.postimg.cc/Kj3MWdq1/register.png) ![Contact](https://i.postimg.cc/fbH5QQKC/contact.png)
 
 ## Libraries used
