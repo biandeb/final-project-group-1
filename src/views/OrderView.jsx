@@ -1,19 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProductsFn } from "../api/products";
 import { NavLink } from "react-router-dom";
+
+import { getProductsFn } from "../api/products";
 import { useOrder } from "../stores/useOrder";
+import { useSession } from "../stores/useSessions";
 
 import ProductsGallery from "../components/UserView/Products/ProductsGallery";
 import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
 
 import "../components/UserView/userStyles.css";
-import { useSession } from "../stores/useSessions";
 
 const OrderView = () => {
-
-    //ZUSTAND
-    const { isLoggedIn, logout, user } = useSession();
-    const {productsOrdered} = useOrder();
+  const { isLoggedIn } = useSession();
+  const { productsOrdered } = useOrder();
 
   const orderQuantity = productsOrdered.length;
 
@@ -38,7 +37,7 @@ const OrderView = () => {
 
   return (
     <>
-        <div className="m-5 pt-5 order-container pb-5">
+      <div className="m-5 pt-5 order-container pb-5">
         <TableNumberInput />
         <hr />
         {isLoading ? (
@@ -50,7 +49,7 @@ const OrderView = () => {
           <div className="checkout-btn-container p-4 text-light d-flex justify-content-center">
             <NavLink
               className={(isActive) =>
-                isActive ? 'nav-link active' : 'nav-link'
+                isActive ? "nav-link active" : "nav-link"
               }
               aria-current="page"
               to="/checkout"

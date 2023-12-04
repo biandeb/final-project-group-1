@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+
 import Statistics from "../components/Statistics/Statistics";
+
 import { getOrdersFn } from "../api/orders";
 
 const StatsView = () => {

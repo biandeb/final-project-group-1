@@ -5,7 +5,7 @@ const RegisterViews = () => {
     <>
       <div className="text-center">
         <h1 className="fs-1 fw-bold">Grill & Thrill</h1>
-        <p className="lead fw.b">Register New Account</p>
+        <p className="lead fw.b">Register new account</p>
       </div>
       <Register></Register>
     </>

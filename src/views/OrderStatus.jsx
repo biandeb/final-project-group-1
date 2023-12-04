@@ -11,7 +11,7 @@ const OrderStatus = () => {
         <p>You will receive an email confirmation shortly</p>
         <div className="mt-5">
           <h5>Your order will be ready in:</h5>
-          <h4>20 min.</h4>
+          <h4>20 min</h4>
         </div>
       </div>
       <div className="p-4 bg-warning">

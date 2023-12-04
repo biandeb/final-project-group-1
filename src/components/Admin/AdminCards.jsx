@@ -1,4 +1,4 @@
-import TableRow from "./TableRow";
+import TableRow from "./TableRow.jsx";
 
 const AdminCards = (props) => {
   const { products } = props;

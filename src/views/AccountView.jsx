@@ -1,29 +1,29 @@
-import Account from "../components/MyAccount/Account";
-import "../index.css";
-import "../components/MyAccount/accountStyles.css";
-import { useSession } from "../stores/useSessions";
-import Swal from "sweetalert2";
-import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import Swal from "sweetalert2";
 
+import { useSession } from "../stores/useSessions.js";
+import Account from "../components/MyAccount/Account.jsx";
+
+import "../components/MyAccount/accountStyles.css";
+import "../index.css";
 
 const AccountView = () => {
-
   const { logout } = useSession();
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
     Swal.fire({
-      title: "Atención",
-      text: "Estás por cerrar tu sesión",
+      title: "Warning",
+      text: "You are about to log out",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Si, salir",
-      cancelButtonText: "Cancelar",
+      confirmButtonText: "Yes, sign off",
+      cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
-        toast.success("Sesión cerrada exitosamente. Hasta luego!");
+        toast.success("Session closed successfully. See you later!");
         logout();
 
         navigate("/login");

@@ -1,4 +1,4 @@
-import Admin from "../components/Admin/Admin";
+import Admin from "../components/Admin/Admin.jsx";
 
 const AdminViews = () => {
   return (
