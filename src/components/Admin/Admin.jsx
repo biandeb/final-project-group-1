@@ -17,7 +17,7 @@ const Admin = () => {
         <AdminForm></AdminForm>
         <h1 className="text-dark text-center mt-5 mb-5">Products</h1>
         <div className="alert alert-danger mt-3">
-          Ocurrio un Error obteniendo los datos del servidor!!!!
+          An error occurred while getting the products
         </div>
       </>
     );
@@ -28,7 +28,7 @@ const Admin = () => {
       <AdminForm></AdminForm>
       <h1 className="text-dark text-center mt-5 mb-5">Products</h1>
       {isLoading ? (
-        <h3 className="text-dark mt-3 text-center">Cargando...</h3>
+        <h3 className="text-dark mt-3 text-center">Loading...</h3>
       ) : (
         <AdminCards products={products}></AdminCards>
       )}
