@@ -33,26 +33,118 @@ export const postProductsFn = async (data) => {
   }
 };
 
-export const putProductsFn = async (data) => {
-  const res = await fetch(`${API_URL}/products/${data.id}`, {
-    method: "put",
-    body: JSON.stringify({ ...data, id: undefined }),
-    headers: { "Content-Type": "application/json" },
-  });
-  if (!res.ok) {
-    throw new Error("Ocurrio un error al cargar los product");
+// export const putProductsFn = async (data, isAvailable) => {
+//   const token = sessionStorage.getItem('token');
+
+//   if (isAvailable) {
+//     const { id, isAvailable } = data;
+
+//     const res = await fetch(`${API_URL}/products/${id}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({ isAvailable }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+
+    
+
+//     const resData = await res.json();
+
+//     if (!res.ok) {
+//       throw new Error(resData.message || 'An error occurred changing product availability');
+//     }
+//   } else {
+//     // Si isAvailable no está presente, asume que se debe actualizar todo el producto
+//     const { id, ...updatedData } = data;
+
+//     const res = await fetch(`${API_URL}/products/${id}`, {
+//       method: 'PUT',
+//       body: JSON.stringify(updatedData),
+//       headers: {
+//         'Content-Type': 'application/json',
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+
+//     if (!res.ok) {
+//       throw new Error('An error occurred while editing the product');
+//     }
+//   }
+// };
+
+export const putProductsFn = async (data, isAvailable) => {
+  console.log(data, isAvailable)
+  const token = sessionStorage.getItem('token');
+  const { id, ...restData } = data;
+
+  try {
+    const res = await fetch(`${API_URL}/products/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(isAvailable ? { isAvailable } : restData),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const resData = await res.json();
+
+    if (!res.ok) {
+      throw new Error(resData.message || 'An error occurred while editing the product');
+    }
+
+    // Puedes retornar datos adicionales si es necesario
+    return resData;
+  } catch (error) {
+    // Puedes manejar errores aquí
+    throw new Error('An error occurred while processing the request');
   }
 };
 
 export const deleteProductFn = async (productId) => {
-  const res = await fetch(`${API_URL}/products/${productId}`, {
-    method: "DELETE",
-  });
-  if (!res.ok) {
-    throw new Error("Ocurrió un error al eliminar el producto");
-  }
+  const token = sessionStorage.getItem('token');
+
+    const res = await fetch(`${API_URL}/products/${productId}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    })
+
+    const resData = await res.json();
+
+    if(!res.ok){
+        throw new Error(resData.message || 'An error occurred deleting the product')
+    }
 };
 
-export const toggleProductAvailabilityFn = () => {
-  console.log("toggle");
-};
+// export const productAvailableFn = async (productId, isAvailable) => {
+//   console.log("toggle");
+//   const token = sessionStorage.getItem('token');
+
+//     // const res = await fetch(`${API_URL}/products/${data.id}`, {
+//     //     method: 'PUT',
+//     //     body: JSON.stringify({ ...data, isAvailable: true }),
+//     //     headers: {
+//     //       "Content-Type": "application/json",
+//     //         Authorization: `Bearer ${token}`,
+//     //     }
+//     // })
+
+//     const res = await fetch(`${API_URL}/products/${productId}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({ isAvailable }),
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       }
+//     });
+
+//     const resData = await res.json();
+
+//     if(!res.ok){
+//         throw new Error(resData.message || 'An error occurred changing product availability')
+//     }
+// };
