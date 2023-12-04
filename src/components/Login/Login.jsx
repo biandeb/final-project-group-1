@@ -2,30 +2,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { toast } from "sonner";
 
-import { useSession } from "../../stores/useSessions";
+import { useSession } from "../../stores/useSessions.js";
+import { postLoginFn } from "../../api/auth.js";
 
 import Input from "../Input/Input";
 
 import "./login.css";
-import { postLoginFn } from "../../api/auth";
-import { toast } from "sonner";
 
 const Login = () => {
-  // Zustabd -------------------------------------
   const { login } = useSession();
 
-  // RRD -------------------------------------
   const navigate = useNavigate();
 
-  // RHF -------------------------------------
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
   } = useForm();
-
-  // Tquery -----------------------------------------------------
 
   const { mutate: postLogin, isLoading } = useMutation({
     mutationFn: postLoginFn,
@@ -44,11 +39,11 @@ const Login = () => {
       });
       Toast.fire({
         icon: "success",
-        title: "Bienvenido",
+        title: "Welcome",
       });
 
       login(data);
-      console.log(data.isAdmin)
+      console.log(data.isAdmin);
 
       if (data.isAdmin === true) {
         navigate("/admin");
@@ -62,15 +57,12 @@ const Login = () => {
     },
   });
 
-  // Handle -------------------------------------
-
   const handleSubmit = (data) => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
     }
   };
-  // Render -----------------------------------------------------
 
   return (
     <>
@@ -101,7 +93,7 @@ const Login = () => {
                           }}
                           type="email"
                           name="email"
-                          placeholder="Enter Email Address..."
+                          placeholder="Enter email address..."
                           error={!!errors.email}
                         ></Input>
                         <Input
@@ -126,7 +118,7 @@ const Login = () => {
 
                       <div className="text-center">
                         <Link className="small fw-bolder" to={"/register"}>
-                          Create an Account!
+                          Create an account
                         </Link>
                       </div>
                     </div>
