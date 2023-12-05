@@ -7,7 +7,7 @@ import logoBlack from "../../img/logo-fondo-negro.png";
 const HomeMobile = () => {
   return (
     <section className="background-photo" id="home-mobile">
-      <div className="btn-container vh-100">
+      <div className="btn-container">
         <img
           src={logoBlack}
           alt="logo Grill and Thrill"
