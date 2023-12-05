@@ -25,7 +25,7 @@ Stored in the assets folder, including images, gif, webPG, svg, etc.
 ![Home](https://i.postimg.cc/0yFLRmyr/home.png) ![Register](https://i.postimg.cc/Kj3MWdq1/register.png) ![Contact](https://i.postimg.cc/fbH5QQKC/contact.png)
 
 ## Libraries used
-- REACT, CSS y JavaScript for user interface.
+- REACT, CSS and JavaScript for user interface.
 - Node.js for backend.
 - SweetAlert.
 - Bootstrap.
