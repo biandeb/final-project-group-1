@@ -78,7 +78,7 @@ const Login = () => {
                     <div className="p-5">
                       <div className="text-center">
                         <h1 className=" text-gray-900 mb-4 fw-bold h1Color">
-                          Login
+                          Log In
                         </h1>
                       </div>
                       <form
@@ -94,7 +94,7 @@ const Login = () => {
                           }}
                           type="email"
                           name="email"
-                          placeholder="Enter email address..."
+                          placeholder="Enter email address"
                           error={!!errors.email}
                         ></Input>
                         <Input
@@ -118,7 +118,7 @@ const Login = () => {
                       </form>
 
                       <div className="text-center">
-                        <Link className="small fw-bolder" to={"/register"}>
+                        <Link className="small fw-bolder text-danger" to={"/register"}>
                           ¡Create an account!
                         </Link>
                       </div>

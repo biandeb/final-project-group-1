@@ -170,7 +170,7 @@ const Navbar = () => {
             </ul>
             {!isLoggedIn ? (
               <Link to="/login">
-                <button className="ms-5 btnLg">Login</button>
+                <button className="ms-5 btnLg">Log In</button>
               </Link>
             ) : (
               <button className="btnSg" type="button" onClick={handleLogout}>
