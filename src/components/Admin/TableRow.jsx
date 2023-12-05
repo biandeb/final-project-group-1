@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useProduct } from "../../stores/useProduct";
 import { deleteProductFn,  putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const TableRow = (props) => {
   const { product, index } = props;
@@ -11,7 +11,7 @@ const TableRow = (props) => {
   const queryClient = useQueryClient();
 
   //USE STATE 
-  const [availability, setAvailability] = useState(false)
+  const [availability, setAvailability] = useState(product.isAvailable)
   //USE EFFECT
 
   // TQUERY________________
@@ -65,16 +65,15 @@ const TableRow = (props) => {
       if (res.isConfirmed) {
         Swal.showLoading();
         deleteProduct(product.id);
-        console.log(product.id);
       }
     });
   };
 
   const handleAvailability = () => {
     const newAvailability = !availability;
-    setAvailability(newAvailability)
-    console.log(newAvailability);
-    putProductsFn(product, newAvailability);
+    setAvailability(newAvailability);
+    const updatedProduct = {...product, isAvailable: newAvailability};
+    putProductsFn(updatedProduct, newAvailability);
   };
 
   return (
@@ -115,6 +114,7 @@ const TableRow = (props) => {
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"
+                    checked={availability}
                   />
                   <label
                     className="form-check-label"
@@ -123,21 +123,6 @@ const TableRow = (props) => {
                     is available?
                   </label>
                 </div>
-                {/* <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                    checked
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckChecked"
-                  >
-                    is available?
-                  </label>
-                </div> */}
               </div>
             </div>
           </div>

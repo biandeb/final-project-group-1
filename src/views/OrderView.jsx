@@ -8,6 +8,7 @@ import TableNumberInput from "../components/UserView/TableNumber/TableNumberInpu
 
 import "../components/UserView/userStyles.css";
 import { useSession } from "../stores/useSessions";
+import LogoutBtn from "../commos/LogoutBtn";
 
 const OrderView = () => {
 
@@ -38,7 +39,11 @@ const OrderView = () => {
 
   return (
     <>
-        <div className="m-5 pt-5 order-container pb-5">
+        <div className="pt-5 order-container">
+          <div className="d-flex justify-content-end me-3 mb-5">
+          <LogoutBtn />
+          </div>
+
         <TableNumberInput />
         <hr />
         {isLoading ? (

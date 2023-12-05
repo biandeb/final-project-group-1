@@ -35,15 +35,13 @@ const ProductCard = (props) => {
   const context = "ProductCard";
 
   return (
-    <article className="p-4 mb-2 product-card col-12 col-md-5 col-lg-3 me-md-3">
+    <article className="p-4 mb-2 product-card col-12 col-md-5 col-lg-3 me-md-3 d-flex flex-column justify-content-between">
       <div className="row">
         <div className="col-6">
           <h5>{product.name}</h5>
-          <button
-            className="btn btn-dark w-100 mb-5 mt-3"
-            onClick={handleShowModal}
-          >
-            Ver Info
+          <button onClick={handleShowModal} className="btn btn-outline-secondary w-100 mb-5 mt-3">
+            <i className="bi bi-plus-lg"></i>
+            info
           </button>
         </div>
         <div className="col-6">
@@ -104,7 +102,7 @@ const ProductCard = (props) => {
                 className="btn btn-secondary"
                 onClick={handleCloseModal}
               >
-                Cerrar
+                Close
               </button>
             </div>
           </div>
