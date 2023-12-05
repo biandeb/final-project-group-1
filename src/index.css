@@ -17,8 +17,6 @@
   font-family: "Noto Sans JP", sans-serif !important;
 }
 
-
-
 .header {
   flex-shrink: 0;
   padding: 1rem 0 0.5rem 0;
@@ -34,7 +32,7 @@ footer {
   background-color: rgba(58, 142, 71, 0.581);
 }
 @media screen and (max-width: 991px) {
-  footer{
-    display: none!important;
+  footer {
+    display: none !important;
   }
 }

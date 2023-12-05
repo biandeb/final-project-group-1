@@ -1,0 +1,97 @@
+#home-mobile {
+  display: none;
+}
+#home-desktop{
+    display: block;
+}
+
+@media (max-width: 767px) {
+  #home-mobile {
+    display: block;
+  }
+  #home-desktop {
+    display: none;
+  }
+  #mobileFirst {
+    padding: 0;
+  }
+  .header {
+    height: 0;
+  }
+  .background-photo {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/grill-fondo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -18%;
+    margin-bottom: -50%;
+  }
+  .btn-container {
+    position: relative;
+  }
+  .btn-continue {
+    position: absolute;
+    margin-top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    border-radius: 13px;
+    font-size: 90%;
+    background-color: #d1470b;
+    color: #f9f9f9;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+  }
+  .logo-black {
+    width: 100%;
+    margin-top: 40%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #home-mobile {
+    display: block;
+  }
+  #home-desktop {
+    display: none;
+  }
+  #mobileFirst {
+    padding: 0;
+  }
+  .header {
+    height: 0;
+  }
+  .background-photo {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/grill-fondo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -7%;
+  }
+  .btn-container {
+    position: relative;
+  }
+  .btn-continue {
+    position: absolute;
+    margin-top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 10px;
+    color: white;
+    border-radius: 13px;
+    font-size: 130%;
+    background-color: #d1470b;
+    color: #f9f9f9;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    width: 18%;
+  }
+  .logo-black {
+    width: 100%;
+    margin-top: 3%;
+  }
+}
