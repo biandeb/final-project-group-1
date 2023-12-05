@@ -49,7 +49,7 @@ const NavBarMobile = () => {
                   className={`nav-link text-secondary  ${({ isActive }) =>
                     isActive ? "active" : ""}`}
                   aria-current="page"
-                  to="/"
+                  to="/checkout"
                 >
                   <i className="bi bi-bag-fill fs-2 text-secondary"></i>
                 </NavLink>
@@ -63,7 +63,7 @@ const NavBarMobile = () => {
                   className={`nav-link text-secondary ${({ isActive }) =>
                     isActive ? "activePage" : ""}`}
                   aria-current="page"
-                  to="/"
+                  to="/myaccount"
                 >
                   <i
                     className="bi bi-person-circle fs-2 text-secondary"

@@ -115,7 +115,7 @@ const TableRow = (props) => {
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    ¿Is available?
+                    Is available?
                   </label>
                 </div>
               </div>
