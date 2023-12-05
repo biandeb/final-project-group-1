@@ -1,36 +1,32 @@
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
-import Swal from "sweetalert2";
-
 import Account from "../components/MyAccount/Account";
 import LogoutBtn from "../commons/LogoutBtn.jsx";
-import { useSession } from "../stores/useSessions";
+
 
 import "../index.css";
 import "../components/MyAccount/accountStyles.css";
 
 const AccountView = () => {
-  const { logout } = useSession();
+  // const { logout } = useSession();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogout = () => {
-    Swal.fire({
-      title: "Attention",
-      text: "You are about to log out",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, log out",
-      cancelButtonText: "Cancel",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        toast.success("Session closed successfully. See you later!");
-        logout();
+  // const handleLogout = () => {
+  //   Swal.fire({
+  //     title: "Attention",
+  //     text: "You are about to log out",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonText: "Yes, log out",
+  //     cancelButtonText: "Cancel",
+  //   }).then((res) => {
+  //     if (res.isConfirmed) {
+  //       toast.success("Session closed successfully. See you later!");
+  //       logout();
 
-        navigate("/login");
-      }
-    });
-  };
+  //       navigate("/login");
+  //     }
+  //   });
+  // };
 
   return (
     <>
@@ -45,4 +41,5 @@ const AccountView = () => {
   );
 };
 
-export default AccountView;
+
+export default AccountView
