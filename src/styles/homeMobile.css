@@ -5,6 +5,7 @@
     display: block;
 }
 
+
 @media (max-width: 767px) {
   #home-mobile {
     display: block;
@@ -26,7 +27,7 @@
     background-repeat: no-repeat;
     height: 100vh;
     overflow: hidden;
-    margin-top: -18%;
+    margin-top: -20%;
     margin-bottom: -50%;
   }
   .btn-container {
