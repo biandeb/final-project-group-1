@@ -26,8 +26,8 @@ const Contact = () => {
         </div>
         <FormContact />
       </div>
-      <div className="container round-5 ">
-        <GoogleMap />
+      <div className="container round-5">
+      <GoogleMap />
       </div>
     </section>
   );
