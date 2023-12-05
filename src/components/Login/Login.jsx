@@ -44,7 +44,6 @@ const Login = () => {
       });
 
       login(data);
-      console.log(data.isAdmin)
 
       if (data.isAdmin === true) {
         navigate("/admin");
@@ -62,6 +61,7 @@ const Login = () => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
+      navigate("/")
     }
   };
 

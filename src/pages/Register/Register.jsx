@@ -3,7 +3,8 @@ import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 import { postUserFn } from "../../api/users";
@@ -12,12 +13,10 @@ import { useSession } from "../../stores/useSessions";
 import Input from "../../components/Input/Input.jsx";
 
 import "./registerStyle.css";
-import { toast } from "sonner";
 
 const Register = () => {
-  const { login } = useSession();
 
-  const navigate = useNavigate();
+  const { login } = useSession();
 
   const {
     register,
@@ -46,20 +45,13 @@ const Register = () => {
       });
 
       login({ ...data, password: undefined });
-      navigate("/");
-      
     },
-    onError: () => {
-      Swal.close();
-      toast.error("An error occurred while registering the user.");
-    },
+    onError: () => {},
   });
-
 
   const handleSubmit = (data) => {
     Swal.showLoading();
-    postUser(data);
-    console.log(data)
+    postUser({ ...data, isAdmin: false, isAuthenticated: false });
   };
 
 
@@ -85,9 +77,9 @@ const Register = () => {
                         minLength: 4,
                         maxLength: 60,
                       }}
-                      name="firstname"
+                      name="firstName"
                       placeholder="Firstname"
-                      error={!!errors.firstname}
+                      error={!!errors.firstName}
                     ></Input>
                     <div className="col-sm-6"></div>
                     <Input
@@ -97,9 +89,9 @@ const Register = () => {
                         minLength: 4,
                         maxLength: 60,
                       }}
-                      name="lastname"
+                      name="lastName"
                       placeholder="Lastname"
-                      error={!!errors.lastname}
+                      error={!!errors.lastName}
                     ></Input>
                     <Input
                       register={register}
@@ -136,8 +128,8 @@ const Register = () => {
 
                   <div className="text-center">
                     <p className="small">
-                      ¿Already have an account? 
-                      <Link to={"/login"} className="fw-bolder text-danger">
+                      ¿Already have an account?
+                      <Link to={"/login"} className="fw-bolder text-warning">
                         Log In
                       </Link>
                     </p>
