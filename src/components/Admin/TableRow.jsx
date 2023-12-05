@@ -1,26 +1,23 @@
-import Swal from "sweetalert2";
-import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
+import { toast } from "sonner";
+import Swal from "sweetalert2";
+
 import { useProduct } from "../../stores/useProduct";
 import { deleteProductFn,  putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
-import { useState } from "react";
 
 const TableRow = (props) => {
   const { product, index } = props;
   const { setProductIsEdit } = useProduct();
   const queryClient = useQueryClient();
 
-  //USE STATE 
   const [availability, setAvailability] = useState(product.isAvailable)
-  //USE EFFECT
-
-  // TQUERY________________
 
   const { mutate: deleteProduct } = useMutation({
     mutationFn: deleteProductFn,
     onSuccess: () => {
       Swal.close();
-      toast.success("Product deleted");
+      toast.success("Product deleted.");
 
       queryClient.invalidateQueries("products");
     },
@@ -30,15 +27,13 @@ const TableRow = (props) => {
     },
   });
 
-  //HANDLERS
-
   const handleEdit = () => {
     Swal.fire({
       title: "¿Are you sure?",
       text: `You're about to edit the product "${product.name}"`,
       showCancelButton: true,
       confirmButtonText: "Yes, edit",
-      cancelButtonText: "No",
+      cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
         Swal.showLoading();
@@ -48,7 +43,7 @@ const TableRow = (props) => {
         const formOffset = formElement.offsetTop;
         window.scrollTo({
           top: formOffset,
-          behavior: "auto", // Si no funciona bien, puedes cambiar a "auto" o quitar esta línea
+          behavior: "auto",
         });
       }
     });
@@ -60,7 +55,7 @@ const TableRow = (props) => {
       text: `You're aboute to delete the product "${product.name}"`,
       showCancelButton: true,
       confirmButtonText: "Yes, delete",
-      cancelButtonText: "No",
+      cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
         Swal.showLoading();
@@ -120,7 +115,7 @@ const TableRow = (props) => {
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    is available?
+                    ¿Is available?
                   </label>
                 </div>
               </div>

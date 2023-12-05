@@ -31,7 +31,7 @@ export const getUserByIdFn = async (id) => {
   const res = await fetch(`${API_URL}/users/${id}`);
 
   if (!res.ok) {
-    throw new Error("An error occured while getting the user");
+    throw new Error("An error occurred while getting the user");
   }
 
   const data = await res.json();

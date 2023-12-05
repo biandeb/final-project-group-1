@@ -36,7 +36,7 @@
 
 .btn-account {
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Agregamos una transición para un cambio suave de color */
+  transition: background-color 0.3s ease;
 }
 
 .btn-account:focus {

@@ -1,7 +1,7 @@
 const DetailsViews = (props) => {
   const { product } = props;
   if (!product) {
-    return <p>No hay información disponible.</p>;
+    return <p>No information available.</p>;
   }
   return (
     <section>

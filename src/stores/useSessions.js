@@ -13,7 +13,7 @@ if (token) {
   } catch (e) {
     Swal.fire({
       title: 'Error',
-      text: 'Inicie sesión nuevamente',
+      text: 'Sign in again',
       icon: 'error',
     });
     sessionStorage.removeItem('token');

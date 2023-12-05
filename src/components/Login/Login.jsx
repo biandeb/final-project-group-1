@@ -12,20 +12,16 @@ import { postLoginFn } from "../../api/auth";
 import { toast } from "sonner";
 
 const Login = () => {
-  // Zustabd -------------------------------------
+
   const { login } = useSession();
 
-  // RRD -------------------------------------
   const navigate = useNavigate();
 
-  // RHF -------------------------------------
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
   } = useForm();
-
-  // Tquery -----------------------------------------------------
 
   const { mutate: postLogin, isLoading } = useMutation({
     mutationFn: postLoginFn,
@@ -44,7 +40,7 @@ const Login = () => {
       });
       Toast.fire({
         icon: "success",
-        title: "Bienvenido",
+        title: "Welcome",
       });
 
       login(data);
@@ -62,15 +58,12 @@ const Login = () => {
     },
   });
 
-  // Handle -------------------------------------
-
   const handleSubmit = (data) => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
     }
   };
-  // Render -----------------------------------------------------
 
   return (
     <>
@@ -85,7 +78,7 @@ const Login = () => {
                     <div className="p-5">
                       <div className="text-center">
                         <h1 className=" text-gray-900 mb-4 fw-bold h1Color">
-                          Login
+                          Log In
                         </h1>
                       </div>
                       <form
@@ -101,7 +94,7 @@ const Login = () => {
                           }}
                           type="email"
                           name="email"
-                          placeholder="Enter Email Address..."
+                          placeholder="Enter email address"
                           error={!!errors.email}
                         ></Input>
                         <Input
@@ -120,13 +113,13 @@ const Login = () => {
                           type="submit"
                           className="btn button fw-bolder btn-user btn-block"
                         >
-                          Login
+                          Log In
                         </button>
                       </form>
 
                       <div className="text-center">
-                        <Link className="small fw-bolder" to={"/register"}>
-                          Create an Account!
+                        <Link className="small fw-bolder text-danger" to={"/register"}>
+                          ¡Create an account!
                         </Link>
                       </div>
                     </div>
