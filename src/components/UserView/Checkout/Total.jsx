@@ -1,8 +1,6 @@
 import { useOrder } from "../../../stores/useOrder";
 
 const Total = () => {
-  //ZUSTAND
-
   const { productsOrdered } = useOrder();
 
   const totalAmount = productsOrdered.reduce(

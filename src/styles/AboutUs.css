@@ -596,20 +596,6 @@
     height: 0;
   }
 
-  h1 {
-    font-size: 45px;
-    position: relative;
-    bottom: 500px;
-    text-shadow: 3px 3px 4px rgb(0, 0, 0);
-  }
-
-  h2 {
-    font-size: 35px;
-    position: relative;
-    bottom: 530px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
-  }
-
   .grill-subtitle {
     font-size: 35px;
 }

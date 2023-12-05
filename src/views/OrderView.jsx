@@ -8,11 +8,10 @@ import TableNumberInput from "../components/UserView/TableNumber/TableNumberInpu
 
 import "../components/UserView/userStyles.css";
 import { useSession } from "../stores/useSessions";
-import LogoutBtn from "../commos/LogoutBtn";
+import LogoutBtn from "../commons/LogoutBtn";
 
 const OrderView = () => {
 
-    //ZUSTAND
     const { isLoggedIn } = useSession();
     const {productsOrdered} = useOrder();
 
@@ -30,7 +29,7 @@ const OrderView = () => {
         <div className="m-5">
           <TableNumberInput />
           <div className="alert alert-danger">
-            An error occurred while getting the products
+            An error occurred while getting the products.
           </div>
         </div>
       </>

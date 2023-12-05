@@ -1,24 +1,25 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import Swal from "sweetalert2";
+
 import { useSession } from "../../stores/useSessions";
 
 import "./navbar.css";
-import Swal from "sweetalert2";
-import { toast } from "sonner";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
   const handleLogout = () => {
     Swal.fire({
-      title: "Atención",
-      text: "Estás por cerrar tu sesión",
+      title: "Attention",
+      text: "You are about to log out",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Si, salir",
-      cancelButtonText: "Cancelar",
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "Cancel",
     }).then((res) => {
       if (res.isConfirmed) {
-        toast.success("Sesión cerrada exitosamente. Hasta luego!");
+        toast.success("Session closed successfully. See you later!");
         logout();
 
         navigate("/login");
@@ -27,13 +28,13 @@ const Navbar = () => {
   };
 
   return (
-    <header className="header " id="desktop">
+    <header className="header" id="desktop">
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
         <div className="container">
           <Link to="/">
             <img
               src="https://i.postimg.cc/VvvFvjYT/logo.png"
-              alt="logo"
+              alt="logo of restaurant"
               className="imgLogo mx-5"
             ></img>
           </Link>
@@ -91,7 +92,7 @@ const Navbar = () => {
                       aria-current="page"
                       to="/checkout"
                     >
-                      Pedidos
+                      Orders
                     </NavLink>
                   </div>
                 </li>
@@ -105,7 +106,7 @@ const Navbar = () => {
                       aria-current="page"
                       to="/myaccount"
                     >
-                      Perfil
+                      Profile
                     </NavLink>
                   </div>
                 </li>
@@ -173,7 +174,7 @@ const Navbar = () => {
               </Link>
             ) : (
               <button className="btnSg" type="button" onClick={handleLogout}>
-                Logout
+                Log Out
               </button>
             )}
           </div>

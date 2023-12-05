@@ -5,7 +5,6 @@ import { useMutation } from "@tanstack/react-query";
 
 import { Link, useNavigate } from "react-router-dom";
 
-// import { useNavigate } from "react-router-dom";
 
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
@@ -16,21 +15,15 @@ import "./registerStyle.css";
 import { toast } from "sonner";
 
 const Register = () => {
-  // ZUSTAND --------------------------------------------
-
   const { login } = useSession();
-  // RRD -----------------------------------------------------
-  const navigate = useNavigate();
 
-  // RHF -----------------------------------------------------
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit: onSubmitRHF,
     formState: { errors },
   } = useForm();
-
-  // Tquery -----------------------------------------------------
 
   const { mutate: postUser } = useMutation({
     mutationFn: postUserFn,
@@ -58,11 +51,10 @@ const Register = () => {
     },
     onError: () => {
       Swal.close();
-      toast.error("Ocurrio un error al registrar el usuario !!!");
+      toast.error("An error occurred while registering the user.");
     },
   });
 
-  // Handlers -----------------------------------------------------
 
   const handleSubmit = (data) => {
     Swal.showLoading();
@@ -70,7 +62,6 @@ const Register = () => {
     console.log(data)
   };
 
-  // Render -----------------------------------------------------
 
   return (
     <>
@@ -95,7 +86,7 @@ const Register = () => {
                         maxLength: 60,
                       }}
                       name="firstname"
-                      placeholder="First Name"
+                      placeholder="Firstname"
                       error={!!errors.firstname}
                     ></Input>
                     <div className="col-sm-6"></div>
@@ -107,7 +98,7 @@ const Register = () => {
                         maxLength: 60,
                       }}
                       name="lastname"
-                      placeholder="Last Name"
+                      placeholder="Lastname"
                       error={!!errors.lastname}
                     ></Input>
                     <Input
@@ -119,7 +110,7 @@ const Register = () => {
                       }}
                       type="email"
                       name="email"
-                      placeholder="Email Address"
+                      placeholder="Email address"
                       error={!!errors.email}
                     ></Input>
 
@@ -132,22 +123,22 @@ const Register = () => {
                       }}
                       type="password"
                       name="password"
-                      placeholder="password"
+                      placeholder="Password"
                       error={!!errors.password}
                     ></Input>
                     <button
                       type="submit"
                       className="btn btn-primary button btn-user btn-block"
                     >
-                      Sing Up
+                      Sign Up
                     </button>
                   </form>
 
                   <div className="text-center">
                     <p className="small">
-                      Already have an account?
+                      ¿Already have an account?
                       <Link to={"/login"} className="fw-bolder">
-                        Login
+                        Log In
                       </Link>
                     </p>
                   </div>

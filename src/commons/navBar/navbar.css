@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Noto+Sans+JP:wght@100;400;500;700&display=swap");
+#desktop {
+  display: block;
+}
+
+#mobileFirst {
+  display: none;
+}
 
 header {
   font-family: "Noto Sans JP", sans-serif;
 }
+
 .header {
   display: flex;
   height: 85px;
@@ -33,6 +41,7 @@ header {
 .imgLogo {
   height: 3rem;
 }
+
 button {
   appearance: none;
   background-color: #fafbfc;
@@ -93,16 +102,6 @@ button:-webkit-details-marker {
   display: none;
 }
 
-#desktop {
-  display: block;
-}
-#mobileFirst {
-  display: none;
-}
-
-/*
-control de los nav version mobile y desktop
-*/
 @media screen and (max-width: 991px) {
   #desktop {
     display: none;
@@ -117,9 +116,8 @@ control de los nav version mobile y desktop
 }
 
 .activeLink {
-  /* Estilos específicos para cuando el enlace está activo */
-  font-weight: bold; /* Puedes ajustar según tus preferencias */
-  color: #f74702; /* Puedes ajustar según tus preferencias */
+  font-weight: bold;
+  color: #f74702;
 }
 
 .btnLg {
@@ -127,6 +125,7 @@ control de los nav version mobile y desktop
   color: #f3f4f6;
   border: #eceff1;
 }
+
 .btnLg:hover {
   background-color: #e66b07;
   color: #f3f4f6;
@@ -138,6 +137,7 @@ control de los nav version mobile y desktop
   border: #eceff1;
   color: #f3f4f6;
 }
+
 .btnSg:hover {
   background-color: #b60606 !important;
   border: #050505;

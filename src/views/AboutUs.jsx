@@ -10,8 +10,6 @@ const AboutUs = () => {
     <>
       <section className="text-center">
         <article>
-          {/* Primera sección */}
-
           <img src={grillImage} alt="Grill meat" className="grill-image" />
           <div className="position-absolute first-text">
             <h1 className="text-light flame-title">FLAME GRILLED, JUST TASTES BETTER!</h1>
@@ -19,7 +17,6 @@ const AboutUs = () => {
           </div>
         </article>
       </section>
-      {/* Segunda sección */}
       <article className="text-center container">
         <p className="grill-subtitle">
           GRILL &amp; THRILL
@@ -44,7 +41,6 @@ const AboutUs = () => {
           hearts for your continued support.
         </p>
       </article>
-      {/* Tercera sección */}
       <article>
         <div className="back-three">
           <p className="text-members text-center">MEMBERS</p>

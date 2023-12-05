@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useSession } from "../stores/useSessions"
-import Swal from "sweetalert2";
 import { toast } from "sonner";
+import Swal from "sweetalert2";
+
+import { useSession } from "../stores/useSessions"
 
 const LogoutBtn = () => {
     const {isLoggedIn, logout} = useSession();
@@ -10,7 +11,7 @@ const LogoutBtn = () => {
 
     const handleLogout = () => {
         Swal.fire({
-          title: "Atention",
+          title: "Attention",
           text: "You're about to log out",
           icon: "warning",
           showCancelButton: true,
@@ -41,8 +42,7 @@ const LogoutBtn = () => {
           type="button"
           onClick={handleLogout}
         >
-          {/* <i className="bi bi-x-octagon mb-1"></i> */}
-          Log out
+          Log Out
         </button>
       </div>
     )}

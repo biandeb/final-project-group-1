@@ -1,29 +1,13 @@
 import { NavLink } from "react-router-dom";
 
-import "./navbar.css";
 import { useSession } from "../../stores/useSessions";
+
+import "./navbar.css";
 
 
 const NavBarMobile = () => {
-  // const navigate = useNavigate();
   const { isLoggedIn, user } = useSession();
-  // const handleLogout = () => {
-  //   Swal.fire({
-  //     title: "Atención",
-  //     text: "Estás por cerrar tu sesión",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonText: "Si, salir",
-  //     cancelButtonText: "Cancelar",
-  //   }).then((res) => {
-  //     if (res.isConfirmed) {
-  //       toast.success("Sesión cerrada exitosamente. Hasta luego!");
-  //       logout();
 
-  //       navigate("/login");
-  //     }
-  //   });
-  // };
   return (
     <header className="header" id="mobileFirst">
       <nav className="navbar bg-body-tertiary fixed-bottom border-top">
@@ -35,7 +19,7 @@ const NavBarMobile = () => {
                   className={`nav-link text-secondary ${({ isActive }) =>
                     isActive ? "active" : ""}`}
                   aria-current="page"
-                  to="/Home"
+                  to="/"
                 >
                   <i className="bi bi-house fs-2 text-secondary "></i>
                 </NavLink>
