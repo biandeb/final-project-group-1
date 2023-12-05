@@ -80,7 +80,7 @@ const HomeDesktop = () => {
                     Succulent sirloin, meticulously marinated in a blend of
                     savory herbs and spices, imparting a symphony of flavors
                   </p>
-                  <Link to="/login" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order-one">
                     Order now
                   </Link>
                 </div>
@@ -101,7 +101,7 @@ const HomeDesktop = () => {
                     Experience the pinnacle of flavor with our premium burger,
                     elevated by the bold kick of house-made spicy hot sauce
                   </p>
-                  <Link to="/login" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order-two">
                     Order now
                   </Link>
                 </div>
@@ -123,7 +123,7 @@ const HomeDesktop = () => {
                     fragrant thyme and zesty lemon, for a truly flavorful
                     delight
                   </p>
-                  <Link to="/login" className="btn btn-order">
+                  <Link to="/login" className="btn btn-order-three">
                     Order now
                   </Link>
                 </div>

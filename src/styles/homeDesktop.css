@@ -17,7 +17,7 @@
     margin-top: 6%;
     margin-bottom: 6%;
 }
-.btn-order{
+.btn-order-one, .btn-order-two, .btn-order-three{
     background-color: #D1470B;
     color: #f9f9f9;
     text-shadow: 2px 2px 1px rgb(0, 0, 0);
