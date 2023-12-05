@@ -26,33 +26,36 @@ const TableNumberInput = () => {
   };
 
   return (
-    <>
+    <div className="ms-5">
       <h5>Enter your table number here:</h5>
 
-      <form className="w-md-50" onSubmit={onSubmitRHF(handleSubmit)}>
-                <Input
-                  register={register}
-                  option={{
-                    required: true,
-                    min: {
-                      value: 1,
-                      message: "El número debe ser mayor o igual a 1",
-                    },
-                    max: {
-                      value: 20,
-                      message: "El número debe ser menor o igual a 25",
-                    },
-                  }}
-                  type="number"
-                  label="Table Number"
-                  name="tablenumber"
-                  placeholder="0"
-                  error={!!errors.tablenumber}
-                />
-                <button className="submit-btn mt-2">Save</button>
-              </form>
+      <form
+        className="w-md-50 table-input"
+        onSubmit={onSubmitRHF(handleSubmit)}
+      >
+        <Input
+          register={register}
+          option={{
+            required: true,
+            min: {
+              value: 1,
+              message: "El número debe ser mayor o igual a 1",
+            },
+            max: {
+              value: 20,
+              message: "El número debe ser menor o igual a 25",
+            },
+          }}
+          type="number"
+          label="Table Number"
+          name="tablenumber"
+          placeholder="0"
+          error={!!errors.tablenumber}
+        />
+        <button className="submit-btn mt-2 px-5">Save</button>
+      </form>
       <TableNumber />
-    </>
+    </div>
   );
 };
 

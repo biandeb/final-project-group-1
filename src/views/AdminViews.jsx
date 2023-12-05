@@ -1,13 +1,11 @@
-import Admin from "../components/Admin/Admin"
-
+import Admin from "../components/Admin/Admin";
 
 const AdminViews = () => {
   return (
-      <section className="container">
-          <Admin></Admin>
+    <section className="container">
+      <Admin></Admin>
+    </section>
+  );
+};
 
-      </section>
-          )
-}
-
-export default AdminViews
+export default AdminViews;

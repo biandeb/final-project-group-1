@@ -15,7 +15,10 @@ const FormContact = () => {
 
   return (
     <section className="text-form">
-      <form onSubmit={handleSubmit(newMessage)} className="container form-inputs">
+      <form
+        onSubmit={handleSubmit(newMessage)}
+        className="container form-inputs"
+      >
         <fieldset>
           <label htmlFor="name-input" className="form-label">
             Name

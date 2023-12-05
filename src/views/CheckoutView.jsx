@@ -1,14 +1,15 @@
+import LogoutBtn from "../commos/LogoutBtn";
 import Checkout from "../components/UserView/Checkout/Checkout";
 
-import "../components/UserView/userStyles.css"
-import { useOrder } from "../stores/useOrder";
+import "../components/UserView/userStyles.css";
 
 const CheckoutView = () => {
-  const{ clearProductOrder} = useOrder()
   return (
     <>
+      <div className="d-flex justify-content-end me-3 mb-5">
+        <LogoutBtn />
+      </div>
       <Checkout />
-      <button className="ms-2" onClick={clearProductOrder}>Clear order</button>
     </>
   );
 };
