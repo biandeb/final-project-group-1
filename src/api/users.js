@@ -8,7 +8,7 @@ export const postUserFn = async (data) => {
       "Content-type": "application/json",
     },
   });
-
+  console.log(data)
   if (!res.ok) {
     throw new Error("An error occurred while registering an user");
   }

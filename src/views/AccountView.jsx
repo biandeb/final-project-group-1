@@ -8,27 +8,27 @@ import { useNavigate } from "react-router-dom";
 import LogoutBtn from "../commos/LogoutBtn";
 
 const AccountView = () => {
-  const { logout } = useSession();
+  // const { logout } = useSession();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogout = () => {
-    Swal.fire({
-      title: "Atención",
-      text: "Estás por cerrar tu sesión",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Si, salir",
-      cancelButtonText: "Cancelar",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        toast.success("Sesión cerrada exitosamente. Hasta luego!");
-        logout();
+  // const handleLogout = () => {
+  //   Swal.fire({
+  //     title: "Atención",
+  //     text: "Estás por cerrar tu sesión",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonText: "Si, salir",
+  //     cancelButtonText: "Cancelar",
+  //   }).then((res) => {
+  //     if (res.isConfirmed) {
+  //       toast.success("Sesión cerrada exitosamente. Hasta luego!");
+  //       logout();
 
-        navigate("/login");
-      }
-    });
-  };
+  //       navigate("/login");
+  //     }
+  //   });
+  // };
 
   return (
     <>
