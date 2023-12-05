@@ -38,6 +38,7 @@
 .grill-image{
     height: 100%;
     width: 100%;
+    margin-top: -1%;
 }
   
 .grill-subtitle{
@@ -56,7 +57,8 @@
     padding: 3%;
     background-color: #3e1706;
     max-width: 100%;
-    padding-bottom: 5%;
+    padding-bottom: 6%;
+    margin-bottom: -3%;
 }
 
 .first-member{
@@ -214,14 +216,16 @@
     .flame-title{
         font-size: 20px;
         position: relative;
-        bottom: 100px;
+        bottom: 80px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
-    
+    .grill-image{
+        margin-top: -13%;
+    }
     .grill-title{
         font-size: 15px;
         position: relative;
-        bottom: 140px;
+        bottom: 120px;
         text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
     }
       
@@ -236,7 +240,7 @@
 
 .back-three{
     background-color: #3e1706;
-    max-width: 100%;
+    margin-bottom: -80%;
 }
 
 .first-member{
@@ -389,21 +393,23 @@
 .flame-title{
     font-size: 45px;
     position: relative;
-    bottom: 90px;
+    bottom: 100px;
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
 }
 
 .grill-title{
     font-size: 35px;
     position: relative;
-    bottom: 115px;
+    bottom: 135px;
     text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
 }
   
 .grill-subtitle{
     font-size: 35px;
 }
-
+.grill-image{
+    margin-top: -7%;
+}
 .grill-text{
     font-size: 14px;
 }

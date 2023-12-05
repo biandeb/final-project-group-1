@@ -1,4 +1,4 @@
-import grillImage from "../img/grill3.jpg";
+import grillImage from "../img/grill3.webp";
 import bianca from "../img/deblinger-bianca.jpeg";
 import juliana from "../img/elias-juliana.jpeg";
 import martin from "../img/cardozo-martin.jpeg";
