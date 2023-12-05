@@ -23,10 +23,12 @@
   margin-bottom: 3%;
 }
 
-.back-photo {
-  background-image: url(https://wallpapercave.com/wp/wp3617900.jpg);
-  background-size: cover;
-  position: relative;
+.back-photo{
+    background-image: url(../img/back-contact.webp);
+    background-size: cover;
+    position: relative;
+    margin-top: -1%;
+    margin-bottom: -3%;
 }
 
 .back-photo::before {
@@ -70,22 +72,25 @@
   }
 }
 
-.map-restaurant {
-  width: 100%;
-  height: 70vh;
+.map-restaurant{
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 10%;
 }
 
 @media (max-width: 767px) {
-  #mobileFirst {
-    padding: 0;
-  }
-
-  .form-content {
-    margin-bottom: 13%;
-    border-radius: 25px;
-    width: 70%;
-    margin-top: 0.1px;
-  }
+    #mobileFirst{
+        padding: 0;
+    }
+    .back-photo{
+        margin-top: -13%;
+    }
+    .form-content{
+        margin-bottom: 20%;
+        border-radius: 25px;
+        width: 70%;
+        margin-top: 0.1px;
+    }
 
   .text-form {
     font-size: 18px;
@@ -106,39 +111,44 @@
     font-size: 75%;
   }
 
-  .form-inputs {
-    font-size: 70%;
-    height: 58vh;
-    width: 50vw;
-    padding: 2%;
-  }
+    .form-inputs {
+        font-size: 70%;
+        height: 50vh;
+        width: 50vw;
+        padding: 2%;
+    }
 
   .btn-submit {
     font-size: 12px;
     margin-top: 2px;
   }
 
-  .map-restaurant {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+    .map-restaurant{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 22%;
+    }
 
-  .header {
-    height: 0;
-  }
+    .header{
+        height: 0;
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  #mobileFirst {
-    padding: 0;
-  }
-
-  .map-restaurant {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
+    #mobileFirst{
+        padding: 0;
+    }
+    .back-photo{
+        margin-top: -7%;
+        margin-bottom: 2%;
+    }
+    .map-restaurant{
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15%;
+    }
 
   .header {
     height: 0;
@@ -148,11 +158,14 @@
     font-size: 40px;
   }
 
-  .form-content {
-    padding: 6%;
-    font-size: 14px;
-    width: 60%;
-  }
+    .form-content {
+        padding: 6%;
+        font-size: 14px;
+        width: 60%;
+    }
+    .back-map{
+        margin-bottom: 30%;
+    }
 
   .btn-submit {
     font-size: 15px;

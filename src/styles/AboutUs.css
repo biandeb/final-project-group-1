@@ -19,7 +19,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Ajusta el ancho según tus necesidades */
+  width: 80%;
 }
 
 .background-container {
@@ -27,8 +27,7 @@
     0,
     0,
     0
-  ); /* Ajusta la transparencia según sea necesario */
-  /* padding: 20px; */
+  );
   position: relative;
 }
 
@@ -45,7 +44,7 @@
 .first-text {
   position: absolute;
 
-  top: 25%;
+  top: 19%;
 
   left: 50%;
   transform: translate(-50%, -50%);
@@ -59,9 +58,10 @@
   margin-bottom: 5px;
 }
 
-.grill-image {
-  height: 100%;
-  width: 100%;
+.grill-image{
+    height: 100%;
+    width: 100%;
+    margin-top: -1%;
 }
 
 .grill-subtitle {
@@ -76,10 +76,11 @@
   margin-bottom: 7%;
 }
 
-.back-three {
-  padding: 5%;
-  background-color: #3e1706;
-  max-width: 100%;
+.back-three{
+    padding: 3%;
+    background-color: #3e1706;
+    max-width: 100%;
+    padding-bottom: 7%;
 }
 
 .first-member {
@@ -223,67 +224,43 @@
 }
 
 @media (max-width: 767px) {
-  #mobileFirst {
-    padding: 0;
-  }
-
-  .header {
-    height: 0;
-  }
-
-  h1 {
-    font-size: 25px;
-    bottom: 390px;
+    #mobileFirst{
+        padding: 0;
+    }
     
-  }
-
-  h2 {
-    font-size: 18px;
-    position: relative;
-    bottom: 420px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
-  }
-
-  .grill-subtitle {
-    font-size: 20px;
-    margin-bottom: 1%;
-  }
-
-  .grill-text {
-    font-size: 10px;
-  }
-}
-/* FOTOS */
-.back-three {
-  padding: 7%;
-
-  .flame-title {
-    font-size: 20px;
-    position: relative;
-    bottom: 100px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
-  }
-
-  .grill-title {
-    font-size: 15px;
-    position: relative;
-    bottom: 140px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
-  }
-
-  .grill-subtitle {
-    font-size: 18px;
-    margin-bottom: 0;
-  }
-
-  .grill-text {
-    font-size: 10px;
-  }
+    .header{
+        height: 0;
+    }
+    
+    .flame-title{
+        font-size: 20px;
+        position: relative;
+        bottom: 55px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+    }
+    .grill-image{
+        margin-top: -13%;
+    }
+    .grill-title{
+        font-size: 15px;
+        position: relative;
+        bottom: 90px;
+        text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
+    }
+      
+    .grill-subtitle{
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    
+    .grill-text{
+        font-size: 10px;
+    }
 
   .back-three {
     background-color: #3e1706;
-    max-width: 100%;
-  }
+    margin-bottom: -80%;
+}
 
   .first-member {
     border-radius: 50%;
@@ -444,21 +421,23 @@
   .flame-title {
     font-size: 45px;
     position: relative;
-    bottom: 90px;
+    bottom: 60px;
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
   }
 
   .grill-title {
     font-size: 35px;
     position: relative;
-    bottom: 115px;
+    bottom: 90px;
     text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.932);
   }
 
   .grill-subtitle {
     font-size: 35px;
   }
-
+  .grill-image{
+    margin-top: -9%;
+  }
   .grill-text {
     font-size: 14px;
   }
@@ -633,9 +612,9 @@
 
   .grill-subtitle {
     font-size: 35px;
-  }
+}
 
-  .grill-text {
+.grill-text{
     font-size: 14px;
   }
 
