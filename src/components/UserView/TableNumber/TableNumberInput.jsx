@@ -4,8 +4,8 @@ import Input from "../../Input/Input";
 import "../userStyles.css";
 import "../../../index.css";
 
-import TableNumber from "./TableNumber";
-import { useTable } from "../../../stores/useTable";
+import TableNumber from "./TableNumber.jsx";
+import { useTable } from "../../../stores/useTable.js";
 
 const TableNumberInput = () => {
   const {
