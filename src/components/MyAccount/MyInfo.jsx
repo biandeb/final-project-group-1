@@ -27,9 +27,19 @@ const MyInfo = (props) => {
     return (
       <div className="mt-5 mb-5">
         <h5>Reset your password</h5>
-        <p>Your new password must have at least one number, one lowercase letter, one uppercase letter,one special character and at least 8 characters</p>
-        <PasswordForm user={user} setIsEditingPassword = {setIsEditingPassword} isEditingPassword={isEditingPassword}/>
-        <button onClick={handleCancel} className="w-50 align-self-center mt-4 btn-cancel">
+        <p>
+          Your new password must have at least one number, one lowercase letter,
+          one uppercase letter,one special character and at least 8 characters
+        </p>
+        <PasswordForm
+          user={user}
+          setIsEditingPassword={setIsEditingPassword}
+          isEditingPassword={isEditingPassword}
+        />
+        <button
+          onClick={handleCancel}
+          className="w-50 align-self-center mt-4 btn-cancel"
+        >
           Cancel
         </button>
       </div>
@@ -60,8 +70,16 @@ const MyInfo = (props) => {
           <p>Email: {user.email}</p>
 
           <div className="d-flex gap-3">
-            <Button title={"Edit"} onClick={handleEdit} className="btn-success"></Button>
-            <Button title={"Reset password"} onClick={handleEditPassword} className="btn-success"></Button>
+            <Button
+              title={"Edit"}
+              onClick={handleEdit}
+              className="btn-success"
+            ></Button>
+            <Button
+              title={"Reset password"}
+              onClick={handleEditPassword}
+              className="btn-success"
+            ></Button>
           </div>
         </div>
       )}

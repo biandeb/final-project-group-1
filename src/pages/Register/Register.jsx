@@ -5,8 +5,6 @@ import { useMutation } from "@tanstack/react-query";
 
 import { Link } from "react-router-dom";
 
-
-
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
 
@@ -15,7 +13,6 @@ import Input from "../../components/Input/Input.jsx";
 import "./registerStyle.css";
 
 const Register = () => {
-
   const { login } = useSession();
 
   const {
@@ -53,7 +50,6 @@ const Register = () => {
     Swal.showLoading();
     postUser({ ...data, isAdmin: false, isAuthenticated: false });
   };
-
 
   return (
     <>

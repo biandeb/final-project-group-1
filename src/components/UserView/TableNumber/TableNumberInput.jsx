@@ -17,7 +17,6 @@ const TableNumberInput = () => {
 
   const { setTableNumber } = useTable();
 
-
   const handleSubmit = (tablenumber) => {
     setTableNumber(tablenumber);
   };

@@ -39,8 +39,8 @@ const Checkout = () => {
   });
 
   const handleOrder = () => {
-    if(productsOrdered.length === 0){
-      console.log('no hay nada en el carrito');
+    if (productsOrdered.length === 0) {
+      console.log("no hay nada en el carrito");
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -60,18 +60,17 @@ const Checkout = () => {
             ...product,
             id: undefined,
           }));
-  
+
           const newOrder = {
             productsOrdered: products,
             userId: userId,
           };
-  
+
           postOrders(newOrder);
           clearProductOrder();
         }
       });
     }
-    
   };
 
   return (
@@ -92,7 +91,11 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <Button title={"Clear Order"} onClick={clearProductOrder} className={"bg-warning text-dark m-4 p-2 fs-5"}></Button>
+      <Button
+        title={"Clear Order"}
+        onClick={clearProductOrder}
+        className={"bg-warning text-dark m-4 p-2 fs-5"}
+      ></Button>
       <div className="order-btn-container  text-light">
         <button className="btn-order" onClick={handleOrder}>
           Confirm order

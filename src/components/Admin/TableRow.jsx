@@ -4,14 +4,14 @@ import { toast } from "sonner";
 import Swal from "sweetalert2";
 
 import { useProduct } from "../../stores/useProduct";
-import { deleteProductFn,  putProductsFn } from "../../api/products.js";
+import { deleteProductFn, putProductsFn } from "../../api/products.js";
 
 const TableRow = (props) => {
   const { product, index } = props;
   const { setProductIsEdit } = useProduct();
   const queryClient = useQueryClient();
 
-  const [availability, setAvailability] = useState(product.isAvailable)
+  const [availability, setAvailability] = useState(product.isAvailable);
 
   const { mutate: deleteProduct } = useMutation({
     mutationFn: deleteProductFn,
@@ -67,7 +67,7 @@ const TableRow = (props) => {
   const handleAvailability = () => {
     const newAvailability = !availability;
     setAvailability(newAvailability);
-    const updatedProduct = {...product, isAvailable: newAvailability};
+    const updatedProduct = { ...product, isAvailable: newAvailability };
     putProductsFn(updatedProduct, newAvailability);
   };
 

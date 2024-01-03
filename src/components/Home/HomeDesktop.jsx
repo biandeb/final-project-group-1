@@ -24,10 +24,18 @@ const HomeDesktop = () => {
           >
             <div className="carousel-inner">
               <div className="carousel-item active" data-bs-interval="5000">
-                <img src={bannerOne} className="d-block w-100" alt="Banner one of food"></img>
+                <img
+                  src={bannerOne}
+                  className="d-block w-100"
+                  alt="Banner one of food"
+                ></img>
               </div>
               <div className="carousel-item" data-bs-interval="5000">
-                <img src={bannerTwo} className="d-block w-100" alt="Banner two of food"></img>
+                <img
+                  src={bannerTwo}
+                  className="d-block w-100"
+                  alt="Banner two of food"
+                ></img>
               </div>
               <div className="carousel-item" data-bs-interval="5000">
                 <img
