@@ -15,7 +15,7 @@ export const postLoginFn = async (formData) => {
 
   if (!response.ok) {
     const message = data.message;
-    throw new Error(message || "Ocurrio un error al loguearse");
+    throw new Error(message || "An error occurred while logging in");
   }
 
   const token = data.data;

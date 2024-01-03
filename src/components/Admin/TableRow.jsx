@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import Swal from "sweetalert2";
 
 import { useProduct } from "../../stores/useProduct";
-import { deleteProductFn,  putProductsFn } from "../../api/products.js"; // Asume que ya tienes una función para activar/desactivar
+import { deleteProductFn,  putProductsFn } from "../../api/products.js";
 
 const TableRow = (props) => {
   const { product, index } = props;

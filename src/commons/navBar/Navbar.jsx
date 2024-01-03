@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import { useSession } from "../../stores/useSessions";
 
 import "./navbar.css";
+import Button from "../../components/Button/Button";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -170,12 +172,11 @@ const Navbar = () => {
             </ul>
             {!isLoggedIn ? (
               <Link to="/login">
-                <button className="ms-5 btnLg">Log In</button>
+                <Button title={"Sign In"}></Button>
               </Link>
             ) : (
-              <button className="btnSg" type="button" onClick={handleLogout}>
-                Log Out
-              </button>
+              <Button title={"Log Out"} onClick={handleLogout}></Button>
+              
             )}
           </div>
         </div>

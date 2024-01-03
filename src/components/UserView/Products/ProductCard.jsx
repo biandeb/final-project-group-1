@@ -5,9 +5,12 @@ import "../userStyles.css";
 
 import { useOrder } from "../../../stores/useOrder.js";
 import Counter from "./Counter.jsx";
+import { useSession } from "../../../stores/useSessions.js";
+import Button from "../../Button/Button.jsx";
 
 
 const ProductCard = (props) => {
+  const { isLoggedIn } = useSession();
   const { product } = props;
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -40,10 +43,9 @@ const ProductCard = (props) => {
       <div className="row">
         <div className="col-6">
           <h5>{product.name}</h5>
-          <button onClick={handleShowModal} className="btn btn-outline-secondary w-100 mb-5 mt-3">
-            <i className="bi bi-plus-lg"></i>
-            Info
-          </button>
+
+          <Button title={"Details"} onClick={handleShowModal} className={"mt-3 mb-3"}></Button>
+         
         </div>
         <div className="col-6">
           <img
@@ -53,23 +55,26 @@ const ProductCard = (props) => {
           ></img>
         </div>
       </div>
-
-      <div className="d-flex justify-content-between">
-        <h5>${product.price}</h5>
-        <Counter
-          count={count}
-          setCount={setCount}
-          context={context}
-          productId={product.id}
-          product={product}
-        />
-      </div>
+     
+        <article>
+          <div className="d-flex justify-content-between">
+            <h5>${product.price}</h5>
+            <Counter
+              count={count}
+              setCount={setCount}
+              context={context}
+              productId={product.id}
+              product={product}
+            />
+          </div>
+        </article>
+      
 
       <div className="text-end mt-2">
-        <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
-          Add
-        </button>
+        <Button title={"Add"} onClick={handleOrder} className={"w-100 "}></Button>
       </div>
+
+      {/* Modal para mostrar detalles */}
       <div
         className={`modal fade${showModal ? " show" : ""}`}
         tabIndex="-1"

@@ -25,8 +25,9 @@ const Router = () => {
   return (
     <BrowserRouter>
       <NavBarMain></NavBarMain>
-      <main className="mt-5">
+      <main className="">
         <Routes>
+          <Route exact path="/" element={<HomeView />} />
           <Route
             path="/register"
             element={
@@ -52,14 +53,37 @@ const Router = () => {
           />
 
           <Route exact path="/about-us" element={<AboutUs />} />
-          <Route exact path="/order" element={<OrderView />} />
+          <Route
+            exact
+            path="/order"
+            element={
+              !user?.isAdmin ? <OrderView /> : <Navigate to="/login"></Navigate>
+            }
+          />
           <Route exact path="/checkout" element={<CheckoutView />} />
-          <Route exact path="/orderstatus" element={<OrderStatus />} />
+          <Route
+            exact
+            path="/orderstatus"
+            element={
+              isLoggedIn ? <OrderStatus /> : <Navigate to="/login"></Navigate>
+            }
+          />
           <Route exact path="/contact-us" element={<Contact />} />
-          <Route exact path="/myaccount" element={<AccountView />} />
-          <Route exact path="/" element={<HomeView />} />
-          <Route exact path="/stats" element={<StatsView />} />
-          <Route exact path="/register" element={<RegisterViews />} />
+          <Route
+            exact
+            path="/myaccount"
+            element={
+              isLoggedIn ? <AccountView /> : <Navigate to="/login"></Navigate>
+            }
+          />
+          <Route
+            exact
+            path="/stats"
+            element={
+              isLoggedIn ? <StatsView /> : <Navigate to="/login"></Navigate>
+            }
+          />
+
         </Routes>
         <Toaster position="top-right" richColors />
       </main>

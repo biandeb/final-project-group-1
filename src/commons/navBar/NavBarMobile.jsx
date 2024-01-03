@@ -9,8 +9,7 @@ const NavBarMobile = () => {
   const { isLoggedIn, user } = useSession();
 
   return (
-    <header className="header" id="mobileFirst">
-      <nav className="navbar bg-body-tertiary fixed-bottom border-top">
+      <nav className="navbar bg-body-tertiary fixed-bottom border-top mt-5" id="mobileFirst">
         <ul className="nav-links mx-auto">
           {!user?.isAdmin && (
             <li>
@@ -75,7 +74,7 @@ const NavBarMobile = () => {
           )}
         </ul>
       </nav>
-    </header>
+  
   );
 };
 

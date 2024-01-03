@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import UserForm from "./UserForm";
 import PasswordForm from "./PasswordForm";
+import Button from "../Button/Button";
 
 const MyInfo = (props) => {
   const { user } = props;
@@ -59,12 +60,8 @@ const MyInfo = (props) => {
           <p>Email: {user.email}</p>
 
           <div className="d-flex gap-3">
-            <button onClick={handleEdit} className="btn-edit">
-              Edit
-            </button>
-            <button onClick={handleEditPassword} className="btn-edit">
-              Reset password
-            </button>
+            <Button title={"Edit"} onClick={handleEdit} className="btn-success"></Button>
+            <Button title={"Reset password"} onClick={handleEditPassword} className="btn-success"></Button>
           </div>
         </div>
       )}
