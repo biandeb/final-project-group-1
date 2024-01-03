@@ -10,7 +10,6 @@ import { postProductsFn, putProductsFn } from "../../api/products";
 import { useProduct } from "../../stores/useProduct";
 
 const AdminForm = () => {
-  // RHF -----------------------------------------------------
 
   const {
     register,
@@ -20,7 +19,6 @@ const AdminForm = () => {
     setValue,
   } = useForm();
 
-  // Zustand -------------------------------------------------
   const { product, clearProduct } = useProduct();
 
   const isEditing = !!product;
@@ -31,14 +29,13 @@ const AdminForm = () => {
     setValue("description", product.description);
   }
 
-  //  Tquery -----------------------------------------------------
   const queryClient = useQueryClient();
-  //Post
+
   const { mutate: postProdcuts } = useMutation({
     mutationFn: postProductsFn,
     onSuccess: () => {
       Swal.close();
-      toast.success("producto guardado correctamente");
+      toast.success("Product saved correctly.");
       reset();
 
       queryClient.invalidateQueries("products");
@@ -46,15 +43,15 @@ const AdminForm = () => {
     onError: () => {
       Swal.close();
 
-      toast.error("ocurrio un error al guardar el procuto");
+      toast.error("An error occurred while saving the product.");
     },
   });
-  //PUT
+
   const { mutate: putProdcuts } = useMutation({
     mutationFn: putProductsFn,
     onSuccess: () => {
       Swal.close();
-      toast.success("producto editado correctamente");
+      toast.success("Product edited correctly.");
 
       reset();
       clearProduct();
@@ -64,11 +61,9 @@ const AdminForm = () => {
     onError: () => {
       Swal.close();
 
-      toast.error("ocurrio un error al editar el procuto");
+      toast.error("An error occurred while editing the product.");
     },
   });
-
-  //  Handle -----------------------------------------------------
 
   const handleSubmit = (data) => {
     Swal.showLoading();
@@ -80,10 +75,9 @@ const AdminForm = () => {
   };
 
   const handleCancelEdition = () => {
-    // Resetear el formulario
+
     reset();
 
-    // Limpiar estado global
     clearProduct();
   };
   return (
@@ -100,7 +94,7 @@ const AdminForm = () => {
                 </div>
                 {isEditing && (
                   <div className="alert alert-info">
-                    Estás editando el producto &quot;
+                    You are editing the product &quot;
                     <span className="fw-bold">{product.name}</span>&quot;
                   </div>
                 )}
@@ -117,7 +111,7 @@ const AdminForm = () => {
                       maxLength: 60,
                     }}
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     error={!!errors.name}
                   ></Input>
                   <Input
@@ -132,7 +126,7 @@ const AdminForm = () => {
                     type="url"
                     label="Enlace a imagen"
                     name="image"
-                    placeholder="https://google.com"
+                    placeholder="Image URL"
                     error={!!errors.image}
                   />
                   <Input
@@ -157,7 +151,7 @@ const AdminForm = () => {
                     }}
                     className="mt-2"
                     name="description"
-                    placeholder="description the product"
+                    placeholder="Product description"
                     error={!!errors.description}
                   />
                   <button
@@ -172,7 +166,7 @@ const AdminForm = () => {
                       className="ms-2 btn btn-secondary"
                       onClick={handleCancelEdition}
                     >
-                      Cancelar edición
+                      Cancel edition
                     </button>
                   )}
                 </form>

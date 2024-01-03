@@ -1,12 +1,13 @@
-import Input from "../Input/Input";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import Swal from "sweetalert2";
-import { putPasswordFn } from "../../api/users";
 import { toast } from "sonner";
+import Swal from "sweetalert2";
+
+import { putPasswordFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
-import { useEffect } from "react";
-// import { useSession } from "../../stores/useSessions";
+import Input from "../Input/Input";
+
 
 const PasswordForm = (props) => {
   const { setIsEditingPassword } = props;
@@ -29,17 +30,14 @@ const PasswordForm = (props) => {
   }, [password, setValue]);
 
 
-  //useMutation para UPDATE(PUT)
   const { mutate: putPassword } = useMutation({
     mutationFn: putPasswordFn,
-    //mensaje de exito
+
     onSuccess: () => {
-      //   login(data.data);
 
       Swal.close();
-      toast.success("Your password was correctly updated");
+      toast.success("Your password was correctly updated.");
 
-      //resetear el form
       reset();
     },
 
@@ -49,15 +47,12 @@ const PasswordForm = (props) => {
     },
   });
 
-  // HANDLERS____________________________
-
   const handleSubmit = (data) => {
     Swal.showLoading();
 
     putPassword({ data, user });
     console.log(data, user);
 
-    //volver a myinfo
     setIsEditingPassword(false);
   };
 
@@ -72,12 +67,11 @@ const PasswordForm = (props) => {
         }}
         type="password"
         name="password"
-        placeholder="password"
+        placeholder="Password"
         error={!!errors.password}
       ></Input>
       <div className="d-flex gap-3 justify-content-center">
         <button
-          // type="submit"
           className="btn btn-primary button btn-save w-50"
         >
           Save

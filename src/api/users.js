@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const postUserFn = async (data) => {
-  const res = await fetch(`${API_URL}/users/`, {
+  const response = await fetch(`${API_URL}/users`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -31,7 +31,7 @@ export const getUserByIdFn = async (id) => {
   const res = await fetch(`${API_URL}/users/${id}`);
 
   if (!res.ok) {
-    throw new Error("An error occured while getting the user");
+    throw new Error("An error occurred while getting the user");
   }
 
   const data = await res.json();

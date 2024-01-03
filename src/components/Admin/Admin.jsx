@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+
 import AdminCards from "./AdminCards";
 import AdminForm from "./AdminForm";
+
 import { getProductsFn } from "../../api/products";
 
 const Admin = () => {
@@ -10,7 +12,6 @@ const Admin = () => {
     isLoading,
   } = useQuery({ queryKey: ["products"], queryFn: getProductsFn });
 
-  //caso de error
   if (isError) {
     return (
       <>
@@ -22,7 +23,7 @@ const Admin = () => {
       </>
     );
   }
-  // caso de todo okey
+
   return (
     <div>
       <AdminForm></AdminForm>

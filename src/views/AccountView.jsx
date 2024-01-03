@@ -1,55 +1,45 @@
 import Account from "../components/MyAccount/Account";
+import LogoutBtn from "../commons/LogoutBtn.jsx";
+
+
 import "../index.css";
 import "../components/MyAccount/accountStyles.css";
-import { useSession } from "../stores/useSessions";
-import Swal from "sweetalert2";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import LogoutBtn from "../commos/LogoutBtn";
 
 const AccountView = () => {
-  const { logout } = useSession();
+  // const { logout } = useSession();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogout = () => {
-    Swal.fire({
-      title: "Atención",
-      text: "Estás por cerrar tu sesión",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Si, salir",
-      cancelButtonText: "Cancelar",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        toast.success("Sesión cerrada exitosamente. Hasta luego!");
-        logout();
+  // const handleLogout = () => {
+  //   Swal.fire({
+  //     title: "Attention",
+  //     text: "You are about to log out",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonText: "Yes, log out",
+  //     cancelButtonText: "Cancel",
+  //   }).then((res) => {
+  //     if (res.isConfirmed) {
+  //       toast.success("Session closed successfully. See you later!");
+  //       logout();
 
-        navigate("/login");
-      }
-    });
-  };
+  //       navigate("/login");
+  //     }
+  //   });
+  // };
 
   return (
-    <>
+    <div className="mb-5 pb-5">
     <div className="d-flex justify-content-end me-5">
     <LogoutBtn />
     </div>
 
       <div className="container-fluid mt-5 pt-5">
         <Account />
-
-        {/* <div className="me-4 d-flex justify-content-end">
-        <button
-          onClick={handleLogout}
-          className="btn w-100 bg-danger text-light m-4 btn-signout"
-        >
-          Sign out
-        </button>
-      </div> */}
       </div>
-    </>
+    </div>
   );
 };
 
-export default AccountView;
+
+export default AccountView

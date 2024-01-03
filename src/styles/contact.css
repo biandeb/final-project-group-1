@@ -88,8 +88,7 @@
     .form-content{
         margin-bottom: 20%;
         border-radius: 25px;
-        width: 70%;
-        margin-top: 0.1px;
+        width: 65%;
     }
 
   .text-form {
@@ -115,7 +114,7 @@
         font-size: 70%;
         height: 50vh;
         width: 50vw;
-        padding: 2%;
+        padding: 5%;
     }
 
   .btn-submit {

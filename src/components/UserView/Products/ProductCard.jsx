@@ -1,9 +1,11 @@
+import { useState } from "react";
+
 import "../../../index.css";
 import "../userStyles.css";
+
 import { useOrder } from "../../../stores/useOrder.js";
 import Counter from "./Counter.jsx";
-import { useState } from "react";
-import { useSession } from "../../../stores/useSessions.js";
+
 
 const ProductCard = (props) => {
   const { isLoggedIn } = useSession();
@@ -41,7 +43,7 @@ const ProductCard = (props) => {
           <h5>{product.name}</h5>
           <button onClick={handleShowModal} className="btn btn-outline-secondary w-100 mb-5 mt-3">
             <i className="bi bi-plus-lg"></i>
-            info
+            Info
           </button>
         </div>
         <div className="col-6">
@@ -64,15 +66,11 @@ const ProductCard = (props) => {
           />
         </div>
 
-        <div className="text-end mt-2">
-          <button
-            className="add-btn w-100 text-light mt-2"
-            onClick={handleOrder}
-          >
-            Add
-          </button>
-        </div>
-      </article>}
+      <div className="text-end mt-2">
+        <button className="add-btn w-100 text-light mt-2" onClick={handleOrder}>
+          Add
+        </button>
+      </div>
 
       {/* Modal para mostrar detalles */}
       <div
@@ -94,7 +92,6 @@ const ProductCard = (props) => {
             </div>
             <div className="modal-body">
               <p>{product.description}</p>
-              {/* Agrega aquí más detalles del producto según sea necesario */}
             </div>
             <div className="modal-footer">
               <button

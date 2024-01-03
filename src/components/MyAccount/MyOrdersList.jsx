@@ -7,7 +7,6 @@ const MyOrdersList = (props) => {
   const { user } = useSession();
   const userIdForOrders = user.id;
 
-  //filtro orders para traer solo los pedidos del user logueado
   const filteredOrders = orders.filter(
     (order) => order.userId === userIdForOrders,
   );

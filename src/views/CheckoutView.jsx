@@ -1,4 +1,4 @@
-import LogoutBtn from "../commos/LogoutBtn";
+import LogoutBtn from "../commons/LogoutBtn";
 import Checkout from "../components/UserView/Checkout/Checkout";
 
 import "../components/UserView/userStyles.css";

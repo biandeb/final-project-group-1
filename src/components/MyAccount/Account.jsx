@@ -1,22 +1,15 @@
+import { useState } from "react";
+
 import AccountBtn from "./AccountBtn.jsx";
-import "./accountStyles.css";
 import MyInfo from "./MyInfo";
 import Coupons from "./Coupons";
 import MyOrders from "./MyOrders";
-import { useState } from "react";
 import { useSession } from "../../stores/useSessions";
+
+import "./accountStyles.css";
 
 const Account = () => {
   const { user } = useSession();
-  // const { users } = props;
-
-  // const userId = user.id;
-  // console.log(userId)
-
-  // const user = users.find((user) => user.id === userId);
-  // console.log(user);
-
-  //USE STATE para cambiar componente hijo o tab
 
   const [tab, setTab] = useState("info");
 
@@ -82,7 +75,6 @@ const Account = () => {
           btnId={"myorders"}
         ></AccountBtn>
       </div>
-      {/* Renderizo el componente hijo seleccionado */}
       {element}
     </div>
   );

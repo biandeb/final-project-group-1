@@ -13,7 +13,7 @@ if (token) {
   } catch (e) {
     Swal.fire({
       title: 'Error',
-      text: 'Inicie sesión nuevamente',
+      text: 'Sign in again',
       icon: 'error',
     });
     sessionStorage.removeItem('token');
@@ -22,11 +22,8 @@ if (token) {
 
 
 export const useSession = create((set) => ({
-  user,
-  isLoggedIn,
+  user: null,
+  isLoggedIn: false,
   login: (newUser) => set({ user: newUser, isLoggedIn: true }),
-  logout: () => {
-    sessionStorage.removeItem('token');
-    set({ user: null, isLoggedIn: false })
-  },
+  logout: () => set({ user: null, isLoggedIn: false }),
 }));
