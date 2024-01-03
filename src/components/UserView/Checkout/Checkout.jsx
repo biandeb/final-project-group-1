@@ -38,29 +38,39 @@ const Checkout = () => {
   });
 
   const handleOrder = () => {
-    Swal.fire({
-      title: "Order",
-      text: "¿Would you like to confirm the order?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, confirm",
-      cancelButtonText: "Cancel",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        const products = productsOrdered.map((product) => ({
-          ...product,
-          id: undefined,
-        }));
-
-        const newOrder = {
-          productsOrdered: products,
-          userId: userId,
-        };
-
-        postOrders(newOrder);
-        clearProductOrder();
-      }
-    });
+    if(productsOrdered.length === 0){
+      console.log('no hay nada en el carrito');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your order is empty",
+      });
+    } else {
+      Swal.fire({
+        title: "Order",
+        text: "¿Would you like to confirm the order?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, confirm",
+        cancelButtonText: "Cancel",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          const products = productsOrdered.map((product) => ({
+            ...product,
+            id: undefined,
+          }));
+  
+          const newOrder = {
+            productsOrdered: products,
+            userId: userId,
+          };
+  
+          postOrders(newOrder);
+          clearProductOrder();
+        }
+      });
+    }
+    
   };
 
   return (
