@@ -6,6 +6,7 @@ import "../../../index.css";
 
 import TableNumber from "./TableNumber.jsx";
 import { useTable } from "../../../stores/useTable.js";
+import Button from "../../Button/Button.jsx";
 
 const TableNumberInput = () => {
   const {
@@ -48,7 +49,7 @@ const TableNumberInput = () => {
           placeholder="0"
           error={!!errors.tablenumber}
         />
-        <button className="submit-btn mt-2 px-5">Save</button>
+        <Button title={"Save"}></Button>
       </form>
       <TableNumber />
     </div>

@@ -50,7 +50,6 @@ const OrderView = () => {
         ) : (
           <ProductsGallery products={products} />
         )}
-        {isLoggedIn && (
           <div className="checkout-btn-container p-4 text-light d-flex justify-content-center">
             <NavLink
               className={(isActive) =>
@@ -77,7 +76,6 @@ const OrderView = () => {
               <span className="widget-span">{orderQuantity}</span>
             )}
           </div>
-        )}
       </div>
     </>
   );

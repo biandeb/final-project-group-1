@@ -13,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Button from "../../Button/Button";
 
 const Checkout = () => {
   const { productsOrdered, clearProductOrder } = useOrder();
@@ -81,9 +82,7 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <button className=" m-4 p-2 fs-5 bg-warning" onClick={clearProductOrder}>
-        Clear order
-      </button>
+      <Button title={"Clear Order"} onClick={clearProductOrder} className={"bg-warning text-dark m-4 p-2 fs-5"}></Button>
       <div className="order-btn-container  text-light">
         <button className="btn-order" onClick={handleOrder}>
           Confirm order
