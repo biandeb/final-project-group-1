@@ -122,6 +122,7 @@ const Register = () => {
                       placeholder="Password"
                       error={!!errors.password}
                     ></Input>
+                    <p className="fw-bolder">The password requires an uppercase and lowercase letter, a number, a special character and more than 8 characters.</p>
                     <button
                       type="submit"
                       className="btn btn-primary button btn-user btn-block"
