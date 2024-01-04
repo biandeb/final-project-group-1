@@ -7,7 +7,6 @@ import { useSession } from "../../stores/useSessions";
 import "./navbar.css";
 import Button from "../../components/Button/Button";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useSession();
@@ -176,7 +175,6 @@ const Navbar = () => {
               </Link>
             ) : (
               <Button title={"Log Out"} onClick={handleLogout}></Button>
-              
             )}
           </div>
         </div>

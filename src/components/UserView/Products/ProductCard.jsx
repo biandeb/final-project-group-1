@@ -8,7 +8,6 @@ import Counter from "./Counter.jsx";
 import { useSession } from "../../../stores/useSessions.js";
 import Button from "../../Button/Button.jsx";
 
-
 const ProductCard = (props) => {
   const { isLoggedIn } = useSession();
   const { product } = props;
@@ -20,7 +19,7 @@ const ProductCard = (props) => {
 
   const handleOrder = () => {
     const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id
+      (item) => item.id === product.id,
     );
 
     if (existingProductIndex !== -1) {
@@ -44,8 +43,11 @@ const ProductCard = (props) => {
         <div className="col-6">
           <h5>{product.name}</h5>
 
-          <Button title={"Details"} onClick={handleShowModal} className={"mt-3 mb-3"}></Button>
-         
+          <Button
+            title={"Details"}
+            onClick={handleShowModal}
+            className={"mt-3 mb-3"}
+          ></Button>
         </div>
         <div className="col-6">
           <img
@@ -55,23 +57,26 @@ const ProductCard = (props) => {
           ></img>
         </div>
       </div>
-     
-        <article>
-          <div className="d-flex justify-content-between">
-            <h5>${product.price}</h5>
-            <Counter
-              count={count}
-              setCount={setCount}
-              context={context}
-              productId={product.id}
-              product={product}
-            />
-          </div>
-        </article>
-      
+
+      <article>
+        <div className="d-flex justify-content-between">
+          <h5>${product.price}</h5>
+          <Counter
+            count={count}
+            setCount={setCount}
+            context={context}
+            productId={product.id}
+            product={product}
+          />
+        </div>
+      </article>
 
       <div className="text-end mt-2">
-        <Button title={"Add"} onClick={handleOrder} className={"w-100 "}></Button>
+        <Button
+          title={"Add"}
+          onClick={handleOrder}
+          className={"w-100 "}
+        ></Button>
       </div>
 
       {/* Modal para mostrar detalles */}

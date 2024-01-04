@@ -39,29 +39,38 @@ const Checkout = () => {
   });
 
   const handleOrder = () => {
-    Swal.fire({
-      title: "Order",
-      text: "¿Would you like to confirm the order?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, confirm",
-      cancelButtonText: "Cancel",
-    }).then((res) => {
-      if (res.isConfirmed) {
-        const products = productsOrdered.map((product) => ({
-          ...product,
-          id: undefined,
-        }));
+    if (productsOrdered.length === 0) {
+      console.log("no hay nada en el carrito");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your order is empty",
+      });
+    } else {
+      Swal.fire({
+        title: "Order",
+        text: "¿Would you like to confirm the order?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, confirm",
+        cancelButtonText: "Cancel",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          const products = productsOrdered.map((product) => ({
+            ...product,
+            id: undefined,
+          }));
 
-        const newOrder = {
-          productsOrdered: products,
-          userId: userId,
-        };
+          const newOrder = {
+            productsOrdered: products,
+            userId: userId,
+          };
 
-        postOrders(newOrder);
-        clearProductOrder();
-      }
-    });
+          postOrders(newOrder);
+          clearProductOrder();
+        }
+      });
+    }
   };
 
   return (
@@ -82,7 +91,11 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <Button title={"Clear Order"} onClick={clearProductOrder} className={"bg-warning text-dark m-4 p-2 fs-5"}></Button>
+      <Button
+        title={"Clear Order"}
+        onClick={clearProductOrder}
+        className={"bg-warning text-dark m-4 p-2 fs-5"}
+      ></Button>
       <div className="order-btn-container  text-light">
         <button className="btn-order" onClick={handleOrder}>
           Confirm order

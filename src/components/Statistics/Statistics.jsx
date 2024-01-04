@@ -4,7 +4,7 @@ import BarsChart from "./BarsChart";
 
 const Statistics = (props) => {
   const { orders } = props;
-  console.log(orders)
+  console.log(orders);
 
   const productCount = {};
 

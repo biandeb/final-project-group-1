@@ -140,7 +140,7 @@
 
   .order-btn-container {
     position: fixed;
-    bottom: 70px ;
+    bottom: 70px;
     left: 0;
     max-width: 100%;
     background-color: var(--red-color);
@@ -149,11 +149,11 @@
     z-index: 1000;
   }
 
-  .checkout-container{
+  .checkout-container {
     padding-bottom: 8rem;
   }
 }
 
-.checkout-container{
+.checkout-container {
   padding-bottom: 8rem;
 }

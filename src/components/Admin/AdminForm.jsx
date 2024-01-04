@@ -10,7 +10,6 @@ import { postProductsFn, putProductsFn } from "../../api/products";
 import { useProduct } from "../../stores/useProduct";
 
 const AdminForm = () => {
-
   const {
     register,
     handleSubmit: onSubmitRHF,
@@ -75,7 +74,6 @@ const AdminForm = () => {
   };
 
   const handleCancelEdition = () => {
-
     reset();
 
     clearProduct();

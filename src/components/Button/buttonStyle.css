@@ -1,11 +1,11 @@
 .btnLg {
-    background-color: #f74702;
-    color: #f3f4f6;
-    border: #eceff1;
-  }
-  
-  .btnLg:hover {
-    background-color: #e66b07;
-    color: #f3f4f6;
-    border: #eceff1;
-  }
+  background-color: #f74702;
+  color: #f3f4f6;
+  border: #eceff1;
+}
+
+.btnLg:hover {
+  background-color: #e66b07;
+  color: #f3f4f6;
+  border: #eceff1;
+}
