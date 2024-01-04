@@ -59,17 +59,22 @@
   bottom: 85px;
   left: 0;
   width: 100%;
-  background-color: var(--red-color);
+  background-color: #f74702!important;
   padding: 10px;
   text-align: center;
   z-index: 1000;
+}
+.checkout-btn-container:hover {
+  background-color: #e66b07;
+  color: #f3f4f6;
+  border: #eceff1;
 }
 
 .btn-order {
   background-color: transparent !important;
   border: none;
   box-shadow: none;
-  color: var(--background);
+  color: black
   max-width: 80%;
   font-size: 1.2rem;
   text-shadow: none !important;

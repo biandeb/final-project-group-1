@@ -12,9 +12,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Router from "./Router";
 
 import "./index.css";
-import AdminViews from "./views/AdminViews.jsx";
-
-import AccountView from "./views/AccountView.jsx";
 
 const queryClient = new QueryClient();
 

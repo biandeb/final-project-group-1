@@ -19,6 +19,11 @@ const Checkout = () => {
   const { productsOrdered, clearProductOrder } = useOrder();
   const { user } = useSession();
 
+  if (!user || !user.id) {
+   
+    return <div>Cargando...</div>;
+  }
+
   const userId = user.id;
 
   const navigate = useNavigate();
@@ -97,9 +102,7 @@ const Checkout = () => {
         className={"bg-warning text-dark m-4 p-2 fs-5"}
       ></Button>
       <div className="order-btn-container  text-light">
-        <button className="btn-order" onClick={handleOrder}>
-          Confirm order
-        </button>
+        <Button title={"Confirm order"} onClick={handleOrder} className={"w-100"}></Button>
       </div>
     </div>
   );

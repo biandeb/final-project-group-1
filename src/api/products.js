@@ -23,32 +23,27 @@ export const postProductsFn = async (data) => {
 };
 
 export const putProductsFn = async (data, isAvailable) => {
-  console.log(data, isAvailable);
   const token = sessionStorage.getItem("token");
   const { id, ...restData } = data;
 
-  try {
-    const res = await fetch(`${API_URL}/products/${id}`, {
-      method: "PUT",
-      body: JSON.stringify(isAvailable ? { isAvailable } : restData),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  const res = await fetch(`${API_URL}/products/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(isAvailable ? { isAvailable } : restData),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-    const resData = await res.json();
+  const resData = await res.json();
 
-    if (!res.ok) {
-      throw new Error(
-        resData.message || "An error occurred while editing the product",
-      );
-    }
-
-    return resData;
-  } catch (error) {
-    throw new Error("An error occurred while processing the request");
+  if (!res.ok) {
+    throw new Error(
+      resData.message || "An error occurred while editing the product"
+    );
   }
+
+  return resData;
 };
 
 export const deleteProductFn = async (productId) => {
@@ -65,7 +60,7 @@ export const deleteProductFn = async (productId) => {
 
   if (!res.ok) {
     throw new Error(
-      resData.message || "An error occurred deleting the product",
+      resData.message || "An error occurred deleting the product"
     );
   }
 };

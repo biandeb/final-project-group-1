@@ -7,11 +7,10 @@ import ProductsGallery from "../components/UserView/Products/ProductsGallery";
 import TableNumberInput from "../components/UserView/TableNumber/TableNumberInput";
 
 import "../components/UserView/userStyles.css";
-import { useSession } from "../stores/useSessions";
+
 import LogoutBtn from "../commons/LogoutBtn";
 
 const OrderView = () => {
-  const { isLoggedIn } = useSession();
   const { productsOrdered } = useOrder();
 
   const orderQuantity = productsOrdered.length;

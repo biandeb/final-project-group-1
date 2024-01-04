@@ -1,15 +1,13 @@
 import { useState } from "react";
+import { useOrder } from "../../../stores/useOrder.js";
+
+import Counter from "./Counter.jsx";
+import Button from "../../Button/Button.jsx";
 
 import "../../../index.css";
 import "../userStyles.css";
 
-import { useOrder } from "../../../stores/useOrder.js";
-import Counter from "./Counter.jsx";
-import { useSession } from "../../../stores/useSessions.js";
-import Button from "../../Button/Button.jsx";
-
 const ProductCard = (props) => {
-  const { isLoggedIn } = useSession();
   const { product } = props;
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +17,7 @@ const ProductCard = (props) => {
 
   const handleOrder = () => {
     const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id,
+      (item) => item.id === product.id
     );
 
     if (existingProductIndex !== -1) {
@@ -42,7 +40,6 @@ const ProductCard = (props) => {
       <div className="row">
         <div className="col-6">
           <h5>{product.name}</h5>
-
           <Button
             title={"Details"}
             onClick={handleShowModal}
@@ -57,7 +54,6 @@ const ProductCard = (props) => {
           ></img>
         </div>
       </div>
-
       <article>
         <div className="d-flex justify-content-between">
           <h5>${product.price}</h5>
@@ -70,7 +66,6 @@ const ProductCard = (props) => {
           />
         </div>
       </article>
-
       <div className="text-end mt-2">
         <Button
           title={"Add"}
@@ -78,8 +73,6 @@ const ProductCard = (props) => {
           className={"w-100 "}
         ></Button>
       </div>
-
-      {/* Modal para mostrar detalles */}
       <div
         className={`modal fade${showModal ? " show" : ""}`}
         tabIndex="-1"
