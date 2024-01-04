@@ -60,7 +60,6 @@ const Login = () => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
-      navigate("/");
     }
   };
 
