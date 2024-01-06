@@ -33,7 +33,7 @@ const UserForm = (props) => {
   const handleSubmit = (data) => {
     Swal.showLoading();
 
-    if (user) putUser({ ...data, id: user.id }, 'updateUser');
+    if (user) putUser({ ...data, id: user.id }, "updateUser");
 
     setIsEditing(false);
   };
@@ -96,11 +96,7 @@ const UserForm = (props) => {
           error={!!errors.email}
         ></Input>
         <div className="d-flex gap-3 justify-content-center">
-          <button
-            className="btn btn-primary button btn-save w-50"
-          >
-            Save
-          </button>
+          <button className="btn btn-primary button btn-save w-50">Save</button>
         </div>
       </form>
     </div>

@@ -12,7 +12,6 @@ import { postLoginFn } from "../../api/auth";
 import { toast } from "sonner";
 
 const Login = () => {
-
   const { login } = useSession();
 
   const navigate = useNavigate();
@@ -61,7 +60,6 @@ const Login = () => {
     if (!isLoading) {
       Swal.showLoading();
       postLogin(data);
-      navigate("/")
     }
   };
 
@@ -118,7 +116,10 @@ const Login = () => {
                       </form>
 
                       <div className="text-center">
-                        <Link className="small fw-bolder text-danger" to={"/register"}>
+                        <Link
+                          className="small fw-bolder text-danger"
+                          to={"/register"}
+                        >
                           ¡Create an account!
                         </Link>
                       </div>

@@ -5,7 +5,6 @@ import { useMutation } from "@tanstack/react-query";
 
 import { Link, useNavigate } from "react-router-dom";
 
-
 import { postUserFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
 
@@ -47,7 +46,6 @@ const Register = () => {
 
       login({ ...data, password: undefined });
       navigate("/");
-      
     },
     onError: () => {
       Swal.close();
@@ -55,13 +53,11 @@ const Register = () => {
     },
   });
 
-
   const handleSubmit = (data) => {
     Swal.showLoading();
     postUser(data);
-    console.log(data)
+    console.log(data);
   };
-
 
   return (
     <>
@@ -126,6 +122,7 @@ const Register = () => {
                       placeholder="Password"
                       error={!!errors.password}
                     ></Input>
+                    <p className="fw-bolder">The password requires an uppercase and lowercase letter, a number, a special character and more than 8 characters.</p>
                     <button
                       type="submit"
                       className="btn btn-primary button btn-user btn-block"
@@ -136,7 +133,7 @@ const Register = () => {
 
                   <div className="text-center">
                     <p className="small">
-                      ¿Already have an account? 
+                      ¿Already have an account?
                       <Link to={"/login"} className="fw-bolder text-danger">
                         Log In
                       </Link>

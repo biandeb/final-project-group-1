@@ -1,10 +1,9 @@
 #home-mobile {
   display: none;
 }
-#home-desktop{
-    display: block;
+#home-desktop {
+  display: block;
 }
-
 
 @media (max-width: 767px) {
   #home-mobile {
@@ -22,7 +21,7 @@
   .background-photo {
     margin: 0;
     padding: 0;
-    background-image: url('../img/grill-fondo.webp');
+    background-image: url("../img/grill-fondo.webp");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -67,7 +66,7 @@
   .background-photo {
     margin: 0;
     padding: 0;
-    background-image: url('../img/grill-fondo.webp');
+    background-image: url("../img/grill-fondo.webp");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;

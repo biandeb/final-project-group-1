@@ -1,20 +1,19 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const postUserFn = async (data) => {
-  const response = await fetch(`${API_URL}/users`, {
+  const res = await fetch(`${API_URL}/users`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-type": "application/json",
     },
   });
-
+  console.log(res);
   if (!res.ok) {
     throw new Error("An error occurred while registering an user");
   }
   return data;
 };
-
 
 export const getUsersFn = async () => {
   const res = await fetch(`${API_URL}/users`);
@@ -53,12 +52,12 @@ export const putUserFn = async (data) => {
   }
 
   const apiData = await res.json();
-  
+
   return apiData;
 };
 
 export const putPasswordFn = async (data) => {
-  console.log(data)
+  console.log(data);
   const res = await fetch(`${API_URL}/users/put-password/${data.user.id}`, {
     method: "PUT",
     body: JSON.stringify(data),
@@ -73,7 +72,6 @@ export const putPasswordFn = async (data) => {
   }
 
   const newApidata = await res.json();
-  
+
   return newApidata;
 };
-

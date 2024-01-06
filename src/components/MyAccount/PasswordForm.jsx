@@ -8,14 +8,13 @@ import { putPasswordFn } from "../../api/users";
 import { useSession } from "../../stores/useSessions";
 import Input from "../Input/Input";
 
-
 const PasswordForm = (props) => {
   const { setIsEditingPassword } = props;
 
   let password = "";
 
   const { user } = useSession();
-  console.log(user)
+  console.log(user);
 
   const {
     register,
@@ -29,12 +28,10 @@ const PasswordForm = (props) => {
     setValue("password", password);
   }, [password, setValue]);
 
-
   const { mutate: putPassword } = useMutation({
     mutationFn: putPasswordFn,
 
     onSuccess: () => {
-
       Swal.close();
       toast.success("Your password was correctly updated.");
 
@@ -71,11 +68,7 @@ const PasswordForm = (props) => {
         error={!!errors.password}
       ></Input>
       <div className="d-flex gap-3 justify-content-center">
-        <button
-          className="btn btn-primary button btn-save w-50"
-        >
-          Save
-        </button>
+        <button className="btn btn-primary button btn-save w-50">Save</button>
       </div>
     </form>
   );
