@@ -9,6 +9,7 @@ import TableNumberInput from "../components/UserView/TableNumber/TableNumberInpu
 import "../components/UserView/userStyles.css";
 
 import LogoutBtn from "../commons/LogoutBtn";
+import Swal from "sweetalert2";
 
 const OrderView = () => {
   const { productsOrdered } = useOrder();
@@ -44,7 +45,7 @@ const OrderView = () => {
         <TableNumberInput />
         <hr />
         {isLoading ? (
-          <h3>Loading...</h3>
+          Swal.showLoading()
         ) : (
           <ProductsGallery products={products} />
         )}
