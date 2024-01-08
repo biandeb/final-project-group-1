@@ -6,6 +6,7 @@ import Button from "../../Button/Button.jsx";
 
 import "../../../index.css";
 import "../userStyles.css";
+import Swal from "sweetalert2";
 
 const ProductCard = (props) => {
   const { product } = props;
@@ -15,20 +16,29 @@ const ProductCard = (props) => {
   const { setProductForOrder, productsOrdered, updateExistingProduct } =
     useOrder();
 
-  const handleOrder = () => {
-    const existingProductIndex = productsOrdered.findIndex(
-      (item) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      const existingProduct = productsOrdered[existingProductIndex];
-      const productId = product.id;
-      const updatedAmount = existingProduct.amount + count;
-      updateExistingProduct(productId, updatedAmount);
-    } else {
-      setProductForOrder({ ...product, amount: count });
-    }
-  };
+    const handleOrder = () => {
+     
+      if (count > 0) {
+        const existingProductIndex = productsOrdered.findIndex(
+          (item) => item.id === product.id
+        );
+    
+        if (existingProductIndex !== -1) {
+          const existingProduct = productsOrdered[existingProductIndex];
+          const productId = product.id;
+          const updatedAmount = existingProduct.amount + count;
+          updateExistingProduct(productId, updatedAmount);
+        } else {
+          setProductForOrder({ ...product, amount: count });
+        }
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "STOP",
+          text: "You must add at least one product!!!",
+        }); 
+      }
+    };
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);

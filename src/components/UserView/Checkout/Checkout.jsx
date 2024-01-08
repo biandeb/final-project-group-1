@@ -21,7 +21,7 @@ const Checkout = () => {
 
   if (!user || !user.id) {
    
-    return <div>Cargando...</div>;
+    return Swal.showLoading();
   }
 
   const userId = user.id;
@@ -45,7 +45,6 @@ const Checkout = () => {
 
   const handleOrder = () => {
     if (productsOrdered.length === 0) {
-      console.log("no hay nada en el carrito");
       Swal.fire({
         icon: "error",
         title: "Oops...",
