@@ -10,6 +10,7 @@ import "../components/UserView/userStyles.css";
 
 import LogoutBtn from "../commons/LogoutBtn";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const OrderView = () => {
   const { productsOrdered } = useOrder();
@@ -21,6 +22,12 @@ const OrderView = () => {
     isError,
     isLoading,
   } = useQuery({ queryKey: ["products"], queryFn: getProductsFn });
+  useEffect(() => {
+
+    if (!isLoading) {
+      Swal.close();
+    }
+  }, [isLoading]);
 
   if (isError) {
     return (
@@ -42,8 +49,7 @@ const OrderView = () => {
           <LogoutBtn />
         </div>
 
-        <TableNumberInput />
-        <hr />
+       
         {isLoading ? (
           Swal.showLoading()
         ) : (

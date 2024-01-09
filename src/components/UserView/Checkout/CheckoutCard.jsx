@@ -27,7 +27,7 @@ const CheckoutCard = (props) => {
       </div>
 
       <div className="d-flex justify-content-between">
-        <p>Subtotal: ${product.price * product.amount}</p>
+        <p className="fw-bolder">Subtotal: ${product.price * product.amount}</p>
         <Counter
           count={count}
           setCount={setCount}

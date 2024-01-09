@@ -63,24 +63,27 @@ const MyInfo = (props) => {
           </button>
         </div>
       ) : (
-        <div className="info-container">
-          <h5 className="mb-4">My personal information</h5>
+        <div className="info-container card o-hidden border-0 shadow-lg">
+          <div className="mx-3 mt-2">
+
+          <h5 className="mb-4 fw-bolder"> MY PERSONAL INFORMATION</h5>
           <p>Name: {user.firstname}</p>
           <p>Lastname: {user.lastname}</p>
           <p>Email: {user.email}</p>
 
-          <div className="d-flex gap-3">
+          <div className="d-flex gap-3 mb-3">
             <Button
               title={"Edit"}
               onClick={handleEdit}
               className="btn-success"
-            ></Button>
+              ></Button>
             <Button
               title={"Reset password"}
               onClick={handleEditPassword}
               className="btn-success"
-            ></Button>
+              ></Button>
           </div>
+              </div>
         </div>
       )}
     </div>

@@ -54,11 +54,12 @@ const Account = () => {
       </div>
 
       <hr />
-
-      <div className="mt-5 row gap-2 d-flex justify-content-center justify-content-md-start">
+    
+      <div className="mt-5 ms-2 row gap-2 d-flex justify-content-center justify-content-md-start ">
         <AccountBtn
           onClick={() => showTab("info")}
           title="My Info"
+          className="hoverCard"
           icon={<i className="bi bi-person"></i>}
           btnId={"info"}
         ></AccountBtn>

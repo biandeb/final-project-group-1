@@ -25,7 +25,9 @@ const Admin = () => {
   }
 
   return (
-    <div>
+    <div className="mt-5">
+      <h1 className="fs-1 fw-bold py-4 text-center">Grill & Thrill</h1>
+      <h5 className="lead fw-bold text-center">ADMIN</h5>
       <AdminForm></AdminForm>
       <h1 className="text-dark text-center mt-5 mb-5">Products</h1>
       {isLoading ? (
