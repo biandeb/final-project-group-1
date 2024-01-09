@@ -2,14 +2,22 @@ import { jwtDecode } from "jwt-decode";
 import Swal from "sweetalert2";
 import { create } from "zustand";
 
-let user = null;
-let isLoggedIn = false;
 
 const token = sessionStorage.getItem("token");
+
+
+let initialState = {
+  user: null,
+  isLoggedIn: false,
+};
+
 if (token) {
   try {
-    user = jwtDecode(token).user;
-    isLoggedIn = true;
+    const decodedToken = jwtDecode(token);
+    initialState = {
+      user: decodedToken.user,
+      isLoggedIn: true,
+    };
   } catch (e) {
     Swal.fire({
       title: "Error",
@@ -20,9 +28,15 @@ if (token) {
   }
 }
 
+
 export const useSession = create((set) => ({
-  user: null,
-  isLoggedIn: false,
-  login: (newUser) => set({ user: newUser, isLoggedIn: true }),
-  logout: () => set({ user: null, isLoggedIn: false }),
+  ...initialState,
+  login: (newUser, newToken) => {
+    set({ user: newUser, isLoggedIn: true });
+    sessionStorage.setItem("token", newToken);
+  },
+  logout: () => {
+    set({ user: null, isLoggedIn: false });
+    sessionStorage.removeItem("token");
+  },
 }));

@@ -10,8 +10,10 @@ import Input from "../Input/Input";
 import "./login.css";
 import { postLoginFn } from "../../api/auth";
 import { toast } from "sonner";
+import { useState } from "react";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useSession();
 
   const navigate = useNavigate();
@@ -102,11 +104,23 @@ const Login = () => {
                             minLength: 4,
                             maxLength: 60,
                           }}
-                          type="password"
+                          type={showPassword ? "text" : "password"}
                           name="password"
                           placeholder="Password"
                           error={!!errors.password}
                         ></Input>
+                        <div className="form-check mb-5">
+                          <input
+                            type="checkbox"
+                            id="showPassword"
+                            className="form-check-input "
+                            checked={showPassword}
+                            onChange={() => setShowPassword(!showPassword)}
+                          />
+                          <label htmlFor="showPassword" className="ms-1 fw-bolder">
+                            Show Password
+                          </label>
+                        </div>
                         <button
                           type="submit"
                           className="btn button fw-bolder btn-user btn-block"

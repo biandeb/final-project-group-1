@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const OrderStatus = () => {
   return (
     <>
-      <div className="container-fluid text-dark p-5 d-flex flex-column justify-content-center text-center order-status">
+      <div className="container-fluid fw-bolder p-5 d-flex flex-column justify-content-center text-center order-status bg-success">
         <h3 className="m-5">SUCCESSFUL ORDER</h3>
         <i className="bi bi-check-circle-fill fs-5"></i>
         <h5>Your order has been placed</h5>

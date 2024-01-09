@@ -161,7 +161,7 @@ const AdminForm = () => {
                   {isEditing && (
                     <button
                       type="button"
-                      className="ms-2 btn btn-secondary"
+                      className="ms-2 btn btn-danger"
                       onClick={handleCancelEdition}
                     >
                       Cancel edition

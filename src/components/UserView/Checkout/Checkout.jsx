@@ -78,7 +78,10 @@ const Checkout = () => {
   };
 
   return (
-    <div className="checkout-container pt-5">
+    <>
+    <h1 className="fs-1 fw-bold py-4 text-center">Grill & Thrill</h1>
+    <h4 className=" fw-bold lead text-center">Order</h4>
+    <div className="checkout-container container-fluid pt-5">
       <div className="d-flex justify-content-end">
         <NavLink
           className={(isActive) => (isActive ? "nav-link active" : "nav-link")}
@@ -86,24 +89,29 @@ const Checkout = () => {
           to="/order"
         >
           <div className="d-flex gap-3 pe-3">
-            <i className="bi bi-arrow-left"></i>
-            <h5>Back to menu</h5>
+            <i className="bi bi-arrow-left mt-1 fs-5 fw-bolder"></i>
+            <h5 className="btn btn-outline-dark">Back to menu</h5>
           </div>
         </NavLink>
       </div>
-      <h5 className="ms-5">Order</h5>
+
+      <div className="card o-hidden border-0 shadow-lg">
+
+      <h5 className="ms-5 fw-bolder mt-2">Order</h5>
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
-      <Button
+      <Button 
         title={"Clear Order"}
         onClick={clearProductOrder}
-        className={"bg-warning text-dark m-4 p-2 fs-5"}
-      ></Button>
-      <div className="order-btn-container  text-light">
+        className={"btn btn-warning  m-4 p-2 fs-5"}
+        ></Button>
+      <div className="order-btn-container btn  text-light">
         <Button title={"Confirm order"} onClick={handleOrder} className={"w-100"}></Button>
       </div>
     </div>
+        </div>
+        </>
   );
 };
 

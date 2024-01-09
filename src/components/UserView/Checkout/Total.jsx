@@ -9,8 +9,8 @@ const Total = () => {
   );
 
   return (
-    <div className="mt-3 pe-3">
-      <h5 className="text-end">Total: ${totalAmount}</h5>
+    <div className="mt-3 pe-3 ">
+      <h5 className="text-end">TOTAL: ${totalAmount}</h5>
     </div>
   );
 };

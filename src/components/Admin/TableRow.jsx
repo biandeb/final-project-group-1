@@ -74,7 +74,7 @@ const TableRow = (props) => {
   return (
     <>
       <div className="col-md-6">
-        <div className="card mb-3">
+        <div className="card  border-0 shadow-lg mb-3">
           <div className="row g-0">
             <div className="col-md-4 ">
               <img
@@ -103,9 +103,9 @@ const TableRow = (props) => {
                   Delete
                 </button>
 
-                <div className="form-check" onClick={handleAvailability}>
+                <div className="form-check mt-1 ms-2" onClick={handleAvailability}>
                   <input
-                    className="form-check-input"
+                    className="form-check-input "
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"

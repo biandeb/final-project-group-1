@@ -49,6 +49,9 @@
   color: var(--red-color);
   max-width: 20rem;
 }
+.hoverCard:hover{
+  border: solid 10px black;
+}
 
 @media (width > 1000px) {
 }
