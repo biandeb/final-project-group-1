@@ -9,7 +9,7 @@ const NavBarMobile = () => {
 
   return (
     <nav
-      className="navbar bg-body-tertiary fixed-bottom border-top mt-5"
+      className="navbar bg-body-tertiary fixed-bottom border-top mt-5 z-3"
       id="mobileFirst"
     >
       <ul className="nav-links mx-auto">

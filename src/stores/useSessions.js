@@ -31,9 +31,9 @@ if (token) {
 
 export const useSession = create((set) => ({
   ...initialState,
-  login: (newUser) => {
+  login: (newUser, newToken) => {
     set({ user: newUser, isLoggedIn: true });
-    sessionStorage.setItem("token",);
+    sessionStorage.setItem("token", newToken);
   },
   logout: () => {
     set({ user: null, isLoggedIn: false });

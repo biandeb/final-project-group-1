@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <header className="header" id="desktop">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom z-index-">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom z-3">
         <div className="container">
           <Link to="/">
             <img
