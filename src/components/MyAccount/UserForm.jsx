@@ -1,12 +1,11 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import Input from "../Input/Input";
+import Swal from "sweetalert2";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import Swal from "sweetalert2";
-
 import { putUserFn } from "../../api/users";
+import { useEffect } from "react";
 import { useSession } from "../../stores/useSessions";
-import Input from "../Input/Input";
 
 const UserForm = (props) => {
   const { user, setIsEditing } = props;
@@ -30,22 +29,28 @@ const UserForm = (props) => {
     }
   }, [user, setValue]);
 
+ 
+
   const handleSubmit = (data) => {
     Swal.showLoading();
 
-    if (user) putUser({ ...data, id: user.id }, "updateUser");
+    if (user) putUser({ ...data, id: user.id }, 'updateUser');
 
+    
     setIsEditing(false);
   };
 
+  
   const { mutate: putUser } = useMutation({
     mutationFn: putUserFn,
+    
     onSuccess: (data) => {
       login(data.data);
 
       Swal.close();
-      toast.success("Your user info was correctly updated.");
+      toast.success("Your user info was correctly updated");
 
+     
       reset();
     },
 
@@ -67,7 +72,7 @@ const UserForm = (props) => {
             maxLength: 60,
           }}
           name="firstname"
-          placeholder="Firstname"
+          placeholder="First Name"
           error={!!errors.firstname}
         ></Input>
         <p>Lastname</p>
@@ -79,7 +84,7 @@ const UserForm = (props) => {
             maxLength: 60,
           }}
           name="lastname"
-          placeholder="Lastname"
+          placeholder="Last Name"
           error={!!errors.lastname}
         ></Input>
         <p>Email</p>
@@ -92,11 +97,16 @@ const UserForm = (props) => {
           }}
           type="email"
           name="email"
-          placeholder="Email address"
+          placeholder="Email Address"
           error={!!errors.email}
         ></Input>
         <div className="d-flex gap-3 justify-content-center">
-          <button className="btn btn-primary button btn-save w-50">Save</button>
+          <button
+            
+            className="btn btn-primary button btn-save w-50"
+          >
+            Save
+          </button>
         </div>
       </form>
     </div>

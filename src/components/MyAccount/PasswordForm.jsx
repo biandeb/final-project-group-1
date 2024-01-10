@@ -1,12 +1,11 @@
-import { useEffect } from "react";
+import Input from "../Input/Input";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { toast } from "sonner";
 import Swal from "sweetalert2";
-
 import { putPasswordFn } from "../../api/users";
+import { toast } from "sonner";
 import { useSession } from "../../stores/useSessions";
-import Input from "../Input/Input";
+import { useEffect } from "react";
 
 const PasswordForm = (props) => {
   const { setIsEditingPassword } = props;
@@ -33,7 +32,7 @@ const PasswordForm = (props) => {
 
     onSuccess: () => {
       Swal.close();
-      toast.success("Your password was correctly updated.");
+      toast.success("Your password was correctly updated");
 
       reset();
     },
@@ -64,7 +63,7 @@ const PasswordForm = (props) => {
         }}
         type="password"
         name="password"
-        placeholder="Password"
+        placeholder="password"
         error={!!errors.password}
       ></Input>
       <div className="d-flex gap-3 justify-content-center">

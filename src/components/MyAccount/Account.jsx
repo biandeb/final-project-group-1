@@ -1,12 +1,10 @@
-import { useState } from "react";
-
-import AccountBtn from "./AccountBtn.jsx";
+import AccountBtn from "./accountBtn";
+import "./accountStyles.css";
 import MyInfo from "./MyInfo";
 import Coupons from "./Coupons";
 import MyOrders from "./MyOrders";
+import { useState } from "react";
 import { useSession } from "../../stores/useSessions";
-
-import "./accountStyles.css";
 
 const Account = () => {
   const { user } = useSession();
@@ -54,12 +52,11 @@ const Account = () => {
       </div>
 
       <hr />
-    
-      <div className="mt-5 ms-2 row gap-2 d-flex justify-content-center justify-content-md-start ">
+
+      <div className="mt-5 row gap-2 d-flex justify-content-center justify-content-md-start">
         <AccountBtn
           onClick={() => showTab("info")}
           title="My Info"
-          className="hoverCard"
           icon={<i className="bi bi-person"></i>}
           btnId={"info"}
         ></AccountBtn>
@@ -76,6 +73,7 @@ const Account = () => {
           btnId={"myorders"}
         ></AccountBtn>
       </div>
+      
       {element}
     </div>
   );

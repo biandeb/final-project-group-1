@@ -4,7 +4,13 @@
   border: solid 2px var(--black);
   border-radius: 50%;
 }
-
+.widget-span{
+  
+  background-color: #fae103;
+  color: #000;
+  border-radius: 100%;
+  
+}
 .camera-span {
   width: 3rem;
   height: auto;
