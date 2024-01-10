@@ -8,15 +8,6 @@ import { useSession } from "../../stores/useSessions";
 
 const Account = () => {
   const { user } = useSession();
-  // const { users } = props;
-
-  // const userId = user.id;
-  // console.log(userId)
-
-  // const user = users.find((user) => user.id === userId);
-  // console.log(user);
-
-  //USE STATE para cambiar componente hijo o tab
 
   const [tab, setTab] = useState("info");
 
@@ -82,7 +73,7 @@ const Account = () => {
           btnId={"myorders"}
         ></AccountBtn>
       </div>
-      {/* Renderizo el componente hijo seleccionado */}
+      
       {element}
     </div>
   );

@@ -6,7 +6,6 @@ import { putPasswordFn } from "../../api/users";
 import { toast } from "sonner";
 import { useSession } from "../../stores/useSessions";
 import { useEffect } from "react";
-// import { useSession } from "../../stores/useSessions";
 
 const PasswordForm = (props) => {
   const { setIsEditingPassword } = props;
@@ -14,7 +13,7 @@ const PasswordForm = (props) => {
   let password = "";
 
   const { user } = useSession();
-  console.log(user)
+  console.log(user);
 
   const {
     register,
@@ -28,18 +27,13 @@ const PasswordForm = (props) => {
     setValue("password", password);
   }, [password, setValue]);
 
-
-  //useMutation para UPDATE(PUT)
   const { mutate: putPassword } = useMutation({
     mutationFn: putPasswordFn,
-    //mensaje de exito
-    onSuccess: () => {
-      //   login(data.data);
 
+    onSuccess: () => {
       Swal.close();
       toast.success("Your password was correctly updated");
 
-      //resetear el form
       reset();
     },
 
@@ -49,15 +43,12 @@ const PasswordForm = (props) => {
     },
   });
 
-  // HANDLERS____________________________
-
   const handleSubmit = (data) => {
     Swal.showLoading();
 
     putPassword({ data, user });
     console.log(data, user);
 
-    //volver a myinfo
     setIsEditingPassword(false);
   };
 
@@ -76,12 +67,7 @@ const PasswordForm = (props) => {
         error={!!errors.password}
       ></Input>
       <div className="d-flex gap-3 justify-content-center">
-        <button
-          // type="submit"
-          className="btn btn-primary button btn-save w-50"
-        >
-          Save
-        </button>
+        <button className="btn btn-primary button btn-save w-50">Save</button>
       </div>
     </form>
   );
