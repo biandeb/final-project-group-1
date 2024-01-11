@@ -12,10 +12,10 @@ const NavBarMobile = () => {
       className="navbar bg-body-tertiary fixed-bottom border-top mt-5 z-3"
       id="mobileFirst"
     >
-      <ul className="nav-links mx-auto">
+      <ul className="nav-links d-flex justify-content-evenly gap-3">
         {!user?.isAdmin && (
           <li>
-            <div className="text-center prueba">
+            <div className="text-center  ">
               <NavLink
                 className={`nav-link text-secondary ${({ isActive }) =>
                   isActive ? "active" : ""}`}
@@ -29,7 +29,7 @@ const NavBarMobile = () => {
         )}
         {!user?.isAdmin && (
           <li>
-            <div className="text-center ms-5">
+            <div className="text-center ms-4">
               <NavLink></NavLink>
               <NavLink
                 className={`nav-link text-secondary ${({ isActive }) =>
@@ -44,7 +44,7 @@ const NavBarMobile = () => {
         )}
         {isLoggedIn && !user?.isAdmin && (
           <li>
-            <div className="text-center ms-5  ">
+            <div className="text-center ms-4  ">
               <NavLink></NavLink>
               <NavLink
                 className={`nav-link text-secondary  ${({ isActive }) =>
@@ -59,7 +59,7 @@ const NavBarMobile = () => {
         )}
         {isLoggedIn && !user?.isAdmin && (
           <li>
-            <div className="text-center ms-5">
+            <div className="text-center ms-4">
               <NavLink
                 className={`nav-link text-secondary ${({ isActive }) =>
                   isActive ? "activePage" : ""}`}
@@ -70,6 +70,36 @@ const NavBarMobile = () => {
                   className="bi bi-person-circle fs-2 text-secondary"
                   id="iconColor"
                 ></i>
+              </NavLink>
+            </div>
+          </li>
+        )}
+        {isLoggedIn && !user?.isAdmin && (
+          <li>
+            <div className="text-center ms-4  ">
+              <NavLink></NavLink>
+              <NavLink
+                className={`nav-link text-secondary  ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+                aria-current="page"
+                to="/checkout"
+              >
+                <i className="bi bi-info-circle-fill fs-2 text-secondary"></i>
+              </NavLink>
+            </div>
+          </li>
+        )}
+        {isLoggedIn && !user?.isAdmin && (
+          <li>
+            <div className="text-center mx-4  ">
+              <NavLink></NavLink>
+              <NavLink
+                className={`nav-link text-secondary  ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+                aria-current="page"
+                to="/checkout"
+              >
+                <i className="bi bi-person-lines-fill fs-2"></i>
               </NavLink>
             </div>
           </li>
