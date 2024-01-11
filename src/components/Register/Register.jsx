@@ -45,7 +45,7 @@ const Register = () => {
       });
 
       login({ ...data, password: undefined });
-      navigate("/");
+      navigate("/order");
     },
     onError: () => {
       Swal.close();
@@ -56,7 +56,6 @@ const Register = () => {
   const handleSubmit = (data) => {
     Swal.showLoading();
     postUser(data);
-    console.log(data);
   };
 
   return (

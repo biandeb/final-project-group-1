@@ -21,7 +21,7 @@ const StatsView = () => {
 
   return (
     <div className="container-fluid">
-      <h3>Grill & Thrill Analytics</h3>
+      <h3 className="text-center">Grill & Thrill Analytics</h3>
       <hr />
       <>{isLoading ? <h3>Loading...</h3> : <Statistics orders={orders} />}</>
     </div>

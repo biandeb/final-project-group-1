@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+import "./navBar/navbar.css";
 
 import { useSession } from "../stores/useSessions";
 
@@ -32,7 +33,7 @@ const LogoutBtn = () => {
       {!isLoggedIn ? (
         <Link to="/login">
           <div className="text-center ms-5">
-            <i className="bi bi-box-arrow-in-right text-dark fs-2"></i>
+            <button className="btnLg">Log In</button>
           </div>
         </Link>
       ) : (
