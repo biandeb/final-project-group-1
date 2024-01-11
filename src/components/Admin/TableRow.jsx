@@ -73,7 +73,7 @@ const TableRow = (props) => {
 
   return (
     <>
-      <div className="col-md-6">
+      <div className="col-md-6 mb-5">
         <div className="card  border-0 shadow-lg mb-3">
           <div className="row g-0">
             <div className="col-md-4 ">

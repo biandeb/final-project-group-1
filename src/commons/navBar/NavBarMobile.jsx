@@ -22,7 +22,7 @@ const NavBarMobile = () => {
                 aria-current="page"
                 to="/"
               >
-                <i className="bi bi-house fs-2 text-secondary "></i>
+                <i className="bi bi-house fs-2  "></i>
               </NavLink>
             </div>
           </li>
@@ -30,14 +30,14 @@ const NavBarMobile = () => {
         {!user?.isAdmin && (
           <li>
             <div className="text-center ms-4">
-              <NavLink></NavLink>
+              
               <NavLink
                 className={`nav-link text-secondary ${({ isActive }) =>
                   isActive ? "active" : " "}`}
                 aria-current="page"
                 to="/order"
               >
-                <i className="bi bi-columns-gap fs-2 text-secondary"></i>
+                <i className="bi bi-columns-gap fs-2 "></i>
               </NavLink>
             </div>
           </li>
@@ -45,14 +45,14 @@ const NavBarMobile = () => {
         {isLoggedIn && !user?.isAdmin && (
           <li>
             <div className="text-center ms-4  ">
-              <NavLink></NavLink>
+            
               <NavLink
                 className={`nav-link text-secondary  ${({ isActive }) =>
                   isActive ? "active" : ""}`}
                 aria-current="page"
                 to="/checkout"
               >
-                <i className="bi bi-bag-fill fs-2 text-secondary"></i>
+                <i className="bi bi-bag-fill fs-2 "></i>
               </NavLink>
             </div>
           </li>
@@ -67,7 +67,7 @@ const NavBarMobile = () => {
                 to="/myaccount"
               >
                 <i
-                  className="bi bi-person-circle fs-2 text-secondary"
+                  className="bi bi-person-circle fs-2 "
                   id="iconColor"
                 ></i>
               </NavLink>
@@ -77,14 +77,14 @@ const NavBarMobile = () => {
         {isLoggedIn && !user?.isAdmin && (
           <li>
             <div className="text-center ms-4  ">
-              <NavLink></NavLink>
+              
               <NavLink
                 className={`nav-link text-secondary  ${({ isActive }) =>
                   isActive ? "active" : ""}`}
                 aria-current="page"
-                to="/checkout"
+                to="/contact-us"
               >
-                <i className="bi bi-info-circle-fill fs-2 text-secondary"></i>
+                <i className="bi bi-info-circle-fill fs-2 "></i>
               </NavLink>
             </div>
           </li>
@@ -92,14 +92,44 @@ const NavBarMobile = () => {
         {isLoggedIn && !user?.isAdmin && (
           <li>
             <div className="text-center mx-4  ">
-              <NavLink></NavLink>
+              
               <NavLink
                 className={`nav-link text-secondary  ${({ isActive }) =>
                   isActive ? "active" : ""}`}
                 aria-current="page"
-                to="/checkout"
+                to="/about-us"
               >
                 <i className="bi bi-person-lines-fill fs-2"></i>
+              </NavLink>
+            </div>
+          </li>
+        )}
+        {user?.isAdmin && (
+          <li>
+            <div className="text-center   ">
+              
+              <NavLink
+                className={`nav-link text-secondary  ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+                aria-current="page"
+                to="/admin"
+              >
+                <i className="bi bi-person-add fs-2"></i>
+              </NavLink>
+            </div>
+          </li>
+        )}
+         {user?.isAdmin && (
+          <li>
+            <div className="text-center   ">
+              
+              <NavLink
+                className={`nav-link text-secondary  ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+                aria-current="page"
+                to="/stats"
+              >
+                <i className="bi bi-bar-chart-line-fill fs-2"></i>
               </NavLink>
             </div>
           </li>

@@ -4,6 +4,7 @@ import AdminCards from "./AdminCards";
 import AdminForm from "./AdminForm";
 
 import { getProductsFn } from "../../api/products";
+import LogoutBtn from "../../commons/LogoutBtn";
 
 const Admin = () => {
   const {
@@ -26,6 +27,9 @@ const Admin = () => {
 
   return (
     <div className="mt-5">
+      <div className="d-flex justify-content-end ">
+        <LogoutBtn />
+        </div>
       <h1 className="fs-1 fw-bold py-4 text-center">Grill & Thrill</h1>
       <h5 className="lead fw-bold text-center">ADMIN</h5>
       <AdminForm></AdminForm>
