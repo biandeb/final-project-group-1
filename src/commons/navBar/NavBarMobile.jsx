@@ -74,7 +74,7 @@ const NavBarMobile = () => {
             </div>
           </li>
         )}
-        {isLoggedIn && !user?.isAdmin && (
+        {!user?.isAdmin && (
           <li>
             <div className="text-center ms-4  ">
               
@@ -89,7 +89,7 @@ const NavBarMobile = () => {
             </div>
           </li>
         )}
-        {isLoggedIn && !user?.isAdmin && (
+        { !user?.isAdmin && (
           <li>
             <div className="text-center mx-4  ">
               

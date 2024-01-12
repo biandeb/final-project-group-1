@@ -7,6 +7,7 @@ import "../../../index.css";
 import TableNumber from "./TableNumber.jsx";
 import { useTable } from "../../../stores/useTable.js";
 import Button from "../../Button/Button.jsx";
+import { toast } from "sonner";
 
 const TableNumberInput = () => {
   const {
@@ -19,14 +20,18 @@ const TableNumberInput = () => {
 
   const handleSubmit = (tablenumber) => {
     setTableNumber(tablenumber);
+    
   };
+  const handleClick = ()=>{
+    toast.success("the table number was saved.");
+  }
 
   return (
-    <div className="ms-5">
-      <h5>Enter your table number here:</h5>
+    <div className="text-center">
+      <h5 className="fs-3 fw-bolder">Enter your table number here:</h5>
 
       <form
-        className="w-md-50 table-input"
+        className="table-input mx-auto "
         onSubmit={onSubmitRHF(handleSubmit)}
       >
         <Input
@@ -48,9 +53,9 @@ const TableNumberInput = () => {
           placeholder="0"
           error={!!errors.tablenumber}
         />
-        <Button title={"Save"}></Button>
-      </form>
+        <Button title={"Save"} onClick={handleClick} ></Button>
       <TableNumber />
+      </form>
     </div>
   );
 };

@@ -101,13 +101,14 @@ const Checkout = () => {
       <TableNumber />
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
+      <Button title={"Confirm order"} onClick={handleOrder} className={"w-100 fs-5 p-3"}></Button>
+      <div className="order-btn-container btn  text-light text-end ">
       <Button 
         title={"Clear Order"}
         onClick={clearProductOrder}
         className={"btn btn-warning  m-4 p-2 fs-5"}
         ></Button>
-      <div className="order-btn-container btn  text-light">
-        <Button title={"Confirm order"} onClick={handleOrder} className={"w-100"}></Button>
+        
       </div>
     </div>
         </div>
