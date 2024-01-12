@@ -1,10 +1,13 @@
 # Final project - Group 1 - Rolling Code School
 
+Demo
+
 ![GrillandThrill Logo](https://i.postimg.cc/2yZcr9ct/grill-logo.png)
 
 This project was created by group number 1 of commission 63i at Rolling Code School, Tucumán, Argentina. It is a restaurant ordering application named Grill & Thrill. It provides users with access to a wide variety of foods to order at the respective table of each customer within the restaurant. Users can register, log in, and enjoy the content and service in a simple and convenient manner.
 
 There is also the option to register and log in as an administrator to perform functions that only administrators can execute, such as uploading, editing, and deleting products, managing their status (active or inactive), and determining their availability. The application features routes with authentication verification.
+
 
 ## Key Features:
 
@@ -26,6 +29,10 @@ Stored in the assets folder, including images, gif, webp, svg, etc.
 
 ![Home](https://i.postimg.cc/0yFLRmyr/home.png) ![Register](https://i.postimg.cc/Kj3MWdq1/register.png) ![Contact](https://i.postimg.cc/fbH5QQKC/contact.png)
 
+## Demo URL
+
+https://grillandthrill.netlify.app/
+
 ## Libraries used
 
 - REACT, CSS and JavaScript for user interface.
@@ -44,4 +51,6 @@ Stored in the assets folder, including images, gif, webp, svg, etc.
 
 ## Admin
 
-- User: [juliana@gmail.com](mailto:admin@admin.com)
+To test the admin view, use this account:
+email: grillnthrill@gmail.com
+password: 1234567890Dmc@
