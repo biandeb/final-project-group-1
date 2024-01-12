@@ -108,6 +108,7 @@ const Login = () => {
                           name="password"
                           placeholder="Password"
                           error={!!errors.password}
+                          
                         ></Input>
                         <div className="form-check mb-5">
                           <input
