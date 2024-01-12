@@ -20,16 +20,18 @@ const ProductCard = (props) => {
     const handleOrder = () => {
      
       if (count > 0) {
+        toast.success("Add product successfully");
         const existingProductIndex = productsOrdered.findIndex(
           (item) => item.id === product.id
         );
     
         if (existingProductIndex !== -1) {
+         
           const existingProduct = productsOrdered[existingProductIndex];
           const productId = product.id;
           const updatedAmount = existingProduct.amount + count;
           updateExistingProduct(productId, updatedAmount);
-          toast.success("Add product successfully");
+          
         } else {
           setProductForOrder({ ...product, amount: count });
         }
