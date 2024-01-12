@@ -102,7 +102,7 @@ const Checkout = () => {
       <CheckoutList productsOrdered={productsOrdered} />
       <Total />
       <Button title={"Confirm order"} onClick={handleOrder} className={"w-100 fs-5 p-3"}></Button>
-      <div className="order-btn-container btn  text-light text-end ">
+      <div className=" btn  text-light ">
       <Button 
         title={"Clear Order"}
         onClick={clearProductOrder}
