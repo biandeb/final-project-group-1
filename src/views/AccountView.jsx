@@ -10,7 +10,9 @@ const AccountView = () => {
  
   return (
     <div className="mb-5 pb-5 mt-3 ">
-        <LogoutBtn />
+        <div className="d-flex justify-content-end me-3 mb-5">
+          <LogoutBtn />
+        </div>
       <h1 className="fs-1 fw-bold py-5 text-center">Grill & Thrill</h1>
       <h5 className=" fw-bold lead  text-center">My info</h5>
       <div className="d-flex justify-content-end me-5">

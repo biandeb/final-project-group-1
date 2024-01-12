@@ -22,7 +22,7 @@ const MyOrdersRow = (props) => {
   });
 
   return (
-    <li className="list-group-item mt-4">
+    <li className="list-group-item mt-4 card o-hidden border-0 shadow-lg">
       <h5 className="badge bg-danger p-3">Order n°: {order.id}</h5>
       {productDetails.map((product, index) => (
         <p key={index}>

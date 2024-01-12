@@ -7,6 +7,7 @@ import Button from "../../Button/Button.jsx";
 import "../../../index.css";
 import "../userStyles.css";
 import Swal from "sweetalert2";
+import { toast } from "sonner";
 
 const ProductCard = (props) => {
   const { product } = props;
@@ -28,6 +29,7 @@ const ProductCard = (props) => {
           const productId = product.id;
           const updatedAmount = existingProduct.amount + count;
           updateExistingProduct(productId, updatedAmount);
+          toast.success("Add product successfully");
         } else {
           setProductForOrder({ ...product, amount: count });
         }
