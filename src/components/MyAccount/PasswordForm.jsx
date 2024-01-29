@@ -13,7 +13,7 @@ const PasswordForm = (props) => {
   let password = "";
 
   const { user } = useSession();
-  console.log(user);
+  
 
   const {
     register,
@@ -47,7 +47,7 @@ const PasswordForm = (props) => {
     Swal.showLoading();
 
     putPassword({ data, user });
-    console.log(data, user);
+    
 
     setIsEditingPassword(false);
   };

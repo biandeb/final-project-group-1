@@ -1,6 +1,6 @@
 const MyOrdersRow = (props) => {
   const { order } = props;
-  console.log(order);
+  
 
   const productDetails = [];
   let total = 0;

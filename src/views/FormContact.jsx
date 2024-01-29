@@ -8,8 +8,8 @@ const FormContact = () => {
     reset,
   } = useForm();
 
-  const newMessage = (data) => {
-    console.log(data);
+  const newMessage = () => {
+   
     reset();
   };
 

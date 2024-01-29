@@ -19,7 +19,6 @@ const MyOrders = () => {
     );
   }
 
-  console.log(orders);
   if (isLoading) {
     return <h3>Loading...</h3>;
   }

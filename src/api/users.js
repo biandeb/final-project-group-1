@@ -8,7 +8,7 @@ export const postUserFn = async (data) => {
       "Content-type": "application/json",
     },
   });
-  console.log(res);
+  
   if (!res.ok) {
     throw new Error("An error occurred while registering an user");
   }
@@ -57,7 +57,6 @@ export const putUserFn = async (data) => {
 };
 
 export const putPasswordFn = async (data) => {
-  console.log(data);
   const res = await fetch(`${API_URL}/users/put-password/${data.user.id}`, {
     method: "PUT",
     body: JSON.stringify(data),
