@@ -108,12 +108,14 @@ const TableRow = (props) => {
                     className="form-check-input "
                     type="checkbox"
                     value=""
-                    id="flexCheckDefault"
+                    id={`flexCheckDefault_${index}`}
                     checked={availability}
+                    onChange={handleAvailability}
                   />
                   <label
                     className="form-check-label"
-                    htmlFor="flexCheckDefault"
+                    htmlFor={`flexCheckDefault_${index}`}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     Is available?
                   </label>
