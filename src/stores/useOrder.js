@@ -18,7 +18,7 @@ export const useOrder = create((set) => ({
       const updatedOrder = state.productsOrdered.map((item) =>
         item.id === productId ? { ...item, amount: count } : item,
       );
-      console.log(updatedOrder);
+      
       return { productsOrdered: updatedOrder };
     }),
   deleteProductFromOrder: (productId) =>

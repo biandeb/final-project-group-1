@@ -8,10 +8,10 @@ const FormContact = () => {
     reset,
   } = useForm();
 
-  const newMessage = (data) => {
-    console.log(data);
+  const newMessage = () => {
+   
     reset();
-  };
+  };https://github.com/biandeb/final-project-group-1/commit/e265127b54844a64e0f91fe811296471bc22c07b
 
   return (
     <section className="text-form">

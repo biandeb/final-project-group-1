@@ -36,8 +36,8 @@ const OrderView = () => {
       <>
         <div className="m-5">
           <TableNumberInput />
-          <div className="alert alert-danger">
-            An error occurred while getting the products.
+          <div className="alert alert-danger fw-bolder text-center mt-2">
+            An error occurred while getting the products!!!.
           </div>
         </div>
       </>
@@ -58,11 +58,12 @@ const OrderView = () => {
         <hr />
         </div>
        
-        {isLoading ? (
-          Swal.showLoading()
-        ) : (
-          <ProductsGallery products={products} />
-        )}
+        {isLoading ? 
+          <div className="alert alert-danger text-center fw-bolder"> Loading...</div>
+         : 
+         
+         <ProductsGallery products={products} />
+        }
         {isLoggedIn &&
         <div className="checkout-btn-container z-3 position-fixed  p-4 text-light d-flex justify-content-center">
           <NavLink

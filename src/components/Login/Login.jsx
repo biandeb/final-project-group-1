@@ -73,7 +73,9 @@ const Login = () => {
             <div className="card o-hidden border-0 shadow-lg my-5">
               <div className="card-body p-0">
                 <div className="row">
-                  <div className="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                  <div className="col-lg-6 d-none d-lg-block bg-login-image p-1">
+                    <img src="https://trello.com/1/cards/6553e17ebd7c340d40f7a7a4/attachments/65556bf0b4eee98477d197ca/download/GRILL_%26_THRILL.png" alt="Grill & Thrill Logo" />
+                  </div>
                   <div className="col-lg-6">
                     <div className="p-5">
                       <div className="text-center">
